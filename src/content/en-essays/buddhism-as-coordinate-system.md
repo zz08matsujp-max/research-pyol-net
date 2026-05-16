@@ -10,6 +10,7 @@ tags: ["AI Safety", "cognitive science", "Buddhism", "Affective Computing", "met
 license: "CC BY 4.0"
 derivedFrom: "Concept Record §0"
 citationKeySuffix: "buddhismCoordinate"
+ogImage: "/img/ogp-buddhism-coordinate.png"
 ---
 
 > **Note on terminology.** "Mental afflictions" in this essay corresponds to the Buddhist concept of *bonnō* (煩悩) — in Sanskrit, *kleshas* — the mental states held to cause human suffering, classified into 108 categories. The translation of Buddhist terminology in this essay is preliminary and will be refined in v0.2 in consultation with Buddhist scholars.

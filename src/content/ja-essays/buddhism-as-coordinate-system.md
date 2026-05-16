@@ -11,6 +11,7 @@ tags: ["AI Safety", "認知科学", "仏教", "Affective Computing", "方法論"
 license: "CC BY 4.0"
 derivedFrom: "構想記録 §0"
 citationKeySuffix: "buddhismCoordinate"
+ogImage: "/img/ogp-buddhism-coordinate.png"
 ---
 
 ## はじめに

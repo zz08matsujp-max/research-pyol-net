@@ -29,7 +29,9 @@ const essaySchema = z.object({
   /** 構想記録のどの章から派生したか */
   derivedFrom: z.string().optional(),
   /** BibTeX citation key 末尾識別子（記事ごとに一意。例: "precisionEconomics"） */
-  citationKeySuffix: z.string().optional()
+  citationKeySuffix: z.string().optional(),
+  /** OGP 画像のパス（/public からの絶対パス、例: "/img/ogp-precision-economics.png"） */
+  ogImage: z.string().optional()
 });
 
 /** 構想記録（concept）コレクションのスキーマ */

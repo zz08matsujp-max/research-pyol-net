@@ -11,6 +11,7 @@ tags: ["AI", "経済学", "詐欺対策", "AI Safety", "戦略論"]
 license: "CC BY 4.0"
 derivedFrom: "構想記録 §15"
 citationKeySuffix: "precisionEconomics"
+ogImage: "/img/ogp-precision-economics.png"
 ---
 
 ## はじめに

@@ -10,6 +10,7 @@ tags: ["AI", "economics", "anti-scam", "AI Safety", "strategy"]
 license: "CC BY 4.0"
 derivedFrom: "Concept Record §15"
 citationKeySuffix: "precisionEconomics"
+ogImage: "/img/ogp-precision-economics.png"
 ---
 
 ## Introduction

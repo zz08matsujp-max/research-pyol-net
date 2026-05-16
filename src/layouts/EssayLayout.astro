@@ -20,6 +20,8 @@ interface Props {
   license?: string;
   /** BibTeX citation key 末尾識別子（記事ごとに一意）。未指定なら "article" */
   citationKeySuffix?: string;
+  /** OGP 画像のパス（記事固有のソーシャル拡散用、1200×630 推奨） */
+  ogImage?: string;
 }
 
 const {
@@ -33,7 +35,8 @@ const {
   version,
   derivedFrom,
   license = 'CC BY 4.0',
-  citationKeySuffix = 'article'
+  citationKeySuffix = 'article',
+  ogImage
 } = Astro.props;
 
 const dict = t(lang);
@@ -75,7 +78,7 @@ const labels = lang === 'ja' ? {
 const essaysIndexPath = lang === 'ja' ? '/essays/' : '/en/essays/';
 ---
 
-<BaseLayout title={title} lang={lang} description={summary}>
+<BaseLayout title={title} lang={lang} description={summary} ogImage={ogImage}>
   <article class="essay">
     <header class="essay-header">
       <h1>{title}</h1>
