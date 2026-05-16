@@ -1,10 +1,10 @@
 ---
 title: "Bonnō × Scam-Virus Mapping: An Integrated Database and a Study of Human Emotional Structure via Small Neural Networks"
 author: "Toshinobu Matsuura"
-summary: "The deepest-layer purpose of this research program is to understand the human as a structure of mental afflictions and to visualize their dynamic weighting through a computable coordinate system. It adopts the 2,500 years of internal Buddhist observation as the coordinate system for modern neural-network engineering. Anti-scam (SNS-mediated investment fraud / Pig Butchering Scam) is positioned as the most pressing first application. Updated in v1.6 with §0 'The fundamental purpose of the research,' which organizes the program into a three-tier structure (methodological / strategic / applied)."
+summary: "The deepest-layer purpose of this research program is to understand the human as a structure of mental afflictions and to visualize their dynamic weighting through a computable coordinate system. It adopts the 2,500 years of internal Buddhist observation as the coordinate system for modern neural-network engineering. Anti-scam (SNS-mediated investment fraud / Pig Butchering Scam) is positioned as the most pressing first application. Updated in v1.6 with §0 'The fundamental purpose of the research,' organizing the program into a three-tier structure (methodological / strategic / applied). Further updated in v1.7 with §16.4 'Personalization and the individual mental-affliction sensitivity profile,' clarifying that scam judgment is a three-way relation among text × context × individual, and suggesting Level 0 (the self-reflective tier)."
 publishedAt: 2026-05-12
 updatedAt: 2026-05-16
-version: "v1.6"
+version: "v1.7"
 lang: "en"
 license: "CC BY 4.0"
 slug: "bonno-virus-mapping-v1.4"
@@ -1542,15 +1542,107 @@ The voice is delivered not as that of a third party but as that of the past self
 - The decline in effectiveness when "the letter from the past self" feels, after long use, "no longer who I am now"
 - Countermeasures against relapse after the block is lifted (still transferring the money 24 hours later)
 
+### 16.4 Challenge 4: personalization and the individual mental-affliction sensitivity profile (added in v1.7)
+
+#### 16.4.1 The locus of the challenge
+
+The mental-affliction embedding f: T → V (108 dimensions) introduced in §14.1 was defined as a mapping from text to a 108-dimensional stimulation vector. But an important issue, recognized by the author during the English-translation work on this Concept Record, is that **scam judgment does not close at the level of "text alone."**
+
+The same scam text resonates differently depending on the recipient's state of mind:
+
+- A lonely person → romance-scam type resonates (resonance with the loneliness-affliction)
+- A person with strong anxiety about the future → investment-scam type resonates (resonance with the anxiety-affliction)
+- A person with strong need for recognition → "special treatment" type resonates (resonance with the conceit-affliction)
+- A person carrying anger → conspiracy-theory / divisive-incitement type resonates (resonance with the aversion-affliction)
+
+That is, the actual judgment is a **three-way relation**, and the mapping in §14.1 must be developed as follows:
+
+```
+g: (T, C, U) → (P_scam, V_active)
+
+  T = text
+  C = situation / context
+  U = the individual's mental-affliction sensitivity profile
+  P_scam = scam probability
+  V_active = list of afflictions primarily activated
+```
+
+Here, U is **not merely demographic data** (age, gender, profession), but **a "mental-affliction sensitivity profile" inside the individual's mind**. This is an **incomplete-observation problem of inner information**, which cannot be fully captured by labeling or behavioral observation alone.
+
+The equation `P(scam|T) = g(V(T), C(T), S(T))` in §14.2 generated V via the text T, but a more accurate form is:
+
+```
+P(scam) = g(V_text(T, C), V_user(U), context)
+```
+
+That is, scam judgment must be captured as **resonance** between the **"mental-affliction-stimulation profile of the text"** and the **"mental-affliction sensitivity profile of the user."** When both vectors simultaneously take high values on a specific affliction, the scam is most effective.
+
+#### 16.4.2 Response strategies (composite approach)
+
+##### Strategy A: progressive personalization
+
+A new user begins from an "average sensitivity profile," and U_i is progressively updated based on the user's behavior, reactions, and self-reports:
+
+- **Phase 0**: U = average profile (general mental-affliction sensitivity)
+- **Phase 1**: basic input (optional self-report) — "currently feeling strong anxiety," "feeling lonely," etc.
+- **Phase 2**: behavioral observation (clicks, dwell time, warning reactions) for estimation
+- **Phase 3**: accuracy improves with accumulated data
+
+This has the same structure as the classical response to the cold-start problem in recommendation systems. Perfect personalization is impossible from the start; precision is built up incrementally.
+
+##### Strategy B: self-reported mental-affliction profiling
+
+A mechanism by which the user voluntarily reports their "recent state of mind":
+
+```
+Your recent state (optional, changeable any time):
+☐ Strong financial anxiety
+☐ Trouble in relationships with spouse or family
+☐ Feeling not recognized at work
+☐ Carrying strong anger or dissatisfaction
+☐ Feeling lonely
+☐ Strong health anxiety
+☐ Living calmly
+```
+
+What is reported is used for personalized judgment at that moment, and is editable / deletable any time. **The act of "putting one's mental afflictions into words" itself is directly connected to the "mirror of self-understanding" function of the ExPFC in §13.** The user contributes to the accuracy of scam detection and at the same time deepens self-understanding.
+
+##### Strategy C: design as a report for the user themselves
+
+The mental-affliction sensitivity profile is positioned not as "data for the AI to judge" but as **"a report by which the user understands themselves":**
+
+- Personalization data is stored, in principle, only on the user's local device
+- Only aggregated statistics are stored on the server (privacy first)
+- The user can view, edit, and delete their own profile at any time
+
+This design is directly consistent with the fundamental purpose of the research program stated in §0: "a mirror by which the human understands the self."
+
+#### 16.4.3 Remaining issues
+
+- **Complete observation of the inner is in principle impossible**: how to handle depth information that cannot be captured by behavior and self-report (e.g., desires the person is not even aware of, repressed emotions)
+- **Time variation**: mental-affliction sensitivity changes with time (life events, health, age, seasons) — the limit of a static profile
+- **Ethical issue**: the ethical boundary of an AI "understanding" the inner mind of an individual
+- **Misuse potential**: harm from leaks of the mental-affliction sensitivity profile (raising the precision of targeted scams) — the personalized version of the misuse risk discussed in §14.12
+- **Connection with the ExPFC in §13**: the ExPFC "substitutes for the dysfunctional PFC," but the precision of the substitution depends on the precision of U
+- **Interaction with the hierarchical embedding in §16.2**: should U also be held in the hierarchical structure of three poisons (3-dim) → mid classification → 108-dim?
+
+#### 16.4.4 The author's meta-realization (recorded in v1.7)
+
+This challenge was recognized by the author during the work of translating the Concept Record into English. **The meta-observation itself — "if I leave everything to the AI, I am about to overlook something important"** — has the same structure as the fundamental purpose of the research program stated in §0 ("mental afflictions are humanity itself," "mirror of self-understanding").
+
+**The "incompleteness of human understanding"** that the research program addresses is isomorphic to the **"incompleteness of observation"** of the research program itself. That is, this research program has **a self-referential soundness**: it recognizes the limit that human mental-affliction sensitivity cannot be fully captured, and that limit itself becomes the theme of the research.
+
+This suggests, beyond the three-tier structure (Level 1 methodological / Level 2 strategic / Level 3 applied) shown in §0.6, the existence of a **Level 0 = self-reflective tier**. A recursive structure in which the research program includes itself as an object of observation.
+
 ### 16.5 Conclusion (§16)
 
 This chapter is not a presentation of complete solutions. It is **the explicit demonstration of the posture that "the challenges are recognized."**
 
-The three challenges discussed in §16 were all touched on at the strategic level in Concept Record v1.4 but were thin on the operational details of the implementation phase. As long as this program runs on a 20-year span and stands on Economies of Precision (§15), it should not rush into implementation. Consistent with the AI's advice in Appendix E.4 — **"do not aim at perfection; reliably bring out parts"** — the description in this chapter is itself a provisional version, to be improved in precision through verification and dialogue with collaborators.
+The four challenges discussed in §16 were all touched on at the strategic level in Concept Record v1.4 but were thin on the operational details of the implementation phase. In particular, the personalization problem in §16.4 was first recognized through the English-translation work, and represents an important discovery indicating the self-reflective tier (Level 0) of the research program itself. As long as this program runs on a 20-year span and stands on Economies of Precision (§15), it should not rush into implementation. Consistent with the AI's advice in Appendix E.4 — **"do not aim at perfection; reliably bring out parts"** — the description in this chapter is itself a provisional version, to be improved in precision through verification and dialogue with collaborators.
 
-Each response strategy is **an application of an existing technology** (hierarchical embedding, incremental learning, the Ulysses contract); none requires new invention. This is consistent with the philosophy of the program (§4.2) to "use mature technology at the necessary and sufficient scale."
+Each response strategy is **an application of an existing technology** (hierarchical embedding, incremental learning, the Ulysses contract, progressive personalization); none requires new invention. This is consistent with the philosophy of the program (§4.2) to "use mature technology at the necessary and sufficient scale."
 
-Finally, the very writing of this chapter is **evidence of the soundness** of the research program. That the author can, immediately after sending the proposal into the world, point to its criticizable holes shows that the program has **a self-critical reflective function built in**. This is an important posture in AI Safety research generally; and the theme of this program — "structuring human vulnerability" — is isomorphic to its own posture of "structuring its own vulnerability."
+Finally, the very writing of this chapter is **evidence of the soundness** of the research program. That the author can, immediately after sending the proposal into the world, point to its criticizable holes shows that the program has **a self-critical reflective function built in**. This is an important posture in AI Safety research generally; and the theme of this program — "structuring human vulnerability" — is isomorphic to its own posture of "structuring its own vulnerability." The self-referential structure shown in §16.4 is precisely such an example.
 
 ---
 
@@ -1563,6 +1655,7 @@ Finally, the very writing of this chapter is **evidence of the soundness** of th
 - **v1.3.1** (2026-05-13, same-day supplement): added Appendix E "Notes on a staged-publication strategy." A record of a dialogue in which the author candidly asked an AI (Claude Opus 4.7) about the value of the research. Recorded as a reference observation, not as a decision: the AI's value evaluation, points of caution, the proposed staged-publication strategy of §15 → §14 → §13, and the strategic advice "do not aim at perfection; reliably bring out parts."
 - **v1.5** (2026-05-16): added §16 "Implementation challenges and response strategies." Three essential challenges that the author re-recognized while reading back through Concept Record v1.4 — (1) orthogonality and sparsity of the 108-dimensional embedding, (2) tracking dynamic changes in scam techniques, (3) the timing paradox of ExPFC intervention — are recorded candidly, together with provisional response strategies (hierarchical embedding structure; separation into invariant and variable layers + incremental learning; graded intervention + Ulysses contract + third-party notification). The chapter explicitly demonstrates the posture that "the challenges that will draw criticism are recognized," and positions the research program as having a self-critical reflective function. Each response strategy is a hypothesis at this stage, to be improved in precision through verification and dialogue with collaborators.
 - **v1.6** (2026-05-16, same-day revision): added §0 "The fundamental purpose of the research" at the beginning. Articulated the author's original research intent (a methodological concern about neuroscience-centered approaches, the hypothesis of adopting Buddhism as a coordinate system, the ontological premise that mental afflictions are humanity itself, and the ultimate aim of dynamically analyzing the moment-to-moment weighting of afflictions). This organizes the program into a three-tier structure (Level 1: methodological / Level 2: strategic / Level 3: applied). Anti-scam (§1–§14) is repositioned as "the most pressing application." The center of appeal to the international AI Safety community is shown to be Level 1. This chapter articulates as a single fundamental purpose what had been touched on only fragmentarily through the discussions up to v1.5.
+- **v1.7** (2026-05-16, same-day supplement): added §16.4 "Personalization and the individual mental-affliction sensitivity profile." A fundamental insight recognized by the author during the English-translation work for a LessWrong post — scam judgment does not close at the level of "text alone," but is a three-way relation among text × context × individual; the same text resonates with different afflictions depending on the recipient's mental-affliction sensitivity profile U. The mapping defined in §14.1 is developed: scam judgment is recaptured as the "resonance" between the text's stimulation profile and the user's sensitivity profile. Three response approaches are presented: progressive personalization, self-reported profiling, and design as a report for the user themselves. Furthermore, the meta-observation that "if everything is left to the AI, something important is about to be overlooked" is shown to be isomorphic to the fundamental purpose of the research program, indicating, in addition to the three-tier structure, the existence of Level 0 (the self-reflective tier). A supplement strengthening the self-referential soundness of the research program.
 - v2 onward: updates as implementation progresses, dialogues with external collaborators occur, and validation results come in.
 
 ---
