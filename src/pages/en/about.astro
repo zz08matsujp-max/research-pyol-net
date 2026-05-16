@@ -2,11 +2,37 @@
 // src/pages/en/about.astro - About: Toshinobu Matsuura
 // Per design spec v1.1 §5.2
 // Confidentiality: no detailed disclosure of specific technical work at KEPCO or Samsung SDS
+// Schema.org Person JSON-LD for author information (for Knowledge Graph)
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { SITE } from '../../config';
+import { SITE, AUTHOR } from '../../config';
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  'name': AUTHOR.nameRomaji,
+  'alternateName': ['Toshi', '松浦 歳宣'],
+  'jobTitle': 'Independent Researcher',
+  'description': 'Former infrastructure engineer (Kansai Electric Power Company, Samsung SDS), now independent as Mindseed Research. Pursuing a 20-year research program centered on Bonnō × AI.',
+  'url': `${SITE.url}/en/about/`,
+  'affiliation': {
+    '@type': 'Organization',
+    'name': 'Mindseed Research',
+    'alternateName': 'マインドシード研究所',
+    'url': SITE.url
+  },
+  'address': {
+    '@type': 'PostalAddress',
+    'addressLocality': 'Wakayama',
+    'addressCountry': 'JP'
+  },
+  'email': SITE.email,
+  'sameAs': [
+    SITE.githubRepo
+  ]
+};
 ---
 
-<BaseLayout title="About" lang="en">
+<BaseLayout title="About" lang="en" jsonLd={personJsonLd}>
   <section class="hero">
     <h1>About</h1>
     <p class="lead">Toshinobu Matsuura (Toshi)</p>

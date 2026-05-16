@@ -76,9 +76,44 @@ const labels = lang === 'ja' ? {
 };
 
 const essaysIndexPath = lang === 'ja' ? '/essays/' : '/en/essays/';
+
+// Schema.org JSON-LD: ScholarlyArticle として論考を構造化
+// Google Scholar / Knowledge Graph などの学術検索エンジンが拾いやすくなる
+const ogImageUrl = ogImage ? new URL(ogImage, SITE.url).toString() : new URL('/img/ogp-default.png', SITE.url).toString();
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'ScholarlyArticle',
+  'headline': title,
+  'name': title,
+  'description': summary,
+  'author': {
+    '@type': 'Person',
+    'name': author,
+    'alternateName': 'Toshi Matsuura',
+    'url': lang === 'ja' ? `${SITE.url}/about/` : `${SITE.url}/en/about/`,
+    'affiliation': {
+      '@type': 'Organization',
+      'name': 'Mindseed Research',
+      'url': SITE.url
+    }
+  },
+  'datePublished': publishedAt.toISOString().split('T')[0],
+  ...(updatedAt && { 'dateModified': updatedAt.toISOString().split('T')[0] }),
+  'publisher': {
+    '@type': 'Organization',
+    'name': 'Mindseed Research',
+    'url': SITE.url
+  },
+  'url': url,
+  'image': ogImageUrl,
+  'inLanguage': lang === 'ja' ? 'ja' : 'en',
+  'license': 'https://creativecommons.org/licenses/by/4.0/',
+  'isAccessibleForFree': true,
+  ...(derivedFrom && { 'isPartOf': { '@type': 'CreativeWork', 'name': derivedFrom } })
+};
 ---
 
-<BaseLayout title={title} lang={lang} description={summary} ogImage={ogImage}>
+<BaseLayout title={title} lang={lang} description={summary} ogImage={ogImage} ogType="article" jsonLd={articleJsonLd}>
   <article class="essay">
     <header class="essay-header">
       <h1>{title}</h1>

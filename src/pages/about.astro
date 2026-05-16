@@ -2,11 +2,38 @@
 // src/pages/about.astro - 松浦 歳宣（Toshi Matsuura）プロフィール
 // 設計指示書 v1.1 §5.2 に準拠
 // 業務上の機密保持のため、関電・サムスンSDS時代の具体的担当技術内容には踏み込まない
+// Schema.org Person JSON-LD で著者情報を構造化（Knowledge Graph 用）
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { SITE } from '../config';
+import { SITE, AUTHOR } from '../config';
+
+const personJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  'name': AUTHOR.nameRomaji,
+  'alternateName': ['松浦 歳宣', AUTHOR.shortName],
+  'jobTitle': 'Independent Researcher',
+  'description': '元基盤系エンジニア（関西電力、サムスン SDS）、現在はマインドシード研究所として独立。煩悩 × AI を軸とする 20 年スパンの研究プログラムに着手',
+  'url': `${SITE.url}/about/`,
+  'affiliation': {
+    '@type': 'Organization',
+    'name': 'Mindseed Research',
+    'alternateName': 'マインドシード研究所',
+    'url': SITE.url
+  },
+  'address': {
+    '@type': 'PostalAddress',
+    'addressLocality': '和歌山市',
+    'addressRegion': '和歌山県',
+    'addressCountry': 'JP'
+  },
+  'email': SITE.email,
+  'sameAs': [
+    SITE.githubRepo
+  ]
+};
 ---
 
-<BaseLayout title="About" lang="ja">
+<BaseLayout title="About" lang="ja" jsonLd={personJsonLd}>
   <section class="hero">
     <h1>About</h1>
     <p class="lead">松浦 歳宣（Matsuura Toshinobu / Toshi）</p>

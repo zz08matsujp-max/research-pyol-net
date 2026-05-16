@@ -15,9 +15,13 @@ interface Props {
   lang?: Locale;
   /** OGP 用画像のパス（/public からの相対）。未指定ならデフォルト */
   ogImage?: string;
+  /** Open Graph type。"website"（デフォルト）または "article" など */
+  ogType?: 'website' | 'article';
+  /** Schema.org JSON-LD オブジェクト（任意）。head 内に出力される */
+  jsonLd?: object | object[];
 }
 
-const { title, description, lang: langProp, ogImage } = Astro.props;
+const { title, description, lang: langProp, ogImage, ogType = 'website', jsonLd } = Astro.props;
 const lang: Locale = langProp ?? getLocaleFromUrl(Astro.url);
 const dict = t(lang);
 const desc = description ?? dict.meta.siteDescription;
@@ -26,6 +30,7 @@ const canonical = new URL(Astro.url.pathname, SITE.url).toString();
 const alternateUrl = getAlternateUrl(Astro.url, lang);
 const alternateLang: Locale = lang === 'ja' ? 'en' : 'ja';
 const ogImageUrl = new URL(ogImage ?? '/img/ogp-default.png', SITE.url).toString();
+const jsonLdItems = jsonLd ? (Array.isArray(jsonLd) ? jsonLd : [jsonLd]) : [];
 ---
 
 <!DOCTYPE html>
@@ -43,7 +48,7 @@ const ogImageUrl = new URL(ogImage ?? '/img/ogp-default.png', SITE.url).toString
     <link rel="alternate" hreflang="x-default" href={new URL(lang === 'ja' ? Astro.url.pathname : alternateUrl, SITE.url).toString()} />
 
     <!-- Open Graph -->
-    <meta property="og:type" content="website" />
+    <meta property="og:type" content={ogType} />
     <meta property="og:title" content={fullTitle} />
     <meta property="og:description" content={desc} />
     <meta property="og:url" content={canonical} />
@@ -63,6 +68,11 @@ const ogImageUrl = new URL(ogImage ?? '/img/ogp-default.png', SITE.url).toString
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;600&display=swap" rel="stylesheet" />
+
+    {/* Schema.org JSON-LD（構造化データ）── 学術検索エンジン・Knowledge Graph 用 */}
+    {jsonLdItems.map(item => (
+      <script type="application/ld+json" set:html={JSON.stringify(item)} />
+    ))}
   </head>
   <body>
     <Header lang={lang} />

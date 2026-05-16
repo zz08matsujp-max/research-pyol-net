@@ -1,0 +1,9 @@
+# robots.txt for research.pyol.net
+# Mindseed Research portal site (bilingual JA/EN Astro site)
+# License: CC BY 4.0
+
+User-agent: *
+Allow: /
+
+# サイトマップ位置
+Sitemap: https://research.pyol.net/sitemap.xml

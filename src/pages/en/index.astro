@@ -1,10 +1,30 @@
 ---
-// src/pages/en/index.astro - English top page (v0.1 structured placeholder)
-// Real content will be added in Step 5. Structure and rhythm fixed first.
+// src/pages/en/index.astro - English top page
+// Schema.org JSON-LD with Organization + Person (for Knowledge Graph)
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE, AUTHOR } from '../../config';
+
+const organizationJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  'name': 'Mindseed Research',
+  'alternateName': 'マインドシード研究所',
+  'url': SITE.url,
+  'logo': `${SITE.url}/favicon.svg`,
+  'description': 'Bonnō × AI — a 20-year research program adopting 2,500 years of internal Buddhist observation as a coordinate system for AI\'s understanding of the human.',
+  'founder': {
+    '@type': 'Person',
+    'name': AUTHOR.nameRomaji,
+    'alternateName': AUTHOR.shortName,
+    'url': `${SITE.url}/en/about/`
+  },
+  'sameAs': [
+    SITE.githubRepo
+  ]
+};
 ---
 
-<BaseLayout title="Home" lang="en">
+<BaseLayout title="Home" lang="en" jsonLd={organizationJsonLd}>
   <section class="hero">
     <h1>Mindseed Research</h1>
     <p class="lead">Bonnō × AI — A research program in human understanding, beginning with anti-scam.</p>
