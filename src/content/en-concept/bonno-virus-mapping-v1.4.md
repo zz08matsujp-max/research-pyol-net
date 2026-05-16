@@ -998,9 +998,9 @@ To avoid overdetection, judgment is designed as **multi-dimensional composite te
 
 Through the integrating judge g, scams and legitimate advertising are distinguished with high accuracy.
 
-### 14.6 The principle of source attribution — a key insight from the author
+### 14.6 The principle of source attribution — a legally grounded discrimination axis
 
-An observation by the author:
+The starting-point observation:
 
 > "If an ad has nothing — no organization name, nothing to identify its origin — then it is not really an ad. There must always be some explicit company name, organization name, or account."
 
@@ -1129,7 +1129,7 @@ This may become a new foundation for affective-computing research.
 
 ### 14.10 The incentive structure of SNS operators
 
-An observation by the author:
+The starting-point observation:
 
 > "On the company side, the SNS makes more money when there's a flame war, so they don't really stop it."
 
@@ -1214,9 +1214,9 @@ This becomes the core technology of the program.
 
 > **Note.** §15 is reproduced here as part of the Concept Record. A standalone, more detailed essay version (which integrates the incentive-asymmetry analysis from §14.10) is available at [Economies of Precision vs Economies of Scale](/en/essays/precision-economics/).
 
-### 15.1 The author's observation (starting point)
+### 15.1 Starting-point observation
 
-In the discussions that produced this program, the author made the following pointed observation about how today's AI — both general AI and generative AI — handles "affliction-stimulating text":
+This program starts from the following observation about how today's AI — both general AI and generative AI — handles "affliction-stimulating text":
 
 > "It's the same with AI and generative AI. When it comes to prohibited words, they simply block by string match. Even for problems that could be solved by reading the sentence, you can see the intent of not wanting to spend AI compute resources on it."
 

@@ -18,6 +18,8 @@ interface Props {
   version: string;
   derivedFrom?: string;
   license?: string;
+  /** BibTeX citation key 末尾識別子（記事ごとに一意）。未指定なら "article" */
+  citationKeySuffix?: string;
 }
 
 const {
@@ -30,7 +32,8 @@ const {
   updatedAt,
   version,
   derivedFrom,
-  license = 'CC BY 4.0'
+  license = 'CC BY 4.0',
+  citationKeySuffix = 'article'
 } = Astro.props;
 
 const dict = t(lang);
@@ -124,6 +127,7 @@ const essaysIndexPath = lang === 'ja' ? '/essays/' : '/en/essays/';
       month={publishedAt.getMonth() + 1}
       day={publishedAt.getDate()}
       url={url}
+      citationKeySuffix={citationKeySuffix}
     />
 
     <hr class="divider" />

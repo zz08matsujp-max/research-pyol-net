@@ -6,7 +6,7 @@ export const SITE = {
   name: 'Mindseed Research',
   defaultLocale: 'ja' as const,
   locales: ['ja', 'en'] as const,
-  email: 'zz08matsu@mindseed.jp',
+  email: 'matsuura@pyol.net',
   twitter: '@mindseed0805',
   githubRepo: 'https://github.com/zz08matsujp-max/research-pyol-net',
   license: 'CC BY 4.0',

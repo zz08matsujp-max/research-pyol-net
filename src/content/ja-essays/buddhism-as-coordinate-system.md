@@ -10,6 +10,7 @@ lang: "ja"
 tags: ["AI Safety", "認知科学", "仏教", "Affective Computing", "方法論"]
 license: "CC BY 4.0"
 derivedFrom: "構想記録 §0"
+citationKeySuffix: "buddhismCoordinate"
 ---
 
 ## はじめに
@@ -139,7 +140,9 @@ fMRI で扁桃体の活性が観察できるとする。その活性が「貪欲
 
 ### 8.4 横展開（医療・教育・メンタルヘルス）
 
-[§15.6 で論じた](/essays/precision-economics/) ように、本方法論は詐欺対策に留まらない。医療における個別精密医療、教育における個別最適化、メンタルヘルスにおける文脈理解、児童保護における関係性読解 ── いずれも「人間の意味的解像度を上げる」必要がある領域であり、本方法論のテンプレートが適用可能である。
+姉妹論考 [§15「精密の経済 vs 規模の経済」](/essays/precision-economics/) で論じたように、本方法論は詐欺対策に留まらない。医療における個別精密医療、教育における個別最適化、メンタルヘルスにおける文脈理解、児童保護における関係性読解 ── いずれも「人間の意味的解像度を上げる」必要がある領域であり、本方法論のテンプレートが適用可能である。
+
+たとえば医療では、患者のナラティブから 108 次元のベクトルをデコードすることで、標準化された質問票が見落とす不安を可視化できる可能性がある。メンタルヘルスでは、「執着駆動型」と「嫌悪駆動型」の抑うつ状態を区別することで、治療アプローチの選択に情報を提供できる。教育では、学習者個別の煩悩感受性に応じてつまずきの予測と介入を設計できる。児童保護では、家族との関係性に潜む煩悩構造を読み取ることで、表面的な行動だけでは捉えきれない危機の兆候を検知できる。
 
 ## 9. 結論
 
@@ -158,6 +161,23 @@ fMRI で扁桃体の活性が観察できるとする。その活性が「貪欲
 
 ## 関連資料
 
-- [構想記録 v1.6 全文](/concept/bonno-virus-mapping/) ── §0 を含む本研究プログラム本体
-- [§15 精密の経済 vs 規模の経済](/essays/precision-economics/) ── 戦略的位置取り（Level 2）
+- [構想記録 全文](/concept/bonno-virus-mapping/) ── §0 を含む本研究プログラム本体
+- [姉妹論考: §15 精密の経済 vs 規模の経済](/essays/precision-economics/) ── 戦略的位置取り（Level 2）
 - [English version](/en/essays/buddhism-as-coordinate-system/)
+
+## 連絡先
+
+本稿に共鳴する研究者・批判者・後継者からの連絡を歓迎します。仏教学・神経科学・認知科学・AI Safety・Affective Computing いずれの分野からの建設的な批判や共同研究の提案を、いつでも [連絡先ページ](/contact/) からお受けします。日本語・英語いずれも対応します。
+
+## References
+
+1. Clark, A. (2013). Whatever next? Predictive brains, situated agents, and the future of cognitive science. *Behavioral and Brain Sciences*, 36(3), 181-204.
+2. Damasio, A. R. (1994). *Descartes' Error: Emotion, Reason, and the Human Brain*. Putnam.
+3. Ekman, P. (1992). An argument for basic emotions. *Cognition and Emotion*, 6(3-4), 169-200.
+4. Friston, K. (2010). The free-energy principle: a unified brain theory? *Nature Reviews Neuroscience*, 11(2), 127-138.
+5. McCrae, R. R., & Costa, P. T. (1987). Validation of the five-factor model of personality across instruments and observers. *Journal of Personality and Social Psychology*, 52(1), 81-90.
+6. Mehrabian, A., & Russell, J. A. (1974). *An Approach to Environmental Psychology*. MIT Press.
+7. Phelps, E. A., Lempert, K. M., & Sokol-Hessner, P. (2014). Emotion and decision making: multiple modulatory neural circuits. *Annual Review of Neuroscience*, 37, 263-287.
+8. Picard, R. W. (1997). *Affective Computing*. MIT Press.
+9. Plutchik, R. (1980). *Emotion: A Psychoevolutionary Synthesis*. Harper & Row.
+10. 世親 (Vasubandhu) (5世紀). 『阿毘達磨倶舎論』(*Abhidharmakośa*). 仏教典籍。煩悩タクソノミーの源流。

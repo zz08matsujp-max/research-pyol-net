@@ -9,15 +9,20 @@ lang: "en"
 tags: ["AI Safety", "cognitive science", "Buddhism", "Affective Computing", "methodology"]
 license: "CC BY 4.0"
 derivedFrom: "Concept Record §0"
+citationKeySuffix: "buddhismCoordinate"
 ---
 
-> **Note on terminology.** "Mental afflictions" in this essay corresponds to the Buddhist concept of *bonnō* (煩悩), the mental states held to cause human suffering, classified into 108 categories. The translation of Buddhist terminology in this essay is preliminary and will be refined in v0.2 in consultation with Buddhist scholars.
+> **Note on terminology.** "Mental afflictions" in this essay corresponds to the Buddhist concept of *bonnō* (煩悩) — in Sanskrit, *kleshas* — the mental states held to cause human suffering, classified into 108 categories. The translation of Buddhist terminology in this essay is preliminary and will be refined in v0.2 in consultation with Buddhist scholars.
 
 ## Introduction
 
 This essay reorganizes §0 of the [Concept Record v1.6](/en/concept/bonno-virus-mapping/) — the founding document of the research program *Bonnō × Scam-Virus Mapping: An Integrated Database* at Mindseed Research — into a standalone piece. The aim is for the essay to read on its own without requiring familiarity with the other chapters; necessary background is given in the body.
 
 The thesis can be summarized as follows. **Contemporary research on emotion and on the human is built almost entirely on the methodological foundation of "observation from the outside" and "physico-chemical reduction." This provides precise observational means but fails to capture the semantic resolution of human emotion. By adopting the 2,500-year system of internal Buddhist observation as a computable coordinate system, this gap can be filled.** This is a new positioning that may serve as a methodological complement, from the East, for AI Safety, Affective Computing, and cognitive science alike.
+
+> **About the author**[^author]: This research program is led by Toshinobu Matsuura, an independent researcher at Mindseed Research in Wakayama, Japan. See the [About page](/en/about/) for background.
+
+[^author]: See the About page linked above.
 
 ## 1. The standard approaches of existing research
 
@@ -140,7 +145,9 @@ The anti-scam discussion developed in [§1–§14 of the Concept Record](/en/con
 
 ### 8.4 Horizontal expansion (medicine, education, mental health)
 
-As discussed in [§15.6](/en/essays/precision-economics/), this methodology is not limited to anti-scam. Personalized precision medicine, individually optimized education, contextual understanding in mental health, contextual reading of relationships in child protection — all are domains that need to raise "the semantic resolution of the human," and the template of this methodology can be applied to them.
+As discussed in the companion essay [§15 "Economies of Precision vs Economies of Scale"](/en/essays/precision-economics/), this methodology is not limited to anti-scam. Personalized precision medicine, individually optimized education, contextual understanding in mental health, contextual reading of relationships in child protection — all are domains that need to raise "the semantic resolution of the human," and the template of this methodology can be applied to them.
+
+For instance, in medicine, decoding 108-dimensional vectors from a patient's narrative may reveal anxieties that standardized questionnaires miss. In mental health, distinguishing "attachment-driven" from "aversion-driven" depressive states could inform the choice of therapeutic approach. In education, individual-level affliction sensitivity could shape both the prediction of stumbling points and the design of interventions. In child protection, reading the affliction structure latent in family relationships could surface warning signs that surface behavior alone cannot capture.
 
 ## 9. Conclusion
 
@@ -159,6 +166,23 @@ This research program takes on this methodological wager over a 20-year span. An
 
 ## Related materials
 
-- [Concept Record v1.6 (full text)](/en/concept/bonno-virus-mapping/) — including §0, the parent research program from which this essay is derived
-- [§15 Economies of Precision vs Economies of Scale](/en/essays/precision-economics/) — the strategic positioning (Level 2)
+- [Concept Record (full text)](/en/concept/bonno-virus-mapping/) — including §0, the parent research program from which this essay is derived
+- [Companion essay: §15 Economies of Precision vs Economies of Scale](/en/essays/precision-economics/) — the strategic positioning (Level 2)
 - [日本語版](/essays/buddhism-as-coordinate-system/)
+
+## Contact
+
+Replies from resonant researchers, critics, and successor candidates are welcomed. Constructive critique or collaboration proposals from Buddhist studies, neuroscience, cognitive science, AI Safety, or Affective Computing are received at any time via the [contact page](/en/contact/). Both English and Japanese are accepted.
+
+## References
+
+1. Clark, A. (2013). Whatever next? Predictive brains, situated agents, and the future of cognitive science. *Behavioral and Brain Sciences*, 36(3), 181-204.
+2. Damasio, A. R. (1994). *Descartes' Error: Emotion, Reason, and the Human Brain*. Putnam.
+3. Ekman, P. (1992). An argument for basic emotions. *Cognition and Emotion*, 6(3-4), 169-200.
+4. Friston, K. (2010). The free-energy principle: a unified brain theory? *Nature Reviews Neuroscience*, 11(2), 127-138.
+5. McCrae, R. R., & Costa, P. T. (1987). Validation of the five-factor model of personality across instruments and observers. *Journal of Personality and Social Psychology*, 52(1), 81-90.
+6. Mehrabian, A., & Russell, J. A. (1974). *An Approach to Environmental Psychology*. MIT Press.
+7. Phelps, E. A., Lempert, K. M., & Sokol-Hessner, P. (2014). Emotion and decision making: multiple modulatory neural circuits. *Annual Review of Neuroscience*, 37, 263-287.
+8. Picard, R. W. (1997). *Affective Computing*. MIT Press.
+9. Plutchik, R. (1980). *Emotion: A Psychoevolutionary Synthesis*. Harper & Row.
+10. Vasubandhu (5th century). *Abhidharmakośa*. Buddhist canonical text on the taxonomy of mental afflictions.

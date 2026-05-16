@@ -18,9 +18,11 @@ interface Props {
   day: number;
   /** 記事の正規 URL */
   url: string;
+  /** BibTeX citation key の末尾識別子（記事ごとに一意。例: "precisionEconomics"） */
+  citationKeySuffix: string;
 }
 
-const { lang, author, title, year, month, day, url } = Astro.props;
+const { lang, author, title, year, month, day, url, citationKeySuffix } = Astro.props;
 const monthName = ['January', 'February', 'March', 'April', 'May', 'June',
                    'July', 'August', 'September', 'October', 'November', 'December'][month - 1];
 const monthShort = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
@@ -31,9 +33,9 @@ const labelBibtex = 'BibTeX';
 const labelApa = 'APA';
 const labelChicago = 'Chicago';
 
-// citation key: 著者姓 + 年 + 短いタイトル
+// citation key: 著者姓 + 年 + 記事識別子（記事ごとに一意であること）
 const surname = author.split(' ').slice(-1)[0].toLowerCase();
-const citationKey = `${surname}${year}precisionEconomics`;
+const citationKey = `${surname}${year}${citationKeySuffix}`;
 
 const bibtex = `@misc{${citationKey},
   author       = {${author}},

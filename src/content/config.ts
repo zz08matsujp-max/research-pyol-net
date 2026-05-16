@@ -27,7 +27,9 @@ const essaySchema = z.object({
   /** ライセンス */
   license: z.string().default('CC BY 4.0'),
   /** 構想記録のどの章から派生したか */
-  derivedFrom: z.string().optional()
+  derivedFrom: z.string().optional(),
+  /** BibTeX citation key 末尾識別子（記事ごとに一意。例: "precisionEconomics"） */
+  citationKeySuffix: z.string().optional()
 });
 
 /** 構想記録（concept）コレクションのスキーマ */

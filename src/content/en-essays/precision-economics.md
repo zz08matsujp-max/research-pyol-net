@@ -9,6 +9,7 @@ lang: "en"
 tags: ["AI", "economics", "anti-scam", "AI Safety", "strategy"]
 license: "CC BY 4.0"
 derivedFrom: "Concept Record §15"
+citationKeySuffix: "precisionEconomics"
 ---
 
 ## Introduction
@@ -19,9 +20,11 @@ The thesis is simple. **Today's large-scale AI and SNS platforms have a domain t
 
 > **Note on terminology.** The term "mental afflictions" in this essay refers to a Buddhist concept (*bonnō*) denoting the mental states that cause human suffering, classified into 108 categories. The translation of Buddhist terminology in this essay is preliminary and will be refined in v0.2 in consultation with Buddhist scholars.
 
-## 1. The author's observation — the starting point
+## 1. The starting-point observation
 
-In the discussions that produced this research program, the author made the following pointed observation about how today's AI — both general AI and generative AI — handles "affliction-stimulating text":
+This research program (led by the author[^author]) starts from the following observation about how today's AI — both general AI and generative AI — handles "affliction-stimulating text":
+
+[^author]: The author is Toshinobu Matsuura, an independent researcher at Mindseed Research in Wakayama, Japan. See the [About page](/en/about/) for background.
 
 > "It's the same with AI and generative AI. When it comes to prohibited words, they simply block by string match. Even for problems that could be solved by reading the sentence, you can see the intent of not wanting to spend AI compute resources on it."
 
@@ -72,7 +75,7 @@ The factors that maximize engagement coincide almost entirely with "content that
 
 That is, SNS operators **structurally lack any incentive** to suppress affliction-stimulating content. **Even where the technology to read deeply exists, they choose not to read deeply.** This is a constraint rooted in the revenue model itself, independent of inference cost.
 
-Read in this light, the author's opening observation — "AI simply blocks by string match" — turns out to have two layers. The first is the judgment that, technically and economically, simple filtering is sufficient. The second is the structural constraint that even where deeper processing is possible, the incentive to implement it is weak. In a future where cost has fallen, the first layer may dissolve. The second layer will not.
+Read in this light, the opening observation — "AI simply blocks by string match" — turns out to have two layers. The first is the judgment that, technically and economically, simple filtering is sufficient. The second is the structural constraint that even where deeper processing is possible, the incentive to implement it is weak. In a future where cost has fallen, the first layer may dissolve. The second layer will not.
 
 The conclusion that follows is clear:
 
@@ -130,7 +133,11 @@ The structure of "Economies of Scale vs Economies of Precision" is not limited t
 | Child protection | keyword surveillance | contextual reading of relationship and developmental stage |
 | Employment matching | job-board matching | understanding of an individual's long-term career trajectory |
 
-In each case, the domain is one that the giants have given up on for reasons of economic rationality, and an AI tool that goes deep into individual cases can offer decisive value. The methods this research program establishes may serve as a **template** for horizontal expansion into these other domains.
+In each case, the domain is one that the giants have given up on for reasons of economic rationality, and an AI tool that goes deep into individual cases can offer decisive value.
+
+For instance, in medicine, decoding 108-dimensional emotional vectors from a patient's narrative may reveal anxieties that standardized questionnaires miss. In mental health, distinguishing "attachment-driven" from "aversion-driven" depressive states could inform the choice of therapeutic approach. In law, detecting affliction-stimulation (anxiety, haste, status-desire) latent in contract language could surface clauses unfavorable to consumers. In education, individual-level affliction sensitivity could shape both the prediction of stumbling points and the design of interventions.
+
+The methods this research program establishes may serve as a **template** for horizontal expansion into these other domains.
 
 ## 8. Strategic implications
 
@@ -150,7 +157,7 @@ Sixth, **it provides grounds for policy proposals.** The analysis that "the gian
 
 ## 9. Conclusion
 
-The author's intuitive observation — that "AI simply blocks by string match" — exposes a fundamental structure of today's AI economy. **There is a domain that Big AI, optimized for Economies of Scale, is structurally barred from entering.** That domain is precisely where mental affliction, vulnerability, context, and relationship matter — the most human domain.
+The opening observation — that "AI simply blocks by string match" — exposes a fundamental structure of today's AI economy. **There is a domain that Big AI, optimized for Economies of Scale, is structurally barred from entering.** That domain is precisely where mental affliction, vulnerability, context, and relationship matter — the most human domain.
 
 This domain is abandoned by the giants in two senses. First, the cost of reading deeply does not fit the current revenue model. Second, even if cost approached zero, the very incentive structure — that revenue is derived from affliction-stimulating content — does not motivate deep reading. The first will dissolve with technical progress. The second will not.
 
@@ -165,6 +172,21 @@ This is not an abandonment of economic rationality. It is **the choice of a diff
 
 ## Related materials
 
-- [Concept Record v1.4 (full text)](/en/concept/bonno-virus-mapping/) — the parent research program from which this essay is derived
+- [Concept Record (full text)](/en/concept/bonno-virus-mapping/) — the parent research program from which this essay is derived
+- [Companion essay: Buddhism as a Coordinate System](/en/essays/buddhism-as-coordinate-system/) — the methodological tier (Level 1) of this research program
 - [日本語版](/essays/precision-economics/)
 - [PYOL Mind Mirror](https://ai.pyol.net) — a fraud-awareness tool currently in production. The starting point of this research program; full mental-affliction mapping is a future implementation goal
+
+## Contact
+
+Replies from resonant researchers, critics, and successor candidates are welcomed. For collaboration, constructive disagreement, citation requests, or media inquiries, please reach out via the [contact page](/en/contact/). Both English and Japanese are accepted.
+
+## References
+
+1. Anderson, C. (2006). *The Long Tail: Why the Future of Business is Selling Less of More*. Hyperion.
+2. Carroll, M., Chan, A., Ashton, H., & Krueger, D. (2023). Characterizing manipulation from AI systems. *Proceedings of the 3rd ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization (EAAMO '23)*.
+3. Kahneman, D. (2011). *Thinking, Fast and Slow*. Farrar, Straus and Giroux.
+4. National Police Agency of Japan. (2025). *Statistics on SNS-mediated investment and romance fraud, 2023–2025*.
+5. Park, P. S., Goldstein, S., O'Gara, A., Chen, M., & Hendrycks, D. (2024). AI deception: a survey of examples, risks, and potential solutions. *Patterns*, 5(5), 100988.
+6. Thaler, R. H., & Sunstein, C. R. (2008). *Nudge: Improving Decisions about Health, Wealth, and Happiness*. Yale University Press.
+7. Whitty, M. T. (2013). The scammers persuasive techniques model: Development of a stage model to explain the online dating romance scam. *British Journal of Criminology*, 53(4), 665-684.
