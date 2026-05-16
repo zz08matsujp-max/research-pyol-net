@@ -1,7 +1,7 @@
 ---
 // src/pages/en/about.astro - About: Toshinobu Matsuura
 // Per design spec v1.1 §5.2
-// Confidentiality: no detailed disclosure of specific technical work at KEPCO or Samsung SDS
+// Confidentiality: no detailed disclosure of specific technical work at KEPCO or Samsung
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { SITE } from '../../config';
 ---
@@ -34,7 +34,7 @@ import { SITE } from '../../config';
       <li><strong>Vocational rehabilitation center</strong> — observed disability employment-support services from the inside. Understood that people with disabilities also have inner strength</li>
       <li><strong>Now</strong> — independent as Mindseed Research. Beginning a 20-year research program</li>
     </ul>
-    <p class="footnote">Within the bounds of professional confidentiality, no specifics of the technical work at KEPCO or Samsung SDS are disclosed; only the role and its influence on the formation of thought are recorded.</p>
+    <p class="footnote">Within the bounds of professional confidentiality, no specifics of the technical work at KEPCO or Samsung are disclosed; only the role and its influence on the formation of thought are recorded.</p>
   </section>
 
   <section>

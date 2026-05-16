@@ -1,7 +1,7 @@
 ---
 // src/pages/about.astro - 松浦 歳宣（Toshi Matsuura）プロフィール
 // 設計指示書 v1.1 §5.2 に準拠
-// 業務上の機密保持のため、関電・サムスンSDS時代の具体的担当技術内容には踏み込まない
+// 業務上の機密保持のため、関電・サムスン時代の具体的担当技術内容には踏み込まない
 import BaseLayout from '../layouts/BaseLayout.astro';
 import { SITE } from '../config';
 ---
@@ -30,7 +30,7 @@ import { SITE } from '../config';
       <li><strong>職業リハビリテーションセンター</strong> ── 障害者就労支援の現場を内側から把握。障害者にも底力がある事を理解</li>
       <li><strong>現在</strong> ── マインドシード研究所として独立。20 年スパンの研究プログラムに着手</li>
     </ul>
-    <p class="footnote">業務上の機密保持の範囲で、関電・サムスンSDS時代の具体的な担当技術内容には踏み込まず、役割と思想形成への影響のみを記しています。</p>
+    <p class="footnote">業務上の機密保持の範囲で、関電・サムスン時代の具体的な担当技術内容には踏み込まず、役割と思想形成への影響のみを記しています。</p>
   </section>
 
   <section>
