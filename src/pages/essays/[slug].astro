@@ -1,0 +1,32 @@
+---
+// src/pages/essays/[slug].astro - 日本語論考の動的ルーティング
+// /essays/<slug>/ に対応。コンテンツコレクション ja-essays から読み込み
+import { getCollection } from 'astro:content';
+import EssayLayout from '../../layouts/EssayLayout.astro';
+
+export async function getStaticPaths() {
+  const essays = await getCollection('ja-essays');
+  return essays.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry }
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<EssayLayout
+  lang="ja"
+  title={entry.data.title}
+  englishSubtitle={entry.data.englishSubtitle}
+  summary={entry.data.summary}
+  author={entry.data.author}
+  publishedAt={entry.data.publishedAt}
+  updatedAt={entry.data.updatedAt}
+  version={entry.data.version}
+  derivedFrom={entry.data.derivedFrom}
+  license={entry.data.license}
+>
+  <Content />
+</EssayLayout>

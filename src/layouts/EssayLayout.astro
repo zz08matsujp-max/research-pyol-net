@@ -1,0 +1,236 @@
+---
+// src/layouts/EssayLayout.astro - 論考（essay）記事用レイアウト
+// 設計指示書 v1.1 §5.4 に準拠
+import BaseLayout from './BaseLayout.astro';
+import CitationBox from '../components/CitationBox.astro';
+import { t, getAlternateUrl } from '../i18n';
+import { SITE } from '../config';
+import type { Locale } from '../config';
+
+interface Props {
+  lang: Locale;
+  title: string;
+  englishSubtitle?: string;
+  summary: string;
+  author: string;
+  publishedAt: Date;
+  updatedAt?: Date;
+  version: string;
+  derivedFrom?: string;
+  license?: string;
+}
+
+const {
+  lang,
+  title,
+  englishSubtitle,
+  summary,
+  author,
+  publishedAt,
+  updatedAt,
+  version,
+  derivedFrom,
+  license = 'CC BY 4.0'
+} = Astro.props;
+
+const dict = t(lang);
+const url = new URL(Astro.url.pathname, SITE.url).toString();
+const alternateUrl = getAlternateUrl(Astro.url, lang);
+
+// 引用情報用の英文タイトル（日本語記事の場合は英語サブタイトルを使用）
+const citationTitle = lang === 'en' ? title : (englishSubtitle ?? title);
+
+const formatDate = (d: Date) => {
+  if (lang === 'ja') {
+    return `${d.getFullYear()}年${d.getMonth() + 1}月${d.getDate()}日`;
+  }
+  const monthName = ['January', 'February', 'March', 'April', 'May', 'June',
+                     'July', 'August', 'September', 'October', 'November', 'December'][d.getMonth()];
+  return `${monthName} ${d.getDate()}, ${d.getFullYear()}`;
+};
+
+const labels = lang === 'ja' ? {
+  publishedAt: '公開',
+  updatedAt: '改訂',
+  version: 'バージョン',
+  derivedFrom: '原典',
+  license: 'ライセンス',
+  summary: '要約',
+  alternateLanguage: 'English version',
+  back: '← 論考一覧へ'
+} : {
+  publishedAt: 'Published',
+  updatedAt: 'Updated',
+  version: 'Version',
+  derivedFrom: 'Derived from',
+  license: 'License',
+  summary: 'Summary',
+  alternateLanguage: '日本語版',
+  back: '← Back to essays'
+};
+
+const essaysIndexPath = lang === 'ja' ? '/essays/' : '/en/essays/';
+---
+
+<BaseLayout title={title} lang={lang} description={summary}>
+  <article class="essay">
+    <header class="essay-header">
+      <h1>{title}</h1>
+      {englishSubtitle && lang === 'ja' && (
+        <p class="english-subtitle">{englishSubtitle}</p>
+      )}
+
+      <div class="essay-meta">
+        <dl>
+          <dt>{labels.publishedAt}</dt>
+          <dd><time datetime={publishedAt.toISOString()}>{formatDate(publishedAt)}</time></dd>
+          {updatedAt && (
+            <>
+              <dt>{labels.updatedAt}</dt>
+              <dd><time datetime={updatedAt.toISOString()}>{formatDate(updatedAt)}</time></dd>
+            </>
+          )}
+          <dt>{labels.version}</dt>
+          <dd>{version}</dd>
+          {derivedFrom && (
+            <>
+              <dt>{labels.derivedFrom}</dt>
+              <dd>{derivedFrom}</dd>
+            </>
+          )}
+          <dt>{labels.license}</dt>
+          <dd>{license}</dd>
+        </dl>
+        <p class="alternate-lang">
+          <a href={alternateUrl} hreflang={lang === 'ja' ? 'en' : 'ja'}>{labels.alternateLanguage}</a>
+        </p>
+      </div>
+
+      <div class="essay-summary">
+        <span class="summary-label">{labels.summary}</span>
+        <p>{summary}</p>
+      </div>
+    </header>
+
+    <div class="essay-body">
+      <slot />
+    </div>
+
+    <CitationBox
+      lang={lang}
+      author={author}
+      title={citationTitle}
+      year={publishedAt.getFullYear()}
+      month={publishedAt.getMonth() + 1}
+      day={publishedAt.getDate()}
+      url={url}
+    />
+
+    <hr class="divider" />
+
+    <nav class="page-nav" aria-label={labels.back}>
+      <a href={essaysIndexPath}>{labels.back}</a>
+    </nav>
+  </article>
+</BaseLayout>
+
+<style>
+  .essay {
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .essay-header {
+    margin-block-end: var(--space-xl);
+  }
+  .essay-header h1 {
+    font-size: 2rem;
+    line-height: 1.35;
+    margin-block: var(--space-md) var(--space-sm);
+  }
+  .english-subtitle {
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    font-style: italic;
+    font-family: var(--font-en);
+    margin-block: 0 var(--space-md);
+    line-height: 1.5;
+  }
+  .essay-meta {
+    border-block: 1px solid var(--color-border);
+    padding-block: var(--space-sm);
+    margin-block: var(--space-md);
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-md);
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+  .essay-meta dl {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0.2em 0.6em;
+    margin: 0;
+  }
+  .essay-meta dt {
+    font-weight: 600;
+    color: var(--color-text);
+  }
+  .essay-meta dd { margin: 0; }
+  .alternate-lang { margin: 0; }
+  .essay-summary {
+    background: var(--color-bg-alt);
+    border-inline-start: 4px solid var(--color-accent);
+    padding: var(--space-md) var(--space-lg);
+    margin-block: var(--space-lg);
+    border-radius: 2px;
+  }
+  .summary-label {
+    display: block;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--color-text-muted);
+    margin-block-end: var(--space-xs);
+  }
+  .essay-summary p {
+    margin: 0;
+    font-size: 1.02rem;
+    line-height: 1.7;
+  }
+  .essay-body {
+    line-height: 1.8;
+  }
+  .essay-body :global(h2) {
+    margin-block: var(--space-xl) var(--space-md);
+  }
+  .essay-body :global(h3) {
+    margin-block: var(--space-lg) var(--space-sm);
+  }
+  .essay-body :global(blockquote) {
+    font-size: 1.05rem;
+  }
+  .essay-body :global(table) {
+    width: 100%;
+    border-collapse: collapse;
+    margin-block: var(--space-md);
+    font-size: 0.95rem;
+  }
+  .essay-body :global(th),
+  .essay-body :global(td) {
+    border: 1px solid var(--color-border);
+    padding: 0.5em 0.8em;
+    text-align: left;
+    vertical-align: top;
+  }
+  .essay-body :global(th) {
+    background: var(--color-bg-alt);
+    font-weight: 600;
+  }
+  .essay-body :global(hr) {
+    border: none;
+    border-top: 1px solid var(--color-border);
+    margin-block: var(--space-lg);
+  }
+</style>

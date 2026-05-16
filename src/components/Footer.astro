@@ -1,0 +1,49 @@
+---
+// src/components/Footer.astro - サイト共通フッター
+import { t } from '../i18n';
+import { SITE } from '../config';
+import type { Locale } from '../config';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const dict = t(lang);
+const year = new Date().getFullYear();
+---
+
+<footer class="site-footer">
+  <div class="footer-inner">
+    <p class="wip-notice">{dict.footer.workInProgress}</p>
+    <p>
+      © {year} {dict.footer.copyright} ·
+      <a href={SITE.licenseUrl} rel="license noopener" target="_blank">{dict.footer.license}</a> ·
+      <a href={SITE.githubRepo} rel="noopener" target="_blank">{dict.footer.github}</a>
+    </p>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--color-border);
+    background: var(--color-bg-alt);
+    color: var(--color-text-muted);
+    margin-top: var(--space-xl);
+  }
+  .footer-inner {
+    max-width: var(--max-width-wide);
+    margin: 0 auto;
+    padding: var(--space-lg) var(--space-md);
+    text-align: center;
+    font-size: 0.9rem;
+  }
+  .wip-notice {
+    display: inline-block;
+    border: 1px solid var(--color-border);
+    border-radius: 4px;
+    padding: 0.2em 0.8em;
+    margin-bottom: var(--space-sm);
+    font-size: 0.85rem;
+  }
+</style>

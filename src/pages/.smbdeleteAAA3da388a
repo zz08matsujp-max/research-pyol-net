@@ -1,0 +1,57 @@
+---
+// src/pages/index.astro - 日本語トップページ（v0.1 構造化プレースホルダ）
+// 本格コンテンツは Step 5 で投入。構造とリズムのみ先に確定。
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="ホーム" lang="ja">
+  <section class="hero">
+    <h1>マインドシード研究所</h1>
+    <p class="lead">煩悩 × AI ── 詐欺対策から始まる、人間理解の研究プログラム</p>
+    <p class="sub">20年スパンの長期研究 ／ 個人事業 ／ 松浦 歳宣（Toshi Matsuura）</p>
+  </section>
+
+  <section>
+    <h2>研究者</h2>
+    <p>
+      <strong>松浦 歳宣（Toshi Matsuura）</strong> ── 68 歳、元基盤系エンジニア、マインドシード研究所代表（個人事業）。
+      関西電力 10 年、サムスン電子 30 年を経て独立。C/C++・アセンブラを軸に 40 年以上の基盤系エンジニアリング経験。
+      和歌山市在住。<a href="/about/">プロフィール詳細 →</a>
+    </p>
+  </section>
+
+  <section>
+    <h2>研究の3層構造</h2>
+    <ul class="layered-list">
+      <li><strong>短期</strong>: PYOL マインドミラー（<a href="https://ai.pyol.net">ai.pyol.net</a>） ── 実動中の詐欺被害注意喚起ツール。本研究プログラムの出発点</li>
+      <li><strong>中期</strong>: 仏教 × AI ── 煩悩タクソノミーと詐欺ウイルスの統合データベース（構想中）</li>
+      <li><strong>長期</strong>: ASI（汎用人工知能）時代における AI の人間理解能力への寄与</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>核心論考</h2>
+    <div class="callout">
+      <span class="callout-label">Essay §15</span>
+      <h3><a href="/essays/precision-economics/">精密の経済 vs 規模の経済 ── 大手AIが立ち入れない領域について</a></h3>
+      <p>大手 AI は規模の経済に最適化されているがゆえに、構造的に立ち入れない領域がある。本構想はその領域に意図的に立つ ── 広く浅くやる隣で、狭く深くやる戦略の体系化。</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>出発点となる実装</h2>
+    <p>本研究プログラムの出発点として、すでに実動中のツールがあります。煩悩マッピング等の本格機能は構想段階ですが、まず一般的な詐欺被害の注意喚起ツールとして公開しています。</p>
+    <p>
+      <a href="https://ai.pyol.net">ai.pyol.net</a> ── PYOL マインドミラー（無料公開中）
+    </p>
+  </section>
+
+  <hr class="divider" />
+
+  <nav class="page-nav" aria-label="主要ページ">
+    <a href="/about/">About →</a>
+    <a href="/concept/">研究プログラム →</a>
+    <a href="/essays/">論考 →</a>
+    <a href="/contact/">連絡先 →</a>
+  </nav>
+</BaseLayout>

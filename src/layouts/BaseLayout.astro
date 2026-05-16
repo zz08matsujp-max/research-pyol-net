@@ -1,0 +1,74 @@
+---
+// src/layouts/BaseLayout.astro - サイト共通の基本レイアウト
+// 設計指示書 v1.1 §7.1 必須メタデータ準拠（hreflang 含む）
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { SITE } from '../config';
+import { getLocaleFromUrl, t, getAlternateUrl } from '../i18n';
+import type { Locale } from '../config';
+
+interface Props {
+  title: string;
+  description?: string;
+  /** 明示指定可能、未指定なら URL から判定 */
+  lang?: Locale;
+  /** OGP 用画像のパス（/public からの相対）。未指定ならデフォルト */
+  ogImage?: string;
+}
+
+const { title, description, lang: langProp, ogImage } = Astro.props;
+const lang: Locale = langProp ?? getLocaleFromUrl(Astro.url);
+const dict = t(lang);
+const desc = description ?? dict.meta.siteDescription;
+const fullTitle = `${title} | ${SITE.name}`;
+const canonical = new URL(Astro.url.pathname, SITE.url).toString();
+const alternateUrl = getAlternateUrl(Astro.url, lang);
+const alternateLang: Locale = lang === 'ja' ? 'en' : 'ja';
+const ogImageUrl = new URL(ogImage ?? '/images/ogp-default.png', SITE.url).toString();
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={desc} />
+    <link rel="canonical" href={canonical} />
+
+    <!-- hreflang for bilingual pages（v1.1 必須） -->
+    <link rel="alternate" hreflang={lang} href={canonical} />
+    <link rel="alternate" hreflang={alternateLang} href={new URL(alternateUrl, SITE.url).toString()} />
+    <link rel="alternate" hreflang="x-default" href={new URL(lang === 'ja' ? Astro.url.pathname : alternateUrl, SITE.url).toString()} />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={desc} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:site_name" content={SITE.name} />
+    <meta property="og:image" content={ogImageUrl} />
+    <meta property="og:locale" content={lang === 'ja' ? 'ja_JP' : 'en_US'} />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={fullTitle} />
+    <meta name="twitter:description" content={desc} />
+    <meta name="twitter:image" content={ogImageUrl} />
+
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+    <!-- フォント（CDN、軽量化のため preconnect） -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&family=Noto+Sans+JP:wght@400;600&display=swap" rel="stylesheet" />
+  </head>
+  <body>
+    <Header lang={lang} />
+    <main>
+      <slot />
+    </main>
+    <Footer lang={lang} />
+  </body>
+</html>

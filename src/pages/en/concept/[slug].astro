@@ -1,0 +1,31 @@
+---
+// src/pages/en/concept/[slug].astro - English concept-record dynamic routing
+// /en/concept/<slug>/ に対応。コンテンツコレクション en-concept から読み込み
+import { getCollection } from 'astro:content';
+import EssayLayout from '../../../layouts/EssayLayout.astro';
+
+export async function getStaticPaths() {
+  const concepts = await getCollection('en-concept');
+  return concepts.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry }
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<EssayLayout
+  lang="en"
+  title={entry.data.title}
+  englishSubtitle={entry.data.englishSubtitle}
+  summary={entry.data.summary}
+  author={entry.data.author}
+  publishedAt={entry.data.publishedAt}
+  updatedAt={entry.data.updatedAt}
+  version={entry.data.version}
+  license={entry.data.license}
+>
+  <Content />
+</EssayLayout>

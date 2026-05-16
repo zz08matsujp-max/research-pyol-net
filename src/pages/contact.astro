@@ -1,0 +1,52 @@
+---
+// src/pages/contact.astro - 連絡先（v0.1 構造化プレースホルダ）
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE, AUTHOR } from '../config';
+---
+
+<BaseLayout title="連絡先" lang="ja">
+  <section class="hero">
+    <h1>連絡先</h1>
+    <p class="lead">共鳴者からの返信を歓迎します</p>
+    <p class="sub">共同研究 ／ 批判 ／ 後継者候補からの接触 ／ メディア取材 ／ 引用依頼</p>
+  </section>
+
+  <section>
+    <h2>連絡手段</h2>
+    <ul class="layered-list">
+      <li><strong>Email</strong>: <a href={`mailto:${SITE.email}`}>{SITE.email}</a> ── 主要な連絡先</li>
+      <li><strong>X (旧 Twitter)</strong>: {SITE.twitter}</li>
+      <li><strong>GitHub</strong>: <a href={SITE.githubRepo}>{SITE.githubRepo}</a> ── 公開議論</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>歓迎する連絡内容</h2>
+    <ul class="layered-list">
+      <li><strong>共同研究</strong>の打診</li>
+      <li><strong>批判</strong>・建設的な反論・指摘</li>
+      <li><strong>後継者候補</strong>からの接触（20 年スパンの研究を引き継ぎたい方）</li>
+      <li><strong>メディア取材</strong>・引用依頼</li>
+      <li><strong>仏教学者</strong>からの術語監修の申し出</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>対応言語</h2>
+    <p>日本語、英語を歓迎します。可能なら韓国語にも対応します。</p>
+  </section>
+
+  <section>
+    <h2>返信ポリシー</h2>
+    <blockquote>
+      <p>すべてに返信を約束はできませんが、目を通します。</p>
+    </blockquote>
+    <p>所在地: {AUTHOR.location}</p>
+  </section>
+
+  <hr class="divider" />
+
+  <nav class="page-nav" aria-label="主要ページ">
+    <a href="/">← トップへ戻る</a>
+  </nav>
+</BaseLayout>

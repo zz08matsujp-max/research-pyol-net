@@ -1,0 +1,91 @@
+---
+// src/components/Header.astro - サイト共通ヘッダー（言語切替含む）
+import { t, getAlternateUrl } from '../i18n';
+import type { Locale } from '../config';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const dict = t(lang);
+const homeBase = lang === 'ja' ? '/' : '/en/';
+const alternateUrl = getAlternateUrl(Astro.url, lang);
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <a href={homeBase} class="site-logo" aria-label="Mindseed Research">
+      <svg class="logo-mark" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="16" cy="19" r="9" fill="none" stroke="currentColor" stroke-width="2"/>
+        <path d="M 16 9 Q 16 4 20 3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+      </svg>
+      <span class="logo-text">Mindseed Research</span>
+    </a>
+    <nav aria-label={dict.nav.home}>
+      <ul class="nav-list">
+        <li><a href={`${homeBase}about/`}>{dict.nav.about}</a></li>
+        <li><a href={`${homeBase}concept/`}>{dict.nav.concept}</a></li>
+        <li><a href={`${homeBase}essays/`}>{dict.nav.essays}</a></li>
+        <li><a href={`${homeBase}contact/`}>{dict.nav.contact}</a></li>
+        <li class="lang-switch"><a href={alternateUrl} hreflang={lang === 'ja' ? 'en' : 'ja'}>{dict.nav.languageSwitch}</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    border-bottom: 1px solid var(--color-border);
+    background: var(--color-bg);
+  }
+  .header-inner {
+    max-width: var(--max-width-wide);
+    margin: 0 auto;
+    padding: var(--space-md);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: var(--space-md);
+    flex-wrap: wrap;
+  }
+  .site-logo {
+    font-weight: 600;
+    color: var(--color-accent);
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.45rem;
+  }
+  .logo-mark {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+  }
+  .nav-list {
+    list-style: none;
+    display: flex;
+    gap: var(--space-md);
+    margin: 0;
+    padding: 0;
+    flex-wrap: wrap;
+  }
+  .nav-list a {
+    text-decoration: none;
+    color: var(--color-text);
+  }
+  .nav-list a:hover {
+    color: var(--color-link);
+  }
+  .lang-switch a {
+    border: 1px solid var(--color-border);
+    padding: 0.15em 0.6em;
+    border-radius: 4px;
+    font-size: 0.9em;
+  }
+  @media (max-width: 600px) {
+    .header-inner { flex-direction: column; align-items: flex-start; }
+    .nav-list { gap: var(--space-sm); }
+  }
+</style>

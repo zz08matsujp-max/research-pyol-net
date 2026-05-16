@@ -1,0 +1,30 @@
+---
+// src/components/LanguageSwitcher.astro - 言語切替単体コンポーネント
+// ヘッダー以外の場所（記事内など）で使用したい場合のため、独立コンポーネントとして提供
+import { t, getAlternateUrl } from '../i18n';
+import type { Locale } from '../config';
+
+interface Props {
+  lang: Locale;
+}
+
+const { lang } = Astro.props;
+const dict = t(lang);
+const alternateUrl = getAlternateUrl(Astro.url, lang);
+const alternateLang: Locale = lang === 'ja' ? 'en' : 'ja';
+---
+
+<a href={alternateUrl} hreflang={alternateLang} class="lang-switcher" aria-label={dict.common.languageSwitch}>
+  {dict.nav.languageSwitch}
+</a>
+
+<style>
+  .lang-switcher {
+    display: inline-block;
+    border: 1px solid var(--color-border);
+    padding: 0.2em 0.7em;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 0.9em;
+  }
+</style>

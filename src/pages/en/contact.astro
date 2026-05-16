@@ -1,0 +1,52 @@
+---
+// src/pages/en/contact.astro - Contact page (v0.1 structured placeholder)
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE, AUTHOR } from '../../config';
+---
+
+<BaseLayout title="Contact" lang="en">
+  <section class="hero">
+    <h1>Contact</h1>
+    <p class="lead">Replies from resonant readers are welcomed</p>
+    <p class="sub">Collaboration / Critique / Approaches from successor candidates / Media inquiries / Citation requests</p>
+  </section>
+
+  <section>
+    <h2>Channels</h2>
+    <ul class="layered-list">
+      <li><strong>Email</strong>: <a href={`mailto:${SITE.email}`}>{SITE.email}</a> — primary</li>
+      <li><strong>X (Twitter)</strong>: {SITE.twitter}</li>
+      <li><strong>GitHub</strong>: <a href={SITE.githubRepo}>{SITE.githubRepo}</a> — public discussion</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Welcomed inquiries</h2>
+    <ul class="layered-list">
+      <li><strong>Collaboration</strong> proposals</li>
+      <li><strong>Critique</strong>, constructive disagreement, or correction</li>
+      <li><strong>Approaches from successor candidates</strong> (those who would inherit a 20-year research program)</li>
+      <li><strong>Media inquiries</strong> and citation requests</li>
+      <li><strong>Buddhist scholars</strong> offering terminology supervision</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Languages</h2>
+    <p>Japanese and English are both welcomed. Korean is also possible.</p>
+  </section>
+
+  <section>
+    <h2>Response policy</h2>
+    <blockquote>
+      <p>I cannot promise to reply to everything, but I read everything.</p>
+    </blockquote>
+    <p>Location: {AUTHOR.locationEn}</p>
+  </section>
+
+  <hr class="divider" />
+
+  <nav class="page-nav" aria-label="Main pages">
+    <a href="/en/">← Back to top</a>
+  </nav>
+</BaseLayout>

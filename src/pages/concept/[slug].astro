@@ -1,0 +1,32 @@
+---
+// src/pages/concept/[slug].astro - 日本語構想記録の動的ルーティング
+// /concept/<slug>/ に対応。コンテンツコレクション ja-concept から読み込み
+// 構想記録は essay と類似の構造なので EssayLayout を流用
+import { getCollection } from 'astro:content';
+import EssayLayout from '../../layouts/EssayLayout.astro';
+
+export async function getStaticPaths() {
+  const concepts = await getCollection('ja-concept');
+  return concepts.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry }
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<EssayLayout
+  lang="ja"
+  title={entry.data.title}
+  englishSubtitle={entry.data.englishSubtitle}
+  summary={entry.data.summary}
+  author={entry.data.author}
+  publishedAt={entry.data.publishedAt}
+  updatedAt={entry.data.updatedAt}
+  version={entry.data.version}
+  license={entry.data.license}
+>
+  <Content />
+</EssayLayout>

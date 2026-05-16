@@ -1,0 +1,103 @@
+---
+// src/pages/en/about.astro - About: Toshinobu Matsuura
+// Per design spec v1.1 §5.2
+// Confidentiality: no detailed disclosure of specific technical work at KEPCO or Samsung
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { SITE } from '../../config';
+---
+
+<BaseLayout title="About" lang="en">
+  <section class="hero">
+    <h1>About</h1>
+    <p class="lead">Toshinobu Matsuura (Toshi)</p>
+    <p class="sub">Mindseed Research / Wakayama, Japan / Age 68 / Former infrastructure engineer</p>
+  </section>
+
+  <section>
+    <p class="intro">
+      Kansai Electric Power Company (KEPCO, Japan's regional power utility),
+      then independent business, then Samsung SDS in Korea, then retirement.
+      After three years teaching electrical theory at a vocational training school,
+      and field observation at a vocational rehabilitation center,
+      he now runs Mindseed Research as a sole-proprietorship initiative,
+      pursuing a 20-year research program centered on Bonnō × AI.
+    </p>
+  </section>
+
+  <section>
+    <h2>Career</h2>
+    <ul class="layered-list">
+      <li><strong>KEPCO</strong> — design and implementation of instrumentation panels and relay control panels. Internalized the discipline of power-system engineering</li>
+      <li><strong>Independent business</strong> — design and manufacture of sequence control and quality-inspection equipment for automotive production lines and the like. Learned the rigor of quality on the manufacturing floor</li>
+      <li><strong>Samsung SDS</strong> — infrastructure engineering. Internalized two philosophies: "mature technology is safety first" and "mismatch is the best fit"</li>
+      <li><strong>Vocational training school, 3 years</strong> — after retirement. Teaching electrical theory. Top priority: "no one falls behind"</li>
+      <li><strong>Vocational rehabilitation center</strong> — observed disability employment-support services from the inside. Understood that people with disabilities also have inner strength</li>
+      <li><strong>Now</strong> — independent as Mindseed Research. Beginning a 20-year research program</li>
+    </ul>
+    <p class="footnote">Within the bounds of professional confidentiality, no specifics of the technical work at KEPCO or Samsung are disclosed; only the role and its influence on the formation of thought are recorded.</p>
+  </section>
+
+  <section>
+    <h2>Technical background</h2>
+    <p>Over 40 years of infrastructure engineering centered on C/C++ and assembly. Witnessed the technological transition from 8-bit CPUs to today's generative AI from the field.</p>
+    <p>Current integrated stack: PHP/MySQL (existing assets), Flutter/Firebase, Next.js, React Native, and Claude / ChatGPT / Claude Code. Holding to the philosophy of an infrastructure engineer — "use mature technology at the necessary and sufficient scale" — while absorbing the new development practices of the AI era.</p>
+  </section>
+
+  <section>
+    <h2>Important life events (self-disclosure)</h2>
+    <p class="intro">
+      To preserve transparency as a researcher's narrative, three events that shaped the direction of life are recorded here.
+    </p>
+
+    <h3>The BBS case of the 1990s</h3>
+    <p>Around age 30, ran a grassroots Bulletin Board System on SunOS — 9 modem lines, about 300 members. Members uploaded obscene images and other members downloaded them. In connection with this, was arrested by 5 detectives, defended pro bono by 6 lawyers, and lost the case. The verdict became the first Japanese precedent in which "a hard disk was deemed to constitute the public display of obscene material." The sentence was 3 years suspended.</p>
+    <p>This experience was a way of learning the boundary of technology, law, and society from the inside. It is also the starting point of the self-definition as "the opposition party of the IT industry."</p>
+
+    <h3>The failure of CineBASIC</h3>
+    <p>Spent half a year developing "CineBASIC," a new language for video-generation AI, and gave up — defeated by the difficulty of controlling the inherent fluctuation of generative output. Through this experience, came to understand bodily that the "fluctuation of generative AI" is not a bug or a tuning issue but a fundamental problem of training data and evaluation design. One of the reasons this research program stands on Economies of Precision is the inside knowledge gained from this defeat.</p>
+
+    <h3>A close relation's victimization by fraud (May 2026)</h3>
+    <p>Someone close to the author was defrauded of approximately 7 million yen (about $47,000) in an FX-investment scam. This event triggered the full-scale launch of the long-incubated anti-scam vision, the formal independence of Mindseed Research, and the start of the research program. The starting point of the philosophy of "Protect Your Only Life" lies in this lived experience.</p>
+  </section>
+
+  <section>
+    <h2>Core philosophical commitments</h2>
+    <ul class="layered-list">
+      <li><strong>Protect Your Only Life</strong> — framing scam victimization not as financial loss but as a violation of the singular life itself</li>
+      <li><strong>Mismatch thinking</strong> — unexpected combinations across disciplines yield the strongest market differentiation. A sales philosophy from the Samsung SDS years</li>
+      <li><strong>The opposition party of the IT industry</strong> — where the giants go wide and shallow, this program goes narrow and deep. The strategic positioning of <a href="/en/essays/precision-economics/">Economies of Precision</a></li>
+      <li><strong>20-year span and successors</strong> — not short-term outcomes, but a research program left in a form that can be inherited</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Replies are welcomed from</h2>
+    <ul class="layered-list">
+      <li><strong>AI Safety / Alignment researchers</strong> — at international AI labs, in the LessWrong community</li>
+      <li><strong>Cognitive science / neuroscience researchers</strong> — at universities and research institutes in Japan or abroad</li>
+      <li><strong>Buddhist scholars</strong> — at institutions such as Bukkyo University, Komazawa University, Ryukoku University, and others</li>
+      <li><strong>Researchers in the victimology of fraud</strong> — domestic and international</li>
+      <li><strong>Successor candidates: early-career researchers and graduate students</strong> — those interested in a 20-year research program</li>
+    </ul>
+    <p>Channels: <a href={`mailto:${SITE.email}`}>{SITE.email}</a>, or via the <a href="/en/contact/">contact page</a>. I cannot promise to reply to everything, but I read everything.</p>
+  </section>
+
+  <hr class="divider" />
+
+  <nav class="page-nav" aria-label="Main pages">
+    <a href="/en/">← Back to top</a>
+    <a href="/en/concept/">Research Program →</a>
+    <a href="/en/essays/precision-economics/">§15 Precision Economics →</a>
+    <a href="/en/contact/">Contact →</a>
+  </nav>
+</BaseLayout>
+
+<style>
+  .footnote {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    border-inline-start: 2px solid var(--color-border);
+    padding-inline-start: var(--space-md);
+    margin-block: var(--space-md);
+  }
+</style>

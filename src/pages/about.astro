@@ -1,0 +1,99 @@
+---
+// src/pages/about.astro - 松浦 歳宣（Toshi Matsuura）プロフィール
+// 設計指示書 v1.1 §5.2 に準拠
+// 業務上の機密保持のため、関電・サムスン時代の具体的担当技術内容には踏み込まない
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { SITE } from '../config';
+---
+
+<BaseLayout title="About" lang="ja">
+  <section class="hero">
+    <h1>About</h1>
+    <p class="lead">松浦 歳宣（Matsuura Toshinobu / Toshi）</p>
+    <p class="sub">マインドシード研究所 ／ 和歌山市 ／ 68歳 ／ 元基盤系エンジニア</p>
+  </section>
+
+  <section>
+    <p class="intro">
+      関西電力、個人事業、サムスンSDS を経て退職。職業訓練校での電気理論講師、職業リハビリテーションセンターでの実地観察を経て、
+      現在はマインドシード研究所として独立。煩悩 × AI を軸とする 20 年スパンの研究プログラムに着手しています。
+    </p>
+  </section>
+
+  <section>
+    <h2>経歴</h2>
+    <ul class="layered-list">
+      <li><strong>関西電力</strong> ── 計装基盤・リレー制御盤の設計と実装。電力システムの規律を骨に刻む</li>
+      <li><strong>個人事業</strong> ── 自動車製造ラインなどのシーケンス制御や品質検査装置設計製造。製造現場で品質の厳しさを学ぶ</li>
+      <li><strong>サムスンSDS</strong> ── 基盤系エンジニアリング。「枯れた技術が安全第一」「ミスマッチが一番相性がいい」という哲学を学ぶ</li>
+      <li><strong>職業訓練校 3 年</strong> ── 退職後。電気理論講師。「脱落者を出さない」を最優先</li>
+      <li><strong>職業リハビリテーションセンター</strong> ── 障害者就労支援の現場を内側から把握。障害者にも底力がある事を理解</li>
+      <li><strong>現在</strong> ── マインドシード研究所として独立。20 年スパンの研究プログラムに着手</li>
+    </ul>
+    <p class="footnote">業務上の機密保持の範囲で、関電・サムスン時代の具体的な担当技術内容には踏み込まず、役割と思想形成への影響のみを記しています。</p>
+  </section>
+
+  <section>
+    <h2>技術背景</h2>
+    <p>40 年以上にわたり、C/C++ とアセンブラを軸とする基盤系エンジニアリングに従事してきました。8bit CPU の時代から現代の生成 AI までの技術変遷を、現場で経験しています。</p>
+    <p>現在の業務統合スタックは、PHP/MySQL（既存資産）、Flutter/Firebase、Next.js、React Native、Claude / ChatGPT / Claude Code。元基盤系エンジニアの視点で「枯れた技術を、必要十分な規模で使う」哲学を保ちつつ、AI 時代の新しい開発手法を吸収しています。</p>
+  </section>
+
+  <section>
+    <h2>重要な人生イベント（自己開示）</h2>
+    <p class="intro">
+      研究者の物語として透明性を保つため、人生の方向性を決めた 3 つの出来事を記録しておきます。
+    </p>
+
+    <h3>90 年代 BBS 事件</h3>
+    <p>30 歳頃、SunOS による草の根 BBS を運営していました。9 回線モデム、会員約 300 名。会員が猥褻画像をアップロードし、他の会員がそれをダウンロードする事案が発生。これに関して、刑事 5 名による逮捕、6 名の弁護士による無償弁護を受けたものの敗訴。「ハードディスクが猥褻物として陳列された」とされる、日本初の判例となりました。判決は執行猶予 3 年。</p>
+    <p>この経験は、技術と法と社会の境界を内側から知ることになりました。「IT 業界の野党勢力」という自己定義の出発点でもあります。</p>
+
+    <h3>CineBASIC 開発の挫折</h3>
+    <p>動画生成 AI のための新言語「CineBASIC」開発に半年取り組み、断念しました。揺らぎ制御の困難に敗北したのです。この経験により、「生成 AI の揺らぎ」が単なるバグやチューニング不足ではなく、訓練データと評価設計の根本問題であることを体感的に理解しました。本研究プログラムが「精密の経済」に立つ理由の一つは、この内側から得られた敗北の知見です。</p>
+
+    <h3>関係者の詐欺被害（2026 年 5 月）</h3>
+    <p>身近な関係者が FX 投資詐欺で約 700 万円の被害に遭いました。これを契機に、長年温めていた詐欺対策構想を本格化させ、マインドシード研究所として独立、研究プログラムを始動させました。「Protect Your Only Life」という哲学の出発点は、この生活実感にあります。</p>
+  </section>
+
+  <section>
+    <h2>思想的核心</h2>
+    <ul class="layered-list">
+      <li><strong>Protect Your Only Life</strong> ── 詐欺被害を財産損失ではなく、人生そのものへの侵害として位置付ける</li>
+      <li><strong>ミスマッチ思想</strong> ── 異分野の予期せぬ結合が最強の差別化を生む。サムスンSDS 由来のセールス哲学</li>
+      <li><strong>IT 業界の野党勢力</strong> ── 大手が広く浅くやる隣で、こちらは狭く深くやる。<a href="/essays/precision-economics/">精密の経済</a>の戦略的位置取り</li>
+      <li><strong>20 年スパンと後継者</strong> ── 短期成果ではなく、研究プログラムを引き継げる形で残すこと</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>連絡を歓迎する方</h2>
+    <ul class="layered-list">
+      <li><strong>AI Safety / Alignment 研究者</strong> ── 海外 AI 研究機関、LessWrong コミュニティ</li>
+      <li><strong>認知科学・神経科学研究者</strong> ── 国内大学・研究所の方</li>
+      <li><strong>仏教学者</strong> ── 仏教大学・駒澤大学・龍谷大学等の方</li>
+      <li><strong>詐欺被害研究者</strong> ── 国内外の研究者の方</li>
+      <li><strong>後継者候補となる若手研究者・大学院生</strong> ── 20 年スパンの研究プログラムに関心のある方</li>
+    </ul>
+    <p>連絡手段は <a href={`mailto:${SITE.email}`}>{SITE.email}</a> または <a href="/contact/">連絡先ページ</a>から。すべてに返信を約束はできませんが、目を通します。</p>
+  </section>
+
+  <hr class="divider" />
+
+  <nav class="page-nav" aria-label="主要ページ">
+    <a href="/">← トップへ戻る</a>
+    <a href="/concept/">研究プログラム →</a>
+    <a href="/essays/precision-economics/">§15 精密の経済 →</a>
+    <a href="/contact/">連絡先 →</a>
+  </nav>
+</BaseLayout>
+
+<style>
+  .footnote {
+    font-size: 0.9rem;
+    color: var(--color-text-muted);
+    border-inline-start: 2px solid var(--color-border);
+    padding-inline-start: var(--space-md);
+    margin-block: var(--space-md);
+  }
+</style>

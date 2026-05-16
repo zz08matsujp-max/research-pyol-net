@@ -1,0 +1,33 @@
+---
+// src/pages/en/essays/[slug].astro - English essay dynamic routing
+// /en/essays/<slug>/ に対応。コンテンツコレクション en-essays から読み込み
+// （v0.1 では英訳記事はまだ無い。Step 4 で precision-economics.md を投入する）
+import { getCollection } from 'astro:content';
+import EssayLayout from '../../../layouts/EssayLayout.astro';
+
+export async function getStaticPaths() {
+  const essays = await getCollection('en-essays');
+  return essays.map(entry => ({
+    params: { slug: entry.slug },
+    props: { entry }
+  }));
+}
+
+const { entry } = Astro.props;
+const { Content } = await entry.render();
+---
+
+<EssayLayout
+  lang="en"
+  title={entry.data.title}
+  englishSubtitle={entry.data.englishSubtitle}
+  summary={entry.data.summary}
+  author={entry.data.author}
+  publishedAt={entry.data.publishedAt}
+  updatedAt={entry.data.updatedAt}
+  version={entry.data.version}
+  derivedFrom={entry.data.derivedFrom}
+  license={entry.data.license}
+>
+  <Content />
+</EssayLayout>

@@ -1,0 +1,106 @@
+---
+// src/components/CitationBox.astro - 学術引用情報の表示ブロック
+// 設計指示書 v1.1 §5.4 に準拠（BibTeX, APA, Chicago の3形式）
+import type { Locale } from '../config';
+
+interface Props {
+  /** 表示言語 */
+  lang: Locale;
+  /** 著者の英文表記（学術引用は英語表記が標準） */
+  author: string;
+  /** 記事タイトル（引用に使う言語のもの） */
+  title: string;
+  /** 公開年 */
+  year: number;
+  /** 公開月（数字） */
+  month: number;
+  /** 公開日 */
+  day: number;
+  /** 記事の正規 URL */
+  url: string;
+}
+
+const { lang, author, title, year, month, day, url } = Astro.props;
+const monthName = ['January', 'February', 'March', 'April', 'May', 'June',
+                   'July', 'August', 'September', 'October', 'November', 'December'][month - 1];
+const monthShort = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+                    'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'][month - 1];
+
+const heading = lang === 'ja' ? '引用情報' : 'Citation';
+const labelBibtex = 'BibTeX';
+const labelApa = 'APA';
+const labelChicago = 'Chicago';
+
+// citation key: 著者姓 + 年 + 短いタイトル
+const surname = author.split(' ').slice(-1)[0].toLowerCase();
+const citationKey = `${surname}${year}precisionEconomics`;
+
+const bibtex = `@misc{${citationKey},
+  author       = {${author}},
+  title        = {${title}},
+  howpublished = {Mindseed Research},
+  year         = {${year}},
+  month        = {${monthShort}},
+  url          = {${url}}
+}`;
+
+const apa = `${author.split(' ').slice(-1)[0]}, ${author.split(' ')[0][0]}. (${year}, ${monthName} ${day}). ${title}. Mindseed Research. ${url}`;
+
+const chicago = `${author.split(' ').slice(-1)[0]}, ${author.split(' ').slice(0, -1).join(' ')}. "${title}." Mindseed Research, ${monthName} ${day}, ${year}. ${url}.`;
+---
+
+<section class="citation" aria-label={heading}>
+  <h3>{heading}</h3>
+  <details>
+    <summary>{labelBibtex}</summary>
+    <pre><code>{bibtex}</code></pre>
+  </details>
+  <details>
+    <summary>{labelApa}</summary>
+    <pre><code>{apa}</code></pre>
+  </details>
+  <details>
+    <summary>{labelChicago}</summary>
+    <pre><code>{chicago}</code></pre>
+  </details>
+</section>
+
+<style>
+  .citation {
+    margin-block: var(--space-xl);
+    padding: var(--space-md) var(--space-lg);
+    border: 1px solid var(--color-border);
+    background: var(--color-bg-alt);
+    border-radius: 4px;
+  }
+  .citation h3 {
+    margin-block: 0 var(--space-sm);
+    font-size: 1rem;
+    color: var(--color-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    border: none;
+    padding: 0;
+  }
+  details {
+    margin-block: var(--space-sm);
+  }
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--color-link);
+    padding: var(--space-xs) 0;
+    user-select: none;
+  }
+  summary:hover { color: var(--color-link-hover); }
+  pre {
+    margin-block: var(--space-sm);
+    font-size: 0.85rem;
+    background: var(--color-bg);
+    border: 1px solid var(--color-border);
+    padding: var(--space-sm) var(--space-md);
+    border-radius: 2px;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+  }
+</style>
