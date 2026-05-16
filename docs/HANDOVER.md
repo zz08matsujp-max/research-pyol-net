@@ -1,9 +1,10 @@
-# research.pyol.net 引き継ぎ書 v1.0
+# research.pyol.net 引き継ぎ書 v1.1
 
-**作成日**: 2026年5月15日
+**初版作成日**: 2026年5月15日（v1.0）
+**改訂日**: 2026年5月16日（v1.1：v0.1 最終仕上げ反映）
 **作成者**: Claude（v0.1 実装担当） / 松浦 歳宣（最終確認・確定）
 **位置付け**: 後継者向け引き継ぎドキュメント
-**前提読書**: `research_pyol_net_設計指示書_v1.2.md`（同階層）、`docs/GLOSSARY.md`
+**前提読書**: `research_pyol_net_設計指示書_v1.4.md`（同階層・最新版）、`docs/GLOSSARY.md`
 
 ---
 
@@ -11,38 +12,38 @@
 
 本書は **20 年スパンの研究プロジェクトの一部として、将来 Toshi さん以外の人が引き継ぐ可能性がある前提** で書かれています。最初に読むべき順序は:
 
-1. `research_pyol_net_設計指示書_v1.2.md` ── プロジェクト全体の意図と判断
+1. `research_pyol_net_設計指示書_v1.4.md` ── プロジェクト全体の意図と判断（最新版、v0.1 完成形を反映）
 2. 本書（HANDOVER.md） ── 実装の現状と運用手順
 3. `docs/GLOSSARY.md` ── 翻訳・用語の中央辞書
-4. `構想記録_煩悩ウイルスマッピング_v1.md` ── 研究プログラム本体
+4. `構想記録_煩悩ウイルスマッピング_v1.md` ── 研究プログラム本体（v1.7、§16.4 個人化問題まで）
 
 ---
 
 ## 1. v0.1 で実装した内容
 
-### 1.1 ページ全 14 件（日英バイリンガル完全対応）
+### 1.1 ページ全 18 件（日英バイリンガル完全対応）+ SEO 補助ファイル
 
 | URL | 言語 | 内容 |
 |---|---|---|
-| `/` | JA | トップ。ヒーロー / 研究者紹介 / 3 層構造 / 核心論考予告 / 出発点となる実装 / page-nav |
-| `/about/` | JA | プロフィール。経歴 / 技術背景 / 自己開示3件（BBS事件・CineBASIC・関係者の被害）/ 思想的核心 / 連絡を歓迎する方 |
+| `/` | JA | トップ（Organization JSON-LD） |
+| `/about/` | JA | プロフィール（Person JSON-LD、経歴 / 技術背景 / 自己開示 3 件 / 思想的核心 / 連絡を歓迎する方） |
 | `/concept/` | JA | 研究プログラム一覧 |
-| `/concept/bonno-virus-mapping/` | JA | 構想記録 v1.4 全文（111KB） |
+| `/concept/bonno-virus-mapping/` | JA | 構想記録 v1.7 全文（§0 + §1〜§16 + Appendix、約 150KB） |
 | `/essays/` | JA | 論考一覧 |
-| `/essays/precision-economics/` | JA | §15 独立記事（§14.10 統合済、150字要約 / 引用情報3形式 / 関連資料リンク） |
-| `/contact/` | JA | 連絡先。歓迎する内容 / 連絡手段 / 対応言語 / 返信ポリシー |
-| `/en/` | EN | 上記の英訳ペア |
-| `/en/about/` | EN | 同上 |
-| `/en/concept/` | EN | 同上 |
-| `/en/concept/bonno-virus-mapping/` | EN | 同上（114KB、Translator's Note 付） |
-| `/en/essays/` | EN | 同上 |
-| `/en/essays/precision-economics/` | EN | 同上 |
-| `/en/contact/` | EN | 同上 |
+| `/essays/precision-economics/` | JA | §15 独立記事（ScholarlyArticle JSON-LD、固有 OGP、References 7 件、Contact 節） |
+| `/essays/buddhism-as-coordinate-system/` | JA | §0 独立記事（同上、References 10 件） |
+| `/contact/` | JA | 連絡先（matsuura@pyol.net、対応言語） |
+| `/en/...` | EN | 上記すべての英訳ペア（9 ページ） |
+| `/sitemap.xml` | - | 16 URL、hreflang 相互参照付き |
+| `/robots.txt` | - | クローラー許可、sitemap 位置指定 |
+| `/.htaccess` | - | UTF-8 強制 + 301 リダイレクト |
 
 ### 1.2 共通機能
 
 - 日英相互リンク（hreflang 自動設定 + ヘッダー言語切替ボタン）
-- OGP / Twitter Card メタデータ全ページ自動付与
+- OGP / Twitter Card メタデータ全ページ（論考は **固有 OGP 画像**、他は default）
+- **Schema.org JSON-LD 構造化データ**（Organization / Person / ScholarlyArticle / PostalAddress / CreativeWork）
+- **og:type** 論考は "article"、他は "website"
 - レスポンシブデザイン（モバイル 375px 〜 デスクトップ）
 - ダークモード自動対応（システム設定追従）
 - フォント: Noto Sans JP（日本語） / Inter（英語）、Google Fonts CDN
@@ -50,8 +51,13 @@
 
 ### 1.3 中央ドキュメント
 
-- `docs/GLOSSARY.md` v1.1 ── 用語対訳表（200+ 語、Toshi さん校正済み）
-- `research_pyol_net_設計指示書_v1.2.md` ── 設計指示書（最新）
+- `docs/GLOSSARY.md` v1.1（v1.2 で「個人化問題」「Level 0 自己反省的階層」等の新術語を追加予定）
+- `research_pyol_net_設計指示書_v1.4.md` ── 設計指示書（最新版）
+
+### 1.4 GitHub Public 公開
+
+- `https://github.com/zz08matsujp-max/research-pyol-net`（Public、CC BY 4.0、Topics 14、Website 設定済）
+- メインブランチ `main`、`.gitignore` で `dist/` `node_modules/` `.smbdelete*` `._*` 等を除外
 
 ---
 
@@ -59,19 +65,32 @@
 
 | 項目 | 理由 | v0.2 での対応 |
 |---|---|---|
-| `sitemap.xml` 生成 | `@astrojs/sitemap` v3.x と Astro 4.16 の routes API 非互換 | Astro 5.x 移行と合わせて再導入 |
 | Pagefind 検索 | v0.1 スコープ外 | 日英両対応で導入 |
 | RSS フィード | v0.1 スコープ外 | `/rss.xml`, `/en/rss.xml` |
-| Schema.org 構造化データ | v0.1 ではメタタグのみ | `ScholarlyArticle`, `Person`, `Organization` を本格実装 |
+| @astrojs/sitemap | v3.x と Astro 4.16 互換性問題 | Astro 5.x 移行と合わせて、現状の手書き `sitemap.xml.ts` を置換 |
+| Schema.org 拡張 | v0.1 は基本セット（Organization/Person/ScholarlyArticle）のみ | CitationCount、ResearcherID、BreadcrumbList 等の追加 |
 | §13 / §14 独立記事化 | v0.1 では §0 と §15 のみ | §13 ExPFC、§14 煩悩埋め込みを順次独立記事化、英訳 |
 | 仏教学者による術語校閲 | v0.1 では暫定 | 駒澤大 / 龍谷大 / 仏教大 と協議 |
 | ネイティブチェック | v0.1 では Claude 初稿のみ | 英訳のブラッシュアップ |
+| Google/Bing 検索エンジン登録 | v0.1 ではサイトマップ送信前 | Search Console / Webmaster Tools 登録 + sitemap 送信 |
+| LessWrong クロスポスト | Toshi さん熟成中 | 英訳作業の負担と英語コメント対応戦略の確立後 |
+| アクセス解析 | v0.1 ではなし | Cloudflare Web Analytics 等のプライバシー重視ツール |
 
-**v0.1 で前倒し達成**:
-- ✅ GitHub Public 公開（2026-05-16、`https://github.com/zz08matsujp-max/research-pyol-net`）── v0.2 送りだったが、§16 自己批判的健全性 + §0 方法論的革新 + 独立論考 2 本の到達点で前倒し公開
-- ✅ 構想記録 v1.6 に §0「研究の根本目的」を追加（Level 1 方法論的階層の言語化）
-- ✅ 構想記録 v1.5 に §16「実装上の課題と対応戦略」を追加
-- ✅ 独立論考 2 本（§15 精密の経済、§0 仏教を座標系として採用する）の日英両方公開
+**v0.1 で前倒し達成（全 11 項目）**:
+- ✅ GitHub Public 公開（`https://github.com/zz08matsujp-max/research-pyol-net`、Topics 14、Website 設定）
+- ✅ 構想記録 v1.7（v1.4 → v1.5 §16 → v1.6 §0 → v1.7 §16.4 の段階的発展）
+  - §0「研究の根本目的」── Level 1 方法論的階層を明示（仏教を座標系として採用）
+  - §16「実装上の課題と対応戦略」── 3 つの課題と対応戦略
+  - §16.4「個人化問題と煩悩感受性プロファイル」── Level 0 自己反省的階層を示唆
+- ✅ 独立論考 2 本（§15 精密の経済、§0 仏教を座標系として採用する）の日英両方、APA References + Contact + 著者脚注 + 固有 OGP
+- ✅ SEO フルセット：robots.txt、sitemap.xml（hreflang 含む）、og:type article、Schema.org JSON-LD
+- ✅ OGP 画像フルセット（default + 論考 2 種、1200×630、MindSeed Institute 統一デザイン）
+- ✅ URL slug 整理（`/concept/bonno-virus-mapping/` バージョン番号なし）+ `.htaccess` 301 リダイレクト
+- ✅ X バイリンガル告知（AI Safety 機関メンション）
+- ✅ 経歴記述の最終確定（v1.3 確定形、サムスンSDS / 個人事業 / 職業リハビリテーションセンター）
+- ✅ メールアドレス確定（matsuura@pyol.net）
+- ✅ 論考の学術的品質向上（自賛的表現除去、BibTeX citation key 一意化、kleshas 追加、横展開具体例）
+- ✅ 設計指示書 v1.4 / HANDOVER v1.1
 
 ---
 
@@ -125,11 +144,13 @@ Markdown コンテンツ。フロントマターで `slug: "..."` を必ず明�
 
 ### 3.7 ルート直下の素材ファイル（参考用、変更しない）
 
-- `構想記録_煩悩ウイルスマッピング_v1.md` ── 構想記録 v1.4 原文
+- `構想記録_煩悩ウイルスマッピング_v1.md` ── 構想記録 v1.7 原文（§0 + §1〜§16、§16.4 個人化問題含む）
 - `LLM訓練手法選定ガイド_v1.md` ── LLM 訓練の階層解説
-- `research_pyol_net_設計指示書_v1.0.md` ── 設計指示書 v1.0（履歴）
-- `research_pyol_net_設計指示書_v1.1.md` ── v1.1（履歴）
-- `research_pyol_net_設計指示書_v1.2.md` ── v1.2（最新版）
+- `research_pyol_net_設計指示書_v1.0.md` ── 設計指示書 v1.0（履歴、経歴記述は v1.3 確定形に遡及更新済）
+- `research_pyol_net_設計指示書_v1.1.md` ── v1.1（履歴、同上）
+- `research_pyol_net_設計指示書_v1.2.md` ── v1.2（履歴）
+- `research_pyol_net_設計指示書_v1.3.md` ── v1.3（履歴）
+- `research_pyol_net_設計指示書_v1.4.md` ── **v1.4（最新版）**
 
 ---
 
@@ -164,7 +185,7 @@ Markdown コンテンツ。フロントマターで `slug: "..."` を必ず明�
 export const SITE = {
   url: 'https://research.pyol.net',
   name: 'Mindseed Research',
-  email: 'info@mindseed.jp',
+  email: 'matsuura@pyol.net',
   twitter: '@mindseed0805',
   githubRepo: 'https://github.com/zz08matsujp-max/research-pyol-net',
   ...
@@ -296,8 +317,8 @@ macOS の SMB プロトコル特有の挙動。FTP 除外設定で対処。Toshi
 
 ## 9. 連絡先
 
-- Toshi さん（プロジェクトオーナー）: zz08matsu@mindseed.jp
-- 関連リポジトリ: https://github.com/zz08matsujp-max/research-pyol-net （v0.1 で公開済み、2026-05-16）
+- Toshi さん（プロジェクトオーナー）: matsuura@pyol.net
+- 関連リポジトリ: https://github.com/zz08matsujp-max/research-pyol-net （v0.1 公開済み、Topics 14、Website 設定済み、main ブランチ）
 
 ---
 

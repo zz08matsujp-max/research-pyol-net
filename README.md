@@ -14,12 +14,17 @@
 **English**:
 This site is not a product showcase. It is a place to publish **the research program and the person's story behind it**. Mindseed Research is a sole-proprietorship research initiative led by Toshinobu Matsuura (Toshi), pursuing a 20-year program at the intersection of Buddhist anthropology, anti-scam engineering, and AI safety. Content is published in both Japanese and English.
 
-## Current status / 現状（v0.1、2026-05-15 時点）
+## Current status / 現状（v0.1 完成形、2026-05-16 時点）
 
-- 全 14 ページの日英バイリンガル化 ── 完了
-- 構想記録 v1.4 全文（§1〜§15 + Appendix）の英訳 ── 完了
-- §15 独立記事（Economies of Precision）日英 ── 完了
-- About / Contact / トップ ── 本格コンテンツ投入済
+- 全 18 ページの日英バイリンガル化 ── ✅ 完了
+- 構想記録 v1.7 全文（§0 + §1〜§16 + Appendix、Level 0 自己反省的階層を示唆する §16.4 を含む） ── ✅ 完了
+- 独立論考 2 本（§15 Economies of Precision、§0 Buddhism as a Coordinate System）日英、APA References + 連絡先 + 著者脚注 + 固有 OGP 画像 ── ✅ 完了
+- About / Contact / トップ / 構想記録一覧 / 論考一覧 ── ✅ 本格コンテンツ投入済
+- SEO フルセット（robots.txt、sitemap.xml、og:type article、Schema.org JSON-LD） ── ✅ 完了
+- OGP 画像フルセット（default + 論考 2 種、1200×630） ── ✅ 完了
+- `.htaccess`（UTF-8 強制 + 301 リダイレクト） ── ✅ 完了
+- GitHub Public 公開（Topics 14、Website 設定） ── ✅ 完了
+- X 公開告知（日英バイリンガル） ── ✅ 完了
 - デプロイ ── Toshi さん側で FTP/SFTP アップロード作業中
 
 ## Pages
@@ -101,16 +106,16 @@ research-pyol-net/
 
 最初に読むべき順序：
 
-1. `research_pyol_net_設計指示書_v1.2.md` ── プロジェクト全体の意図と判断
-2. `docs/HANDOVER.md` ── 実装の現状と運用手順
-3. `docs/GLOSSARY.md` ── 翻訳・用語の中央辞書
-4. `構想記録_煩悩ウイルスマッピング_v1.md` ── 研究プログラム本体
+1. `research_pyol_net_設計指示書_v1.4.md` ── プロジェクト全体の意図と判断（最新版、v0.1 完成形を反映）
+2. `docs/HANDOVER.md` ── 実装の現状と運用手順（v1.1）
+3. `docs/GLOSSARY.md` ── 翻訳・用語の中央辞書（v1.2）
+4. `構想記録_煩悩ウイルスマッピング_v1.md` ── 研究プログラム本体（v1.7、§0 + §1〜§16 + Appendix）
 
 ## Contact
 
-- Email: info@mindseed.jp
+- Email: matsuura@pyol.net
 - X (旧 Twitter): @mindseed0805
-- GitHub Issues: this repository（v0.2 以降公開予定）
+- GitHub Issues: this repository（v0.1 公開済み）
 
 ---
 

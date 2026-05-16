@@ -1,7 +1,8 @@
-# Mindseed Research 用語対訳表 v1.1
+# Mindseed Research 用語対訳表 v1.2
 
 **作成日**: 2026年5月15日（v1.0 初版）
 **改訂日**: 2026年5月15日（v1.1：仏教術語の保守化、固有名詞確定）
+**改訂日**: 2026年5月16日（v1.2：構想記録 v1.7 §16.4 で導入された新術語、メール変更）
 **作成者**: Claude（初稿） / 松浦 歳宣（校正・最終確定）
 **目的**: research.pyol.net サイト全体および公開文書（構想記録、論考、プロフィール）における日英術語の一貫性を保つための中央辞書
 **運用ルール**: 翻訳・記事執筆時には本表を必ず参照する。新しい術語が出てきた場合、本表に追記してから使用する
@@ -118,6 +119,15 @@ v0.1 では**英訳を第一表記とし、ローマ字や Skt. 由来語は基�
 | 1 to 1（深い）スケール | 1-to-1 (deep) scale | A scaling strategy of providing deep processing for each individual user, contrasted with 1-to-all (shallow) scaling. |
 | インセンティブ非対称性 | incentive asymmetry | The structural condition in which SNS platforms profit from bonnō-stimulating content (engagement) and therefore lack the incentive to suppress it, even where technically capable. |
 | 炎上経済学 | flame-war economics | An informal term for the SNS-platform incentive structure described above. |
+| 煩悩感受性プロファイル | mental-affliction sensitivity profile | An individual's psychological tendency to be stimulated by particular afflictions. Introduced in v1.7 §16.4. Cannot be fully captured by labeling or behavioral observation alone — an incomplete-observation problem of inner information. |
+| 共鳴 | resonance | The relationship between a text's affliction-stimulation profile and a user's affliction-sensitivity profile. Scam judgment is captured as resonance rather than text properties alone. |
+| 3 項関係 | three-way relation | The structure of scam judgment as a function of (text, context, individual) rather than text alone. Introduced in v1.7 §16.4. |
+| Level 0 自己反省的階層 | Level 0 self-reflective tier | A recursive tier in the research program's structure: the program recognizes its own observational limits as itself an object of study. The "research-program-observing-itself" structure introduced in v1.7 §16.4. Beyond the three tiers (methodological / strategic / applied) of §0.6. |
+| 段階的個人化 | progressive personalization | A response strategy for the cold-start problem in user-profile learning: begin from an average profile and progressively refine based on behavior and self-report. |
+| ユリシーズ契約 | Ulysses contract | A prior contract by which the user's "calm self" delegates intervention authority (e.g., the Tier C unconditional block of §16.4.2) to the ExPFC, to protect the user's "emotionally-overwhelmed self." Same structural logic as voluntary guardianship in Japan's adult-guardianship system. |
+| 第三者通知 | third-party notification | A countermeasure to the SNS-mediated structural invalidation of physical third-party intervention (§1.2): the ExPFC automatically notifies pre-registered family or friends at high scam-score moments. |
+| 段階的介入 | graded intervention | A tiered intervention design (Tier A informational / Tier B strong warning / Tier C unconditional block with cooling-off period) for the ExPFC. |
+| 「過去の自己の手紙」UI | "letter from the past self" UI | A UI design pattern in which the ExPFC presents past self-reports as a letter, rather than third-party advice — a behavioral-economics Commitment Device adapted for psychological vulnerability. |
 
 ---
 
@@ -315,10 +325,11 @@ v0.1 では**英訳を第一表記とし、ローマ字や Skt. 由来語は基�
 
 ## 10. 改訂履歴
 
-- **v1.0**（2026-05-15）: 初版作成。Claude が構想記録 v1.4 と設計指示書 v1.1 から術語を抽出し、IABS 慣例と海外 AI Safety コミュニティの語彙を考慮して英訳。Toshi さんの校正・最終確定を待つ状態。
-- **v1.1**（2026-05-15、同日改訂）: Toshi さんの校正を反映。仏教術語（§1）を保守化（マクロン付きローマ字と Skt. 由来語を削除し、最も一般的な英訳のみに絞る）。これは Toshi さん自身が仏教学者でないため、宗教学的精度を v0.1 で過度に主張しないという誠実さ優先の判断。お名前を `Toshinobu Matsuura`（フルネーム、姓名の順）で確定。木村敦氏のファーストネームを未確定として、英文は学術引用形式 `Kimura (2025)` の姓のみで運用することに変更。著者造語の4語（Economies of Precision / the "can-but-won't" domain / Bonnō Embedding / External Prefrontal Cortex）は確定。
+- **v1.0**（2026-05-15）: 初版作成。Claude が構想記録 v1.4 と設計指示書 v1.1 から術語を抽出し、IABS 慣例と海外 AI Safety コミュニティの語彙を考慮して英訳。
+- **v1.1**（2026-05-15、同日改訂）: Toshi さんの校正を反映。仏教術語（§1）を保守化、お名前を `Toshinobu Matsuura` で確定、木村敦氏は `Kimura (2025)` 形式、著者造語 4 語確定。
+- **v1.2**（2026-05-16）: 構想記録 v1.7 §16.4 で導入された新術語を §3 著者造語に追加：煩悩感受性プロファイル（mental-affliction sensitivity profile）、共鳴（resonance）、3 項関係、Level 0 自己反省的階層、段階的個人化、ユリシーズ契約（Ulysses contract）、第三者通知、段階的介入、「過去の自己の手紙」UI。これらは §16 実装上の課題と対応戦略の議論で導出された概念で、v0.2 以降の実装フェーズで参照される予定。メール変更（matsuura@pyol.net）も反映。
 - v0.2 以降: 仏教学者校閲（駒澤大・龍谷大・仏教大学）を経た仏教術語の精度向上、§13/§14 独立記事公開時の追加対訳、未確定事項の解消
 
 ---
 
-**本表は v1.1 である。新しい術語が出てきた場合、必ず本表に追記してから使用すること。**
+**本表は v1.2 である。新しい術語が出てきた場合、必ず本表に追記してから使用すること。**
