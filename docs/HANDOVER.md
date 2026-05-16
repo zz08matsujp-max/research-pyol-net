@@ -63,10 +63,15 @@
 | Pagefind 検索 | v0.1 スコープ外 | 日英両対応で導入 |
 | RSS フィード | v0.1 スコープ外 | `/rss.xml`, `/en/rss.xml` |
 | Schema.org 構造化データ | v0.1 ではメタタグのみ | `ScholarlyArticle`, `Person`, `Organization` を本格実装 |
-| §13 / §14 独立記事化 | v0.1 では §15 のみ | 順次独立記事化、英訳 |
+| §13 / §14 独立記事化 | v0.1 では §0 と §15 のみ | §13 ExPFC、§14 煩悩埋め込みを順次独立記事化、英訳 |
 | 仏教学者による術語校閲 | v0.1 では暫定 | 駒澤大 / 龍谷大 / 仏教大 と協議 |
 | ネイティブチェック | v0.1 では Claude 初稿のみ | 英訳のブラッシュアップ |
-| GitHub Public 公開 | v0.1 では FTP のみ | バージョン履歴の透明性証拠として公開検討 |
+
+**v0.1 で前倒し達成**:
+- ✅ GitHub Public 公開（2026-05-16、`https://github.com/zz08matsujp-max/research-pyol-net`）── v0.2 送りだったが、§16 自己批判的健全性 + §0 方法論的革新 + 独立論考 2 本の到達点で前倒し公開
+- ✅ 構想記録 v1.6 に §0「研究の根本目的」を追加（Level 1 方法論的階層の言語化）
+- ✅ 構想記録 v1.5 に §16「実装上の課題と対応戦略」を追加
+- ✅ 独立論考 2 本（§15 精密の経済、§0 仏教を座標系として採用する）の日英両方公開
 
 ---
 
@@ -291,8 +296,8 @@ macOS の SMB プロトコル特有の挙動。FTP 除外設定で対処。Toshi
 
 ## 9. 連絡先
 
-- Toshi さん（プロジェクトオーナー）: info@mindseed.jp
-- 関連リポジトリ: https://github.com/zz08matsujp-max/research-pyol-net （v0.2 以降公開予定）
+- Toshi さん（プロジェクトオーナー）: zz08matsu@mindseed.jp
+- 関連リポジトリ: https://github.com/zz08matsujp-max/research-pyol-net （v0.1 で公開済み、2026-05-16）
 
 ---
 
