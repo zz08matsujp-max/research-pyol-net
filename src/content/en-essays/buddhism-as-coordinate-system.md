@@ -8,14 +8,14 @@ version: "v1.0"
 lang: "en"
 tags: ["AI Safety", "cognitive science", "Buddhism", "Affective Computing", "methodology"]
 license: "CC BY 4.0"
-derivedFrom: "Concept Record v1.6 §0"
+derivedFrom: "Concept Record §0"
 ---
 
 > **Note on terminology.** "Mental afflictions" in this essay corresponds to the Buddhist concept of *bonnō* (煩悩), the mental states held to cause human suffering, classified into 108 categories. The translation of Buddhist terminology in this essay is preliminary and will be refined in v0.2 in consultation with Buddhist scholars.
 
 ## Introduction
 
-This essay reorganizes §0 of the [Concept Record v1.6](/en/concept/bonno-virus-mapping-v1.4/) — the founding document of the research program *Bonnō × Scam-Virus Mapping: An Integrated Database* at Mindseed Research — into a standalone piece. The aim is for the essay to read on its own without requiring familiarity with the other chapters; necessary background is given in the body.
+This essay reorganizes §0 of the [Concept Record v1.6](/en/concept/bonno-virus-mapping/) — the founding document of the research program *Bonnō × Scam-Virus Mapping: An Integrated Database* at Mindseed Research — into a standalone piece. The aim is for the essay to read on its own without requiring familiarity with the other chapters; necessary background is given in the body.
 
 The thesis can be summarized as follows. **Contemporary research on emotion and on the human is built almost entirely on the methodological foundation of "observation from the outside" and "physico-chemical reduction." This provides precise observational means but fails to capture the semantic resolution of human emotion. By adopting the 2,500-year system of internal Buddhist observation as a computable coordinate system, this gap can be filled.** This is a new positioning that may serve as a methodological complement, from the East, for AI Safety, Affective Computing, and cognitive science alike.
 
@@ -82,7 +82,7 @@ Here wᵢ is the stimulation intensity (or weight) of mental affliction i. This 
 
 The number 108 is the granularity of partition empirically reached in Buddhist canonical texts: combinations of 6 sense faculties (eye, ear, nose, tongue, body, mind) × 3 affect attributes (suffering, pleasure, neutral) × 2 classifications (defiled, undefiled) × 3 temporal axes (past, present, future). Compared with contemporary psychological models of emotion (between roughly 5 and 28 dimensions), this is **a granularity orders of magnitude finer.**
 
-These 108 dimensions are not necessarily mathematically independent (orthogonal); see [§16.2 of the Concept Record](/en/concept/bonno-virus-mapping-v1.4/) for the discussion of this challenge. But by building hierarchically — Level 1: three poisons (3-dim) → Level 2: mid-level classification → Level 3: 108-dim — the coordinate system can be made to function as a computable one.
+These 108 dimensions are not necessarily mathematically independent (orthogonal); see [§16.2 of the Concept Record](/en/concept/bonno-virus-mapping/) for the discussion of this challenge. But by building hierarchically — Level 1: three poisons (3-dim) → Level 2: mid-level classification → Level 3: 108-dim — the coordinate system can be made to function as a computable one.
 
 ## 5. Comparison with existing models of emotion
 
@@ -132,11 +132,11 @@ The moment of waking up; after an argument with one's spouse; the moment of irri
 
 ### 8.2 External Prefrontal Cortex (ExPFC)
 
-The ExPFC concept introduced in [§13 of the Concept Record](/en/concept/bonno-virus-mapping-v1.4/) acquires meaning only on the methodological foundation of this essay. Neuroscience provides the fact that "the PFC falls into functional failure under emotional overwhelm"; Buddhism provides the semantic description "the moment when a particular affliction is activated." The integration of the two allows ExPFC to be defined as a device that **"detects affliction activation and externally substitutes for the judgment in a state of functional failure."**
+The ExPFC concept introduced in [§13 of the Concept Record](/en/concept/bonno-virus-mapping/) acquires meaning only on the methodological foundation of this essay. Neuroscience provides the fact that "the PFC falls into functional failure under emotional overwhelm"; Buddhism provides the semantic description "the moment when a particular affliction is activated." The integration of the two allows ExPFC to be defined as a device that **"detects affliction activation and externally substitutes for the judgment in a state of functional failure."**
 
 ### 8.3 Anti-scam
 
-The anti-scam discussion developed in [§1–§14 of the Concept Record](/en/concept/bonno-virus-mapping-v1.4/) is the **most pressing application** of the methodological foundation of this essay. Scams are situations in which "particular aspects of humanity (particular afflictions) are exploited," and they can be precisely described and detected in the coordinate system of this program.
+The anti-scam discussion developed in [§1–§14 of the Concept Record](/en/concept/bonno-virus-mapping/) is the **most pressing application** of the methodological foundation of this essay. Scams are situations in which "particular aspects of humanity (particular afflictions) are exploited," and they can be precisely described and detected in the coordinate system of this program.
 
 ### 8.4 Horizontal expansion (medicine, education, mental health)
 
@@ -159,6 +159,6 @@ This research program takes on this methodological wager over a 20-year span. An
 
 ## Related materials
 
-- [Concept Record v1.6 (full text)](/en/concept/bonno-virus-mapping-v1.4/) — including §0, the parent research program from which this essay is derived
+- [Concept Record v1.6 (full text)](/en/concept/bonno-virus-mapping/) — including §0, the parent research program from which this essay is derived
 - [§15 Economies of Precision vs Economies of Scale](/en/essays/precision-economics/) — the strategic positioning (Level 2)
 - [日本語版](/essays/buddhism-as-coordinate-system/)

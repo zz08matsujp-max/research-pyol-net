@@ -8,7 +8,7 @@ updatedAt: 2026-05-16
 version: "v1.7"
 lang: "ja"
 license: "CC BY 4.0"
-slug: "bonno-virus-mapping-v1.4"
+slug: "bonno-virus-mapping"
 ---
 
 # 構想記録：煩悩 × 詐欺ウイルス マッピング統合データベースと小規模ニューラルネットワークによる人間感情構造の探究

@@ -7,7 +7,7 @@ updatedAt: 2026-05-16
 version: "v1.7"
 lang: "en"
 license: "CC BY 4.0"
-slug: "bonno-virus-mapping-v1.4"
+slug: "bonno-virus-mapping"
 ---
 
 > **Translator's note.** This English version is a preliminary translation of the Japanese original (v1.4). Buddhist terminology in particular is rendered in conservative form for v0.1; the rigorous final wording will be settled in v0.2 in consultation with Buddhist scholars. The term "mental afflictions" corresponds to the Buddhist concept of *bonnō* (煩悩), the mental states held to cause human suffering, classified into 108 categories.

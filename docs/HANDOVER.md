@@ -27,14 +27,14 @@
 | `/` | JA | トップ。ヒーロー / 研究者紹介 / 3 層構造 / 核心論考予告 / 出発点となる実装 / page-nav |
 | `/about/` | JA | プロフィール。経歴 / 技術背景 / 自己開示3件（BBS事件・CineBASIC・関係者の被害）/ 思想的核心 / 連絡を歓迎する方 |
 | `/concept/` | JA | 研究プログラム一覧 |
-| `/concept/bonno-virus-mapping-v1.4/` | JA | 構想記録 v1.4 全文（111KB） |
+| `/concept/bonno-virus-mapping/` | JA | 構想記録 v1.4 全文（111KB） |
 | `/essays/` | JA | 論考一覧 |
 | `/essays/precision-economics/` | JA | §15 独立記事（§14.10 統合済、150字要約 / 引用情報3形式 / 関連資料リンク） |
 | `/contact/` | JA | 連絡先。歓迎する内容 / 連絡手段 / 対応言語 / 返信ポリシー |
 | `/en/` | EN | 上記の英訳ペア |
 | `/en/about/` | EN | 同上 |
 | `/en/concept/` | EN | 同上 |
-| `/en/concept/bonno-virus-mapping-v1.4/` | EN | 同上（114KB、Translator's Note 付） |
+| `/en/concept/bonno-virus-mapping/` | EN | 同上（114KB、Translator's Note 付） |
 | `/en/essays/` | EN | 同上 |
 | `/en/essays/precision-economics/` | EN | 同上 |
 | `/en/contact/` | EN | 同上 |

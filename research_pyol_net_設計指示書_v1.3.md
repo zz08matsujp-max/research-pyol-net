@@ -165,7 +165,7 @@ v0.2 で追加予定: @astrojs/sitemap（Astro 5.x 移行と合わせて）、Pa
 | `/` | トップページ | JA | ✅ |
 | `/about/` | プロフィール | JA | ✅ |
 | `/concept/` | 研究プログラム一覧 | JA | ✅ |
-| `/concept/bonno-virus-mapping-v1.4/` | **構想記録 v1.6（§0 + §1〜§16）** | JA | ✅ |
+| `/concept/bonno-virus-mapping/` | **構想記録 v1.6（§0 + §1〜§16）** | JA | ✅ |
 | `/essays/` | 論考一覧 | JA | ✅ |
 | `/essays/precision-economics/` | §15 独立記事 | JA | ✅ |
 | `/essays/buddhism-as-coordinate-system/` | **§0 独立記事（v1.3 で新規追加）** | JA | ✅ |
@@ -223,7 +223,7 @@ v0.2 で追加予定: @astrojs/sitemap（Astro 5.x 移行と合わせて）、Pa
 ### 英語ページ
 
 - [x] `/en/` トップが日本語版と同水準の情報量を持つか
-- [x] `/en/concept/bonno-virus-mapping-v1.4/` 全文（§0 + §1〜§16）が公開されているか
+- [x] `/en/concept/bonno-virus-mapping/` 全文（§0 + §1〜§16）が公開されているか
 - [x] `/en/essays/precision-economics/` が独立記事として完結しているか
 - [x] `/en/essays/buddhism-as-coordinate-system/` が独立記事として完結しているか（v1.3 追加）
 - [x] `/en/about/` がプロフィール全文を網羅しているか（"someone close to the author" 表現）

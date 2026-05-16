@@ -8,12 +8,12 @@ version: "v1.0"
 lang: "en"
 tags: ["AI", "economics", "anti-scam", "AI Safety", "strategy"]
 license: "CC BY 4.0"
-derivedFrom: "Concept Record v1.4 §15"
+derivedFrom: "Concept Record §15"
 ---
 
 ## Introduction
 
-This essay reorganizes §15 of the [Concept Record v1.4](/en/concept/bonno-virus-mapping-v1.4/) — the founding document of the research program *Bonnō × Scam-Virus Mapping: An Integrated Database* at Mindseed Research — into a standalone piece. The aim is for the essay to read on its own without requiring familiarity with the other chapters; necessary background is given in the body.
+This essay reorganizes §15 of the [Concept Record v1.4](/en/concept/bonno-virus-mapping/) — the founding document of the research program *Bonnō × Scam-Virus Mapping: An Integrated Database* at Mindseed Research — into a standalone piece. The aim is for the essay to read on its own without requiring familiarity with the other chapters; necessary background is given in the body.
 
 The thesis is simple. **Today's large-scale AI and SNS platforms have a domain they are structurally barred from entering.** This is not because the domain is technically intractable, but because economic rationality does not support entry. This essay formalizes that "can-but-won't" domain in economic terms, and outlines the strategic ground on which this research program deliberately stands.
 
@@ -165,6 +165,6 @@ This is not an abandonment of economic rationality. It is **the choice of a diff
 
 ## Related materials
 
-- [Concept Record v1.4 (full text)](/en/concept/bonno-virus-mapping-v1.4/) — the parent research program from which this essay is derived
+- [Concept Record v1.4 (full text)](/en/concept/bonno-virus-mapping/) — the parent research program from which this essay is derived
 - [日本語版](/essays/precision-economics/)
 - [PYOL Mind Mirror](https://ai.pyol.net) — a fraud-awareness tool currently in production. The starting point of this research program; full mental-affliction mapping is a future implementation goal
