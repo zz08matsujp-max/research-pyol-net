@@ -25,7 +25,7 @@ const fullTitle = `${title} | ${SITE.name}`;
 const canonical = new URL(Astro.url.pathname, SITE.url).toString();
 const alternateUrl = getAlternateUrl(Astro.url, lang);
 const alternateLang: Locale = lang === 'ja' ? 'en' : 'ja';
-const ogImageUrl = new URL(ogImage ?? '/images/ogp-default.png', SITE.url).toString();
+const ogImageUrl = new URL(ogImage ?? '/img/ogp-default.png', SITE.url).toString();
 ---
 
 <!DOCTYPE html>
