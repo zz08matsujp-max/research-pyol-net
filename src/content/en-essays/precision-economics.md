@@ -177,6 +177,7 @@ This is not, for me, an abandonment of economic rationality. It is **the choice 
 
 - [Concept Record (full text)](/en/concept/bonno-virus-mapping/) — the parent research program from which this essay is derived
 - [Companion essay: Buddhism as a Coordinate System](/en/essays/buddhism-as-coordinate-system/) — the methodological tier (Level 1) of my research program
+- [Companion essay: §13 The External Prefrontal Cortex (ExPFC)](/en/essays/external-prefrontal-cortex/) — the neuroscientific implementation of the device that stands in the Economies-of-Precision domain (neuroethics + AI Safety)
 - [日本語版](/essays/precision-economics/)
 - [PYOL Mind Mirror](https://ai.pyol.net) — a fraud-awareness tool I am running in production. The starting point of my research program; full mental-affliction mapping is a future implementation goal
 

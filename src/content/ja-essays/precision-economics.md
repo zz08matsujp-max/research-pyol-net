@@ -171,6 +171,7 @@ SNS の収益モデルは次のような連鎖で動いている。
 
 - [構想記録 全文](/concept/bonno-virus-mapping/) ── 本稿が派生した研究プログラム本体
 - [姉妹論考: 仏教を座標系として採用する](/essays/buddhism-as-coordinate-system/) ── 私の研究プログラムの方法論的階層（Level 1）
+- [姉妹論考: §13 External Prefrontal Cortex（ExPFC）](/essays/external-prefrontal-cortex/) ── 「精密の経済」に立つ装置の神経科学的実装（神経倫理 + AI Safety）
 - [English version](/en/essays/precision-economics/)
 - [PYOL マインドミラー](https://ai.pyol.net) ── 実動中の詐欺被害注意喚起ツール。私の研究プログラムの出発点であり、煩悩マッピング等の本格機能は今後の実装課題
 

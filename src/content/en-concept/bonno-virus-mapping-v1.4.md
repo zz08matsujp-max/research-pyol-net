@@ -670,6 +670,8 @@ It is positioned as a 20-year-span research program, "slowly and surely, but ste
 
 ## 13. Brain-inspired architecture and the External Prefrontal Cortex concept (supplement)
 
+> **A standalone essay is also published.** The core of this §13 (13.1 / 13.5 / 13.6 / 13.7 / 13.8 / 13.11) has been rewritten for neuroethics + AI Safety readers as a [standalone essay, *The External Prefrontal Cortex (ExPFC)*](/en/essays/external-prefrontal-cortex/). For citation or critique, that standalone version is the preferable target. The §13 here is more comprehensive and also covers the implementation roadmap (§13.2–§13.4, §13.10).
+
 ### 13.1 Reframing the problem — why refer to the structure of the brain
 
 In developing this program, it has been found that the human cognitive system — in particular the hierarchical modular structure of "**five-sense input → parallel processing by specialized brain regions → integrated judgment by the prefrontal cortex**" — is an extremely useful design guide for the present research system. This is an insight derived as the intuitive proposal of an active engineer, and it is consistent with the established findings of modern neuroscience and cognitive science.
