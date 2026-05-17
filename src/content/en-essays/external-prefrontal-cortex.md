@@ -10,7 +10,7 @@ tags: ["AI Safety", "neuroethics", "cognitive science", "Affective Computing", "
 license: "CC BY 4.0"
 derivedFrom: "Concept Record §13"
 citationKeySuffix: "expfcConcept"
-ogImage: "/img/ogp-default.png"
+ogImage: "/img/ogp-external-prefrontal-cortex.png"
 ---
 
 > **Note on terminology.** Throughout this essay, "mental afflictions" corresponds to the Buddhist concept of *bonnō* (煩悩) — in Sanskrit, *kleshas* — the mental states held to cause human suffering, classified into 108 categories. I use this taxonomy as the **output vocabulary** of ExPFC; the methodological argument for adopting it is given in the companion essay [*Buddhism as a Coordinate System*](/en/essays/buddhism-as-coordinate-system/).
@@ -173,6 +173,7 @@ The Buddhist taxonomy of mental afflictions functions, in my design, as the **ou
 
 - [Concept Record (full text)](/en/concept/bonno-virus-mapping/) — including §13, the parent research program from which this essay is derived
 - [Companion essay: Buddhism as a Coordinate System](/en/essays/buddhism-as-coordinate-system/) — the coordinate system that supplies ExPFC's semantic layer (Level 1)
+- [Companion essay: §14 Bonnō Embedding and the Scam-Detection Mechanism](/en/essays/bonno-embedding/) — the concrete implementation device driving ExPFC's "examination" module (Affective Computing + scam detection)
 - [Companion essay: Economies of Precision vs Economies of Scale](/en/essays/precision-economics/) — the strategic positioning in which ExPFC stands (Level 2)
 - [日本語版](/essays/external-prefrontal-cortex/)
 - [PYOL Mind Mirror](https://ai.pyol.net) — a fraud-awareness tool I run in production, serving as ExPFC's implementation foundation

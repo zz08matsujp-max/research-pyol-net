@@ -166,6 +166,7 @@ fMRI で扁桃体の活性が観察できたとする。だが、その活性が
 
 - [構想記録 全文](/concept/bonno-virus-mapping/) ── §0 を含む私の研究プログラム本体
 - [姉妹論考: §13 External Prefrontal Cortex（ExPFC）](/essays/external-prefrontal-cortex/) ── 仏教学座標系の意味層を、神経科学的に実装する装置（神経倫理 + AI Safety）
+- [姉妹論考: §14 煩悩埋め込みと詐欺検知メカニズム](/essays/bonno-embedding/) ── 108 次元座標系を実際にテキスト解析に乗せる技術（Affective Computing + 詐欺検出）
 - [姉妹論考: §15 精密の経済 vs 規模の経済](/essays/precision-economics/) ── 戦略的位置取り（Level 2）
 - [English version](/en/essays/buddhism-as-coordinate-system/)
 

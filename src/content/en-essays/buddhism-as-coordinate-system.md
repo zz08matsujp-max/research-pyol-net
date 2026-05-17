@@ -171,6 +171,7 @@ I intend to give this methodological wager a 20-year horizon. Anti-scam is its m
 
 - [Concept Record (full text)](/en/concept/bonno-virus-mapping/) — including §0, the parent research program from which this essay is derived
 - [Companion essay: §13 The External Prefrontal Cortex (ExPFC)](/en/essays/external-prefrontal-cortex/) — the neuroscientific implementation device that gives the Buddhist coordinate system a semantic layer in practice (neuroethics + AI Safety)
+- [Companion essay: §14 Bonnō Embedding and the Scam-Detection Mechanism](/en/essays/bonno-embedding/) — the technology that brings the 108-dimensional coordinate system onto actual text analysis (Affective Computing + scam detection)
 - [Companion essay: §15 Economies of Precision vs Economies of Scale](/en/essays/precision-economics/) — the strategic positioning (Level 2)
 - [日本語版](/essays/buddhism-as-coordinate-system/)
 

@@ -11,7 +11,7 @@ tags: ["AI Safety", "神経倫理", "認知科学", "Affective Computing", "意�
 license: "CC BY 4.0"
 derivedFrom: "構想記録 §13"
 citationKeySuffix: "expfcConcept"
-ogImage: "/img/ogp-default.png"
+ogImage: "/img/ogp-external-prefrontal-cortex.png"
 ---
 
 ## はじめに
@@ -172,6 +172,7 @@ ExPFC 概念は、私の中で詐欺対策に限定されない。前頭前野�
 
 - [構想記録 全文](/concept/bonno-virus-mapping/) ── §13 を含む私の研究プログラム本体
 - [姉妹論考: 仏教を座標系として採用する](/essays/buddhism-as-coordinate-system/) ── ExPFC の意味層を提供する座標系（Level 1）
+- [姉妹論考: §14 煩悩埋め込みと詐欺検知メカニズム](/essays/bonno-embedding/) ── ExPFC の「吟味」モジュールを駆動する具体的実装機構（Affective Computing + 詐欺検出）
 - [姉妹論考: 精密の経済 vs 規模の経済](/essays/precision-economics/) ── ExPFC を立ち上げる戦略的位置取り（Level 2）
 - [English version](/en/essays/external-prefrontal-cortex/)
 - [PYOL マインドミラー](https://ai.pyol.net) ── ExPFC の実装基盤として稼働中の詐欺被害注意喚起ツール

@@ -959,6 +959,8 @@ This is the philosophical position that places AI **not as "a black-box judging 
 
 ## 14. Vectorization of mental afflictions and the scam-detection mechanism (supplement)
 
+> **A standalone essay is also published.** The detection-mechanism core of this §14 (14.1 / 14.2 / 14.3 / 14.6 / 14.7 / 14.11 / 14.12) has been rewritten for Affective Computing and anti-scam-practitioner readers as a [standalone essay, *Bonnō Embedding and the Scam-Detection Mechanism*](/en/essays/bonno-embedding/). For citation or critique, that standalone version is the preferable target. The §14 here is more comprehensive and also covers the implementation architecture (§14.8) and the SNS-operator incentive structure (§14.10, which overlaps §15).
+
 ### 14.1 Conceptual definition — the affliction-embedding space
 
 I define the affliction embedding as the following three-way relation:
