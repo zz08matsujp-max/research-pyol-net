@@ -1,16 +1,19 @@
 ---
 title: "Bonnō × Scam-Virus Mapping: An Integrated Database and a Study of Human Emotional Structure via Small Neural Networks"
 author: "Toshinobu Matsuura"
-summary: "The deepest-layer purpose of my research program is to understand the human as a structure of mental afflictions and to visualize their dynamic weighting through a computable coordinate system. I adopt the 2,500 years of internal Buddhist observation as the coordinate system for modern neural-network engineering. Anti-scam (SNS-mediated investment fraud / Pig Butchering Scam) is the most pressing first application of that program. Updated in v1.6 with §0 'The fundamental purpose of the research,' organizing the program into a three-tier structure (methodological / strategic / applied). Updated in v1.7 with §16.4 'Personalization and the individual mental-affliction sensitivity profile,' clarifying that scam judgment is a three-way relation among text × context × individual, and suggesting Level 0 (the self-reflective tier). Updated in v1.8 with §0.4.5 'The implementation starting point — a 3×3 minimum model' and §4.3.0, presenting a concrete implementation roadmap (three poisons × three subcategories = 9 dimensions) and upgrading the proposal from a 'philosophical proposal' to a 'proposal with an implementation roadmap.' Updated in v1.9 with a full stylistic sweep into first-person voice across the entire site."
+summary: "The deepest-layer purpose of my research program is to understand the human as a structure of mental afflictions and to visualize their dynamic weighting through a computable coordinate system. I adopt the 2,500 years of internal Buddhist observation as the coordinate system for modern neural-network engineering. Anti-scam (SNS-mediated investment fraud / Pig Butchering Scam) is the most pressing first application of that program. Updated in v1.6 with §0 'The fundamental purpose of the research'; in v1.7 with §16.5 'Personalization and the individual mental-affliction sensitivity profile'; in v1.8 with §0.4.5 'The 3×3 minimum model' and §4.3.0 (a concrete implementation roadmap); in v1.9 with a stylistic sweep into first-person voice; in v2.0 with consistency fixes across eleven points (unified mapping form, References, cost figures updated, §16 numbering corrected, etc.)."
 publishedAt: 2026-05-12
 updatedAt: 2026-05-17
-version: "v1.9"
+version: "v2.0"
 lang: "en"
 license: "CC BY 4.0"
 slug: "bonno-virus-mapping"
 ---
 
-> **Translator's note.** This English version is a preliminary translation of the Japanese original (v1.4). Buddhist terminology in particular is rendered in conservative form for v0.1; the rigorous final wording will be settled in v0.2 in consultation with Buddhist scholars. The term "mental afflictions" corresponds to the Buddhist concept of *bonnō* (煩悩), the mental states held to cause human suffering, classified into 108 categories.
+> **Position and status (as of 2026-05-17)**
+> This is the Concept Record of the research program I am running. The implementation foundation, [PYOL Mind Mirror](https://ai.pyol.net) (a general fraud-awareness tool), is already running in production. The affliction-mapping and small-neural-network contextual analysis layered on top of it are still in design. This is a 20-year research program, and I will keep updating this record in stages.
+
+> **Translator's note.** This English version is my preliminary translation of the Japanese original. Buddhist terminology in particular is in conservative form for v0.1; the rigorous final wording will be settled in v0.2 in consultation with Buddhist scholars. The term "mental afflictions" corresponds to the Buddhist concept of *bonnō* (煩悩) — in Sanskrit, *kleshas* — the mental states held to cause human suffering, classified into 108 categories.
 
 ## Abstract
 
@@ -111,7 +114,7 @@ Why begin with anti-scam:
 3. **Technical verifiability**: the objective metric "scam-detection accuracy" allows the validity of the affliction mapping to be tested
 4. **PYOL Mind Mirror as an existing implementation foundation**: the existing tool I run (a fraud-awareness tool currently in production) provides a venue for data collection and verification
 
-But the scope of my program does not stop at anti-scam. In addition to the generality of application discussed in §13.8 (investing, health, gambling, love, cults, politics, SNS, childcare, the elderly), the program holds a broader social value as **a foundational technology by which the human understands the self and the other.**
+But the scope of the program does not stop at anti-scam. In addition to the generality of application discussed in §13.8 (investing, health, gambling, love, cults, politics, SNS, childcare, the elderly), the program holds a broader social value as **a foundational technology by which the human understands the self and the other.**
 
 ### 0.6 The strategic significance of this chapter
 
@@ -144,7 +147,7 @@ Level 1 is the philosophical and methodological core of the program; Level 2 is 
 
 ### 0.7 Conclusion (§0)
 
-The deepest-layer purpose of my program is not anti-scam. It is **to understand the human as a structure of mental afflictions, to visualize their dynamic weighting in a computable coordinate system, and thereby to provide a foundation by which the human more accurately understands the self and the other.**
+The deepest-layer purpose of this program is not anti-scam. It is **to understand the human as a structure of mental afflictions, to visualize their dynamic weighting in a computable coordinate system, and thereby to provide a foundation by which the human more accurately understands the self and the other.**
 
 Anti-scam is the first application of this. Over the 20-year span of the research, applications will progressively expand. My program stands, as **a synthesis of 2,500 years of internal Buddhist observation and modern neural-network engineering**, in a domain that no one has yet seriously attempted.
 
@@ -192,7 +195,7 @@ This system was refined over more than a millennium of empirical observation as 
 
 ### 2.4 Borrowing from anti-virus engineering
 
-The methods accumulated by the computer-security industry over 30 years — signature matching, heuristic detection, behavioral analysis, sandbox analysis, and vaccines (preemptive immunity) — are the crystallization of an arms race between adaptive attackers and defenders. By modeling the techniques of scam organizations as "viruses," my program transposes those methods into anti-scam.
+The methods accumulated by the computer-security industry over 30 years — signature matching, heuristic detection, behavioral analysis, sandbox analysis, and vaccines (preemptive immunity) — are the crystallization of an arms race between adaptive attackers and defenders. By modeling the techniques of scam organizations as "viruses," the program transposes those methods into anti-scam.
 
 ### 2.5 Philosophical synthesis
 
@@ -262,7 +265,9 @@ Each affliction has the following attributes:
 
 ### 3.4 Many-to-many mapping
 
-Each virus targets multiple afflictions, and each affliction is attacked by multiple viruses. This relationship is not a simple correspondence table but must be described as **a graph structure with intensities (exploitation_strength: 0–10) and conditions (triggering conditions).**
+Each virus targets multiple afflictions, and each affliction is attacked by multiple viruses. This relationship is not a simple correspondence table but must be described as **a graph structure with intensities (exploitation_strength) and conditions (triggering conditions).**
+
+The intensity range is unified across my research program at **continuous values in [0, 1]** — the same scale as wᵢ in §14.1 and V_min in §4.3.0. In annotation work it is sometimes convenient to use a human-friendly 1–10 integer scale, but the values are normalized to [0, 1] when stored in the database. This allows graph edge weights and affliction vectors to be combined at a single scale.
 
 ---
 
@@ -409,7 +414,7 @@ Large language models learn from vast amounts of text "the words used to talk ab
 
 ### 5.2 What this research can offer
 
-If my program succeeds, it can offer the following to modern AI research:
+If this program succeeds, it can offer the following to modern AI research:
 
 1. **A structured taxonomy**: a computable classification of human emotion that maps the 108 mental afflictions to modern psychology
 2. **Behavioral grounding**: emotional states grounded in the real behavioral record of scam victimization
@@ -600,6 +605,9 @@ This is the embodiment of the "mismatch thinking" mentioned earlier, and it is *
 
 ## 10. Limits and ethical considerations
 
+> **Cross-references on ethical issues**
+> I discuss ethical issues in three places across this Concept Record: (a) §10.3 — general / cross-cutting ethical issues (this section); (b) §13.11 — philosophical and ethical scope (specific to the brain-inspired architecture); (c) §14.12 — ethical considerations specific to affliction vectorization. These will be consolidated into a single ethical guideline in a future version, with the present sections as its starting points.
+
 ### 10.1 Epistemological limits
 
 - Human emotion may be only incompletely captured
@@ -654,7 +662,7 @@ My program proposes, against the concrete and urgent social problem of SNS-media
 
 It is technically implementable, and the data foundation already exists in PYOL Mind Mirror. Academically, it is an approach without parallel in the world; and as a side effect, contributions to AI research and cognitive science can be expected.
 
-What characterizes my program is that the starting point of the research is not "academic interest" but **the wish for a society that does not produce victims.** This sits at the nodal point of my personal history: more than 40 years of large-corporate engineering, the experience of running a grassroots BBS in the 1990s, the present connection to welfare practice, and the experience of fraud victimization by someone close to me.
+What characterizes the program is that the starting point of the research is not "academic interest" but **the wish for a society that does not produce victims.** This sits at the nodal point of my personal history: more than 40 years of large-corporate engineering, the experience of running a grassroots BBS in the 1990s, the present connection to welfare practice, and the experience of fraud victimization by someone close to me.
 
 It is positioned as a 20-year-span research program, "slowly and surely, but steadily."
 
@@ -664,7 +672,7 @@ It is positioned as a 20-year-span research program, "slowly and surely, but ste
 
 ### 13.1 Reframing the problem — why refer to the structure of the brain
 
-In developing my program, it has been found that the human cognitive system — in particular the hierarchical modular structure of "**five-sense input → parallel processing by specialized brain regions → integrated judgment by the prefrontal cortex**" — is an extremely useful design guide for the present research system. This is an insight derived as the intuitive proposal of an active engineer, and it is consistent with the established findings of modern neuroscience and cognitive science.
+In developing this program, it has been found that the human cognitive system — in particular the hierarchical modular structure of "**five-sense input → parallel processing by specialized brain regions → integrated judgment by the prefrontal cortex**" — is an extremely useful design guide for the present research system. This is an insight derived as the intuitive proposal of an active engineer, and it is consistent with the established findings of modern neuroscience and cognitive science.
 
 ### 13.2 The hierarchical modular structure of human cognition
 
@@ -777,7 +785,7 @@ This architecture **uses the small neural networks discussed in §4 (GNN, VAE, T
 
 ### 13.5 The neuroscientific mechanism of scam victimization
 
-As a theoretical foundation of my program, here is how scam victimization can be described neuroscientifically.
+As a theoretical foundation of the program, here is how scam victimization can be described neuroscientifically.
 
 It is established knowledge that **under strong emotional states, activity of the prefrontal cortex (PFC) is suppressed**, as demonstrated by functional magnetic resonance imaging (fMRI) studies (Phelps et al., 2014; Tom et al., 2007).
 
@@ -877,25 +885,9 @@ The ExPFC concept is not limited to anti-scam. Inappropriate decisions due to PF
 
 For all of these, an ExPFC-style support device may be effective. This research thus has the scope of **fundamental research on supporting human decision-making.**
 
-### 13.9 Relation to existing research programs
+### 13.9 Relation to existing research programs and interdisciplinary positioning
 
-Existing research programs related to my program:
-
-| Program | Institution | Relation |
-|---|---|---|
-| NeurIPS Workshops on Human-AI Decision Making | international conference | directly related |
-| Affective Computing | MIT Media Lab | computational treatment of emotion |
-| Brain-Inspired AI | DeepMind, Numenta | brain-imitation methods |
-| Cognitive Tutors | educational-technology field | application of external cognitive support |
-| Predictive Processing | Friston group | integrative theoretical background |
-| AI Alignment / Safety | Anthropic, OpenAI, etc. | understanding human intent |
-| Neuroethics | neuroethics | the ethical issues of ExPFC |
-
-The originality of my program lies in integrating these with **"an Eastern view of the human + the concrete application of anti-scam."**
-
-### 13.10 Interdisciplinary positioning
-
-My program stands at the intersection of the following disciplines:
+My program stands at the intersection of several traditionally independent disciplines:
 
 ```
                     Neuroscience
@@ -910,9 +902,21 @@ My program stands at the intersection of the following disciplines:
               Behavioral economics / criminology
 ```
 
-It is a research program that fuses five traditionally independent disciplines, addressing questions unreachable by any of them alone.
+It is a research program that fuses five traditionally independent disciplines, addressing questions unreachable by any of them alone. The specific related research programs are:
 
-### 13.11 Implications for the research program
+| Program | Institution | Relation |
+|---|---|---|
+| NeurIPS Workshops on Human-AI Decision Making | international conference | directly related |
+| Affective Computing | MIT Media Lab | computational treatment of emotion |
+| Brain-Inspired AI | DeepMind, Numenta | brain-imitation methods |
+| Cognitive Tutors | educational-technology field | application of external cognitive support |
+| Predictive Processing | Friston group | integrative theoretical background |
+| AI Alignment / Safety | Anthropic, OpenAI, etc. | understanding human intent |
+| Neuroethics | neuroethics | the ethical issues of ExPFC |
+
+The originality of this program lies in integrating these with **"an Eastern view of the human + the concrete application of anti-scam."**
+
+### 13.10 Implications for the research program
 
 Augmenting §7 (the implementation roadmap) in light of this section:
 
@@ -928,7 +932,7 @@ Augmenting §7 (the implementation roadmap) in light of this section:
 - in parallel with the anti-scam paper, submit a separate ExPFC concept paper
 - present at neuroethics / AI Safety conferences
 
-### 13.12 Philosophical and ethical scope
+### 13.11 Philosophical and ethical scope
 
 The ExPFC concept raises deep questions about the relation between humans and technology:
 
@@ -939,9 +943,9 @@ The ExPFC concept raises deep questions about the relation between humans and te
 5. **Dependence**: does the user's own frontal lobe atrophy
 6. **Fairness**: does inequality in access to ExPFC produce inequality in the quality of judgment
 
-These overlap with the central topics of AI ethics and must be treated continuously as ethical considerations of my program.
+These overlap with the central topics of AI ethics and must be treated continuously as ethical considerations of my program. The points raised in this section are related to §10.3 (general / cross-cutting ethical issues) and §14.12 (ethics specific to affliction vectorization), and will eventually be consolidated into a single ethical guideline.
 
-### 13.13 Conclusion (§13)
+### 13.12 Conclusion (§13)
 
 This research, which begins from anti-scam, is, when reconstructed neuroscientifically, redefined as the more universal research program of **building an external device that supports human decision-making (External Prefrontal Cortex).**
 
@@ -955,15 +959,24 @@ This is the philosophical position that places AI **not as "a black-box judging 
 
 ### 14.1 Conceptual definition — the affliction-embedding space
 
-Consider a function f that maps an arbitrary text T to a 108-dimensional real-valued vector V:
+I define the affliction embedding as the following three-way relation:
 
 ```
-f: T → V = (w₁, w₂, ..., w₁₀₈),  wᵢ ∈ [0, 1]
+f: (T, C, U) → V = (w₁, w₂, ..., w₁₀₈),  wᵢ ∈ [0, 1]
+
+  T: an arbitrary text
+  C: the situation / context (time of day, medium, relationship, cumulative behavior, etc.)
+  U: the individual's mental-affliction sensitivity profile (detailed in §16.5)
+  V: a 108-dimensional affliction-stimulation vector
 ```
 
-Here wᵢ represents **"how strongly the text T stimulates affliction i."** Through this map, every text is represented as a point in the **affliction-embedding space.**
+Here wᵢ represents **"how strongly text T, in situation C, stimulates affliction i of individual U."** The value range is normalized to [0, 1]. This is exactly the same mapping as the "human state (T, C, U) → V" presented in §0.4.
 
-This is positioned in the lineage of **embedding-representation learning** as developed in Word2Vec, BERT, CLIP, and so on, but it is distinctive in that **the meaning of the embedding space corresponds directly to "human psychological vulnerability."** Conventional embeddings learn things like "semantic similarity of words" or "correspondence between images and text"; my program learns "the action on human emotion."
+In earlier versions of this record (up to v1.4), I had described f as `f: T → V` — a function of T alone. But when I added §16.5 in v1.7, it became clear that judgment does not close at the level of text alone: V varies with the situation C and the individual U as well — that is, this is **a three-way relation.** I unified this §14.1 to the three-way form in v2.0.
+
+Through this mapping, every text is represented as a point in the **affliction-embedding space** (with individual U and context C fixed as parameters).
+
+This is positioned in the lineage of **embedding-representation learning** as developed in Word2Vec, BERT, CLIP, and so on, but it is distinctive in that **the meaning of the embedding space corresponds directly to "human psychological vulnerability."** Conventional embeddings learn things like "semantic similarity of words" or "correspondence between images and text"; the program learns "the action on human emotion."
 
 ### 14.2 Operational definition of scam judgment
 
@@ -1068,7 +1081,7 @@ That is, **legitimate ads are legally obliged to identify their source.** Conver
 [source unclear]    + [strong affliction stimulation] = highly likely a scam
 ```
 
-This is a far more powerful axis of discrimination than the affliction vector alone. The system of my program **performs affliction-stimulation analysis and source analysis simultaneously, so as to avoid overdetection.**
+This is a far more powerful axis of discrimination than the affliction vector alone. The system of this program **performs affliction-stimulation analysis and source analysis simultaneously, so as to avoid overdetection.**
 
 Concrete source-verification items:
 
@@ -1158,23 +1171,20 @@ Output to the user:
    → very likely a scam"
 ```
 
-Not a black box, but **a design that presents the basis of the judgment**, is the ethical core of my program.
+Not a black box, but **a design that presents the basis of the judgment**, is the ethical core of the program.
 
 ### 14.9 Application to general text classification
 
-Affliction embedding is not limited to anti-scam; it can be used as **a general scale for measuring psychological influence on humans:**
+I believe affliction embedding can extend well beyond anti-scam, as **a general scale for measuring psychological influence on humans.** The application space is wide, but here I limit myself to the four areas I want to prioritize in practice:
 
-| Area | Application |
-|---|---|
-| Political messaging | analysis of the affliction-stimulation structure of propaganda |
-| Advertising ethics | automatic detection of excessively affliction-inflaming advertising |
-| Literature / art | psychological-structure comparison of masterpieces, mediocre works, mass works |
-| Clinical psychology | analysis of the emotional distribution of a client's speech |
-| Education | clarification of the structure of persuasive writing |
-| AI-generated text | analysis of the affliction biases of LLM outputs |
-| Cult / brainwashing | detection of persuasion structures |
-| Cross-cultural comparison | differences in affliction sensitivity across cultures |
-| Ethical judgment | the boundary between "incitement" and "enlightenment" |
+| Priority | Area | Application |
+|:---:|---|---|
+| 1 | **Clinical psychology / mental health** | analysis of the emotional distribution of a client's speech; for example, distinguishing "attachment-driven" from "aversion-driven" depressive states to inform therapeutic choice |
+| 2 | **Advertising ethics / consumer protection** | automatic detection of excessively affliction-inflaming advertising (anxiety, haste, status-desire). A natural extension of anti-scam, on the same implementation base |
+| 3 | **Ethical evaluation of AI-generated text** | analysis of the affliction biases of LLM outputs. A strategic connection point with AI Safety research |
+| 4 | **Education / mentoring of successors** | clarification of the structure of persuasive writing; teaching readers to recognize cognitive biases. Fits naturally with the 20-year horizon of cultivating successors |
+
+Other possibilities exist as well — analyzing the affliction-stimulation structure of political propaganda; psychological-structure comparison of literary and artistic works; detection of cult / brainwashing persuasion structures; cross-cultural comparison of affliction sensitivity; ethical-judgment work on the boundary between "incitement" and "enlightenment" — but for a 20-year program I want to focus first on the four above.
 
 This may become a new foundation for affective-computing research.
 
@@ -1240,11 +1250,11 @@ Ethical considerations of affliction-vectorization technology:
 5. **Value judgment by AI**: the rightness of an AI declaring "you are being stimulated to greed"
 6. **Risk of dependence**: do users abdicate their own judgment
 
-These are continuing considerations; ethical guidelines must be developed in parallel with development.
+These are continuing considerations; I plan to develop ethical guidelines in parallel with development. This section (ethics specific to affliction vectorization) is related to §10.3 (general / cross-cutting issues) and §13.11 (ethics specific to ExPFC), and will eventually be consolidated into a single ethical guideline.
 
 ### 14.13 Conclusion (§14)
 
-Text analysis through affliction embedding is the technical implementation mechanism of the philosophical core of my program — **"directly capturing human vulnerability."**
+Text analysis through affliction embedding is the technical implementation mechanism of the philosophical core of this program — **"directly capturing human vulnerability."**
 
 Particularly important findings:
 
@@ -1277,25 +1287,28 @@ This is not merely a technical observation. It is a deep insight into the **econ
 
 The major generative-AI providers (OpenAI, Google, Anthropic, Meta) and the major SNS platforms (X, Facebook, Instagram, TikTok) typically operate content judgment in a two-tier structure:
 
-| Tier | Processing | Cost | Accuracy |
+| Tier | Processing | Cost (as of May 2026) | Accuracy |
 |---|---|---|---|
-| Tier 1: keyword / regex filter | prohibited-word lists, URL blacklists, hash matching | minimal (< $0.000001 per item) | surface only |
+| Tier 1: keyword / regex filter | prohibited-word lists, URL blacklists, hash matching | minimal (< $0.0000001 per item) | surface only |
 | Tier 2: ML classifier | binary / multi-class classification by lightweight model | small (≈ $0.00001 per item) | medium |
-| Tier 3 (rare): contextual understanding | deep semantic analysis by an LLM | large ($0.01–$0.10 per item) | high |
+| Tier 3 (rare): contextual understanding (low-cost LLM) | semantic analysis by GPT-4o mini, Claude Haiku 3.5, etc. | medium ($0.0001–$0.001 per item) | high |
+| Tier 3 (rare): contextual understanding (high-end LLM) | deep analysis by Claude Opus, GPT-5, etc. | large ($0.01–$0.10 per item) | highest |
 
 In actual operation, more than 99% of traffic is processed at Tiers 1–2; Tier 3 is invoked only in limited cases. **This is not a technical limit but an economic choice.**
 
 ### 15.3 Economic structural analysis: why the giants do not read deeply
 
-Suppose X (formerly Twitter) were to put every post of a single day (estimated 500 million) through an LLM:
+Suppose X (formerly Twitter) were to put every post of a single day (estimated 500 million) through a low-cost LLM (at, say, $0.0005 per item):
 
-- 500 million × $0.07 ≈ $35 million per day
-- Annual: ≈ $12.7 billion
-- This is more than half of X's estimated annual ad revenue ($20–25 billion)
+- 500 million × $0.0005 = $250,000 per day
+- Annual: ≈ $91 million
+- A small percentage of X's estimated annual ad revenue ($20–25 billion)
 
-That is, **deep analysis would not be economically viable as a business.** The giants' economic model is optimized for "wide, shallow, automatic" Economies of Scale, and deep inspection is structurally impossible at that scale.
+In strict numerical terms, that no longer means "not economically viable." LLM inference cost dropped one to two orders of magnitude between 2024 and 2026, and is likely to keep falling. But what I want to emphasize is: **even when cost falls, the structural barrier is somewhere else.** The incentive asymmetry I discuss in §15.4 is the real barrier.
 
-Furthermore, as discussed in §14.10, **SNSs derive revenue from affliction-stimulating content**, so even if deep analysis were possible, the incentive to implement it would be weak.
+If instead we applied a high-end LLM (deep context, multi-turn reasoning, source verification) to every single post, we would still be in the dollars-per-item range, and the annual total would still run into the billions. But my point here is not the per-item price — it is **the structure by which SNS operators derive revenue from affliction-stimulating content,** which remains a constraint independent of inference cost.
+
+Furthermore, as discussed in §14.10, **SNSs derive revenue from affliction-stimulating content**, so even if deep analysis became economically feasible, the structural incentive to implement it would remain weak.
 
 ### 15.4 The blind spots of the giants — the "can-but-won't" domain
 
@@ -1311,7 +1324,7 @@ What this analysis reveals is that a wide **"can-but-won't" domain** exists in m
 
 These are not technically infeasible. **They are not implemented because economic rationality does not support them.**
 
-### 15.5 The strategic positioning of my program — Economies of Precision
+### 15.5 The strategic positioning of the program — Economies of Precision
 
 My program (PYOL Mind Mirror) stands on the opposite economic principle:
 
@@ -1328,9 +1341,9 @@ My program (PYOL Mind Mirror) stands on the opposite economic principle:
 **Key principle:**
 
 > Today's AI is optimized for Economies of Scale, and in doing so it abandons Economies of Precision.
-> The abandoned domain is precisely the legitimate domain of activity for my program.
+> The abandoned domain is precisely the legitimate domain of activity for this program.
 
-This is the clearest instance of my mismatch-thinking philosophy discussed in §3. **Where the giants go wide and shallow, my program goes narrow and deep.** That very asymmetry is the strategic advantage of my program.
+This is the clearest instance of my mismatch-thinking philosophy discussed in §3. **Where the giants go wide and shallow, my program goes narrow and deep.** That very asymmetry is the strategic advantage of the program.
 
 ### 15.6 Applicability to isomorphic problems
 
@@ -1345,7 +1358,7 @@ The structure "Economies of Scale vs Economies of Precision" is observed isomorp
 | Child protection | keyword surveillance | contextual reading of relationship and developmental stage |
 | Employment matching | job-board matching | understanding of an individual's long-term career trajectory |
 
-In each case, the domain is one that the giants have given up on for reasons of economic rationality, and an AI tool that goes deep into individual cases can offer decisive value. The methods my program establishes may serve as a **template** for horizontal expansion into these other domains.
+In each case, the domain is one that the giants have given up on for reasons of economic rationality, and an AI tool that goes deep into individual cases can offer decisive value. The methods this program establishes may serve as a **template** for horizontal expansion into these other domains.
 
 ### 15.7 Connection to §14 (affliction vectorization) and §13 (ExPFC)
 
@@ -1378,11 +1391,15 @@ My program deliberately stands in that domain. **It chooses precision over scale
 This is not an abandonment of economic rationality. It is **the choice of a different economic principle.** And this choice is one of the most realistic paths to protecting human dignity in the age of AI.
 
 > Where Big AI goes wide and shallow, we go narrow and deep.
-> That asymmetry is the legitimate reason my program exists.
+> That asymmetry is the legitimate reason the program exists.
 
 ---
 
-## Appendix A: Glossary (excerpt)
+## Appendix A: Glossary — this program's own terms and the general technical terms used
+
+If you are a first-time reader, I recommend skimming this glossary before the main body. It will speed up your reading of my own terms ("mental afflictions," "three poisons," "ExPFC," "affliction vector," "Economies of Precision," "mismatch thinking," and so on).
+
+A note on the word **"virus"**: in this Concept Record I use it as a metaphor for *computer virus* (malware), not biological virus (pathogen). The methods that the computer-security industry has accumulated over 30 years — signature detection, heuristics, vaccines (preemptive immunity) — are what I want to transpose into anti-scam, which is why I adopt this metaphor.
 
 | Term | Definition |
 |---|---|
@@ -1406,10 +1423,10 @@ This is not an abandonment of economic rationality. It is **the choice of a diff
 | False positive (overdetection) | Misclassifying legitimate economic activity or communication as a scam |
 | Flame-war economics | The observation that SNS platforms structurally cannot self-regulate because they derive revenue from affliction-stimulating content |
 | Economies of Scale | The economic principle that pursues per-unit cost reduction through mass processing. The basic model adopted by Big AI and SNS — wide, shallow, automatic, minimal per-unit cost |
-| Economies of Precision | The economic principle that finds value in deep processing of individual cases. The position of my program — narrow, deep, individually optimized, accepting per-unit cost |
+| Economies of Precision | The economic principle that finds value in deep processing of individual cases. The position of the program — narrow, deep, individually optimized, accepting per-unit cost |
 | Keyword-filter dependence | The operational reality that, for reasons of economic rationality, Big AI and SNS avoid deep contextual analysis and rely on surface keyword matching |
 | The "can-but-won't" domain | A domain that is technically possible but not implemented by the giants because economic rationality does not support it: contextual analysis of scam DMs, affliction detection, protection of the vulnerable, and so on |
-| Strategic positioning | The strategic choice of my program to deliberately occupy the "Economies of Precision" domain that the giants have abandoned for Economies of Scale |
+| Strategic positioning | The strategic choice of this program to deliberately occupy the "Economies of Precision" domain that the giants have abandoned for Economies of Scale |
 | One-to-one (deep) scale | A scaling strategy that performs deep processing for each individual user. Contrasted with one-to-all (shallow) |
 
 ## Appendix B: Data sources (recap)
@@ -1425,7 +1442,7 @@ This is not an abandonment of economic rationality. It is **the choice of a diff
 
 ---
 
-## Appendix E: Notes on a staged-publication strategy (from a 2026-05-13 dialogue with an AI)
+## Appendix D: Notes on a staged-publication strategy (from a 2026-05-13 dialogue with an AI)
 
 A record of the AI's evaluation when I candidly asked an AI (Claude Opus 4.7) "is this research worth doing?" **Recorded as a reference observation, not as a decision.**
 
@@ -1478,9 +1495,9 @@ Three challenges are described below in the form of (1) the locus of the challen
 
 #### 16.2.1 The locus of the challenge
 
-For the affliction embedding f: T → V (108 dimensions) introduced in §14.1, the 108 dimensions are not necessarily mathematically independent (orthogonal). Many afflictions overlap strongly in meaning: "greed" and "attachment," "conceit" and "desire for superiority," "haste" and "anxiety." If they are simply treated as 108 independent dimensions, the machine-learning model risks falling into something like a multicollinearity state, and may not be able to accurately separate and identify specific emotional triggers.
+For the affliction embedding f: (T, C, U) → V (108 dimensions) introduced in §14.1, the 108 dimensions are not necessarily mathematically independent (orthogonal). Many afflictions overlap strongly in meaning: "greed" and "attachment," "conceit" and "desire for superiority," "haste" and "anxiety." If they are simply treated as 108 independent dimensions, the machine-learning model risks falling into something like a multicollinearity state, and may not be able to accurately separate and identify specific emotional triggers.
 
-A still more serious problem is **the consistency of labeling**. If, for the same scam text, multiple annotators are split on "is this greed or attachment?", the training data itself becomes noisy. This is the most concrete manifestation of the issue the AI raised in Appendix E.2: "establishing operational definitions of religious terms requires substantial labor."
+A still more serious problem is **the consistency of labeling**. If, for the same scam text, multiple annotators are split on "is this greed or attachment?", the training data itself becomes noisy. This is the most concrete manifestation of the issue the AI raised in Appendix D.2: "establishing operational definitions of religious terms requires substantial labor."
 
 #### 16.2.2 Response strategy — hierarchical embedding structure
 
@@ -1546,7 +1563,7 @@ In addition, **the combined use of a signature layer and a structural-analysis l
 - **Signature layer**: an explicit virus database, version-managed, with new entries added on discovery
 - **Structural-analysis layer**: affliction vector + suppression pattern (the signature features in §14.3) — invariant
 
-Even for unknown techniques, if the structural-analysis layer captures the signature of "concentrated stimulation of specific afflictions + suppression of cautionary afflictions + coexistence of contradictory stimuli," detection is possible. This is the concrete form in which my program transposes the wisdom of anti-virus engineering (§2.4).
+Even for unknown techniques, if the structural-analysis layer captures the signature of "concentrated stimulation of specific afflictions + suppression of cautionary afflictions + coexistence of contradictory stimuli," detection is possible. This is the concrete form in which the program transposes the wisdom of anti-virus engineering (§2.4).
 
 #### 16.3.3 Remaining issues
 
@@ -1574,7 +1591,7 @@ The ExPFC introduced in §13.6 is a device that acts in place of the user's PFC 
 
 The basis for Tier C is a cognitive-science approach: **"have the PFC recover during the cooling-off period before judgment is made."** The same idea as a bank's "24-hour transfer freeze."
 
-But unconditional blocking conflicts with the autonomy issue raised in §13.12. The response is **the modern version of the Ulysses contract**:
+But unconditional blocking conflicts with the autonomy issue raised in §13.11. The response is **the modern version of the Ulysses contract**:
 
 ```
 At registration, the user chooses:
@@ -1601,9 +1618,9 @@ The voice is delivered not as that of a third party but as that of the past self
 - The decline in effectiveness when "the letter from the past self" feels, after long use, "no longer who I am now"
 - Countermeasures against relapse after the block is lifted (still transferring the money 24 hours later)
 
-### 16.4 Challenge 4: personalization and the individual mental-affliction sensitivity profile (added in v1.7)
+### 16.5 Challenge 4: personalization and the individual mental-affliction sensitivity profile (added in v1.7)
 
-#### 16.4.1 The locus of the challenge
+#### 16.5.1 The locus of the challenge
 
 The mental-affliction embedding f: T → V (108 dimensions) introduced in §14.1 was defined as a mapping from text to a 108-dimensional stimulation vector. But an important issue, that I recognized during the English-translation work on this Concept Record, is that **scam judgment does not close at the level of "text alone."**
 
@@ -1636,7 +1653,7 @@ P(scam) = g(V_text(T, C), V_user(U), context)
 
 That is, scam judgment must be captured as **resonance** between the **"mental-affliction-stimulation profile of the text"** and the **"mental-affliction sensitivity profile of the user."** When both vectors simultaneously take high values on a specific affliction, the scam is most effective.
 
-#### 16.4.2 Response strategies (composite approach)
+#### 16.5.2 Response strategies (composite approach)
 
 ##### Strategy A: progressive personalization
 
@@ -1676,7 +1693,7 @@ The mental-affliction sensitivity profile is positioned not as "data for the AI 
 
 This design is directly consistent with the fundamental purpose of the research program stated in §0: "a mirror by which the human understands the self."
 
-#### 16.4.3 Remaining issues
+#### 16.5.3 Remaining issues
 
 - **Complete observation of the inner is in principle impossible**: how to handle depth information that cannot be captured by behavior and self-report (e.g., desires the person is not even aware of, repressed emotions)
 - **Time variation**: mental-affliction sensitivity changes with time (life events, health, age, seasons) — the limit of a static profile
@@ -1685,7 +1702,7 @@ This design is directly consistent with the fundamental purpose of the research 
 - **Connection with the ExPFC in §13**: the ExPFC "substitutes for the dysfunctional PFC," but the precision of the substitution depends on the precision of U
 - **Interaction with the hierarchical embedding in §16.2**: should U also be held in the hierarchical structure of three poisons (3-dim) → mid classification → 108-dim?
 
-#### 16.4.4 The author's meta-realization (recorded in v1.7)
+#### 16.5.4 The author's meta-realization (recorded in v1.7)
 
 This challenge was recognized by me during the work of translating the Concept Record into English. **The meta-observation itself — "if I leave everything to the AI, I am about to overlook something important"** — has the same structure as the fundamental purpose of the research program stated in §0 ("mental afflictions are humanity itself," "mirror of self-understanding").
 
@@ -1693,31 +1710,65 @@ This challenge was recognized by me during the work of translating the Concept R
 
 This suggests, beyond the three-tier structure (Level 1 methodological / Level 2 strategic / Level 3 applied) shown in §0.6, the existence of a **Level 0 = self-reflective tier**. A recursive structure in which the research program includes itself as an object of observation.
 
-### 16.5 Conclusion (§16)
+### 16.6 Conclusion (§16)
 
 This chapter is not a presentation of complete solutions. It is **the explicit demonstration of the posture that "the challenges are recognized."**
 
-The four challenges discussed in §16 were all touched on at the strategic level in Concept Record v1.4 but were thin on the operational details of the implementation phase. In particular, the personalization problem in §16.4 was first recognized through the English-translation work, and represents an important discovery indicating the self-reflective tier (Level 0) of the research program itself. As long as my program runs on a 20-year span and stands on Economies of Precision (§15), it should not rush into implementation. Consistent with the AI's advice in Appendix E.4 — **"do not aim at perfection; reliably bring out parts"** — the description in this chapter is itself a provisional version, to be improved in precision through verification and dialogue with collaborators.
+The four challenges discussed in §16 were all touched on at the strategic level in Concept Record v1.4 but were thin on the operational details of the implementation phase. In particular, the personalization problem in §16.5 was first recognized through the English-translation work, and represents an important discovery indicating the self-reflective tier (Level 0) of the research program itself. As long as this program runs on a 20-year span and stands on Economies of Precision (§15), it should not rush into implementation. Consistent with the AI's advice in Appendix D.4 — **"do not aim at perfection; reliably bring out parts"** — the description in this chapter is itself a provisional version, to be improved in precision through verification and dialogue with collaborators.
 
 Each response strategy is **an application of an existing technology** (hierarchical embedding, incremental learning, the Ulysses contract, progressive personalization); none requires new invention. This is consistent with the philosophy of the program (§4.2) to "use mature technology at the necessary and sufficient scale."
 
-Finally, the very writing of this chapter is **evidence of the soundness** of the research program. That I can, immediately after sending the proposal into the world, point to its criticizable holes shows that the program has **a self-critical reflective function built in**. This is an important posture in AI Safety research generally; and the theme of my program — "structuring human vulnerability" — is isomorphic to its own posture of "structuring its own vulnerability." The self-referential structure shown in §16.4 is precisely such an example.
+Finally, the very writing of this chapter is **evidence of the soundness** of the research program. That I can, immediately after sending the proposal into the world, point to its criticizable holes shows that the program has **a self-critical reflective function built in**. This is an important posture in AI Safety research generally; and the theme of my program — "structuring human vulnerability" — is isomorphic to its own posture of "structuring its own vulnerability." The self-referential structure shown in §16.5 is precisely such an example.
 
 ---
 
-## Appendix D: Revision history
+## Appendix E: References (works cited in this Concept Record)
+
+The following are the works I cite by author–year in the body, in APA format. I plan to enrich this list in subsequent versions.
+
+1. Anderson, C. (2006). *The Long Tail: Why the Future of Business is Selling Less of More*. Hyperion.
+2. Bender, E. M., Gebru, T., McMillan-Major, A., & Shmitchell, S. (2021). On the dangers of stochastic parrots: Can language models be too big? *Proceedings of the 2021 ACM Conference on Fairness, Accountability, and Transparency (FAccT '21)*, 610–623.
+3. Carroll, M., Chan, A., Ashton, H., & Krueger, D. (2023). Characterizing manipulation from AI systems. *Proceedings of the 3rd ACM Conference on Equity and Access in Algorithms, Mechanisms, and Optimization (EAAMO '23)*.
+4. Caruana, R. (1997). Multitask learning. *Machine Learning*, 28(1), 41–75.
+5. Damasio, A. R. (1994). *Descartes' Error: Emotion, Reason, and the Human Brain*. Putnam.
+6. Friston, K. (2010). The free-energy principle: a unified brain theory? *Nature Reviews Neuroscience*, 11(2), 127–138.
+7. Fujii, K., et al. (2024). Continual pre-training for cross-lingual LLM adaptation: Enhancing Japanese language capabilities. *arXiv preprint*.
+8. Goodfellow, I., Bengio, Y., & Courville, A. (2016). *Deep Learning*. MIT Press.
+9. Hamilton, W. L., Ying, R., & Leskovec, J. (2017). Inductive representation learning on large graphs. *Advances in Neural Information Processing Systems*, 30.
+10. Kahneman, D. (2011). *Thinking, Fast and Slow*. Farrar, Straus and Giroux.
+11. Kingma, D. P., & Welling, M. (2014). Auto-encoding variational Bayes. *International Conference on Learning Representations (ICLR)*.
+12. Kipf, T. N., & Welling, M. (2017). Semi-supervised classification with graph convolutional networks. *International Conference on Learning Representations (ICLR)*.
+13. Kirkpatrick, J., et al. (2017). Overcoming catastrophic forgetting in neural networks. *Proceedings of the National Academy of Sciences*, 114(13), 3521–3526.
+14. Marcus, G., & Davis, E. (2019). *Rebooting AI: Building Artificial Intelligence We Can Trust*. Pantheon.
+15. National Police Agency of Japan. (2025). *Statistics on SNS-mediated investment and romance fraud, 2023–2025*.
+16. Nickel, M., & Kiela, D. (2017). Poincaré embeddings for learning hierarchical representations. *Advances in Neural Information Processing Systems*, 30.
+17. Park, P. S., Goldstein, S., O'Gara, A., Chen, M., & Hendrycks, D. (2024). AI deception: A survey of examples, risks, and potential solutions. *Patterns*, 5(5), 100988.
+18. Phelps, E. A., Lempert, K. M., & Sokol-Hessner, P. (2014). Emotion and decision making: Multiple modulatory neural circuits. *Annual Review of Neuroscience*, 37, 263–287.
+19. Radford, A., et al. (2021). Learning transferable visual models from natural language supervision. *Proceedings of the 38th International Conference on Machine Learning*, 8748–8763.
+20. Shazeer, N., et al. (2017). Outrageously large neural networks: The sparsely-gated mixture-of-experts layer. *International Conference on Learning Representations (ICLR)*.
+21. Thaler, R. H., & Sunstein, C. R. (2008). *Nudge: Improving Decisions about Health, Wealth, and Happiness*. Yale University Press.
+22. Tom, S. M., Fox, C. R., Trepel, C., & Poldrack, R. A. (2007). The neural basis of loss aversion in decision-making under risk. *Science*, 315(5811), 515–518.
+23. Vaswani, A., et al. (2017). Attention is all you need. *Advances in Neural Information Processing Systems*, 30.
+24. Veličković, P., et al. (2018). Graph attention networks. *International Conference on Learning Representations (ICLR)*.
+25. Whitty, M. T. (2013). The scammers persuasive techniques model: Development of a stage model to explain the online dating romance scam. *British Journal of Criminology*, 53(4), 665–684.
+26. Vasubandhu (5th century). *Abhidharmakośa*. Buddhist canonical text on the taxonomy of mental afflictions.
+
+---
+
+## Appendix F: Revision history
 
 - **v1.0** (2026-05-12): first draft. Systematized thought, concept, technology, ethics, and organizational structure. §1–§12 + Appendix.
 - **v1.1** (2026-05-12): added §13 "Brain-inspired architecture and the External Prefrontal Cortex concept." Integrated views from neuroscience and cognitive science, formalized the ExPFC concept, the five-senses metaphor, the generality of application, and added related references.
 - **v1.2** (2026-05-12): added §14 "Vectorization of mental afflictions and the scam-detection mechanism." Defined the affliction-embedding space, the scam signature (concentrated stimulation of specific afflictions + suppression of cautionary afflictions), composite judgment via source attribution, the strategic advantage at the abstraction level, the incentive structure of SNS operators, countermeasures against overdetection, and ethical considerations. Also expanded the glossary and references.
-- **v1.3** (2026-05-13): added §15 "Economies of Scale and Economies of Precision — the strategic positioning of my program." Starting from the author's "AI simply blocks by string match" observation, analyzed how the giants are optimized for Economies of Scale and how a wide "can-but-won't" domain therefore exists. Formalized my program as a strategic positioning standing on Economies of Precision. Organized applicability to isomorphic problems (medicine / law / education / mental health / child protection), connections to §13 / §14 / §7 / §3, and strategic implications. Glossary expanded.
+- **v1.3** (2026-05-13): added §15 "Economies of Scale and Economies of Precision — the strategic positioning of the program." Starting from the author's "AI simply blocks by string match" observation, analyzed how the giants are optimized for Economies of Scale and how a wide "can-but-won't" domain therefore exists. Formalized this program as a strategic positioning standing on Economies of Precision. Organized applicability to isomorphic problems (medicine / law / education / mental health / child protection), connections to §13 / §14 / §7 / §3, and strategic implications. Glossary expanded.
 - **v1.3.1** (2026-05-13, same-day supplement): added Appendix E "Notes on a staged-publication strategy." A record of a dialogue in which the author candidly asked an AI (Claude Opus 4.7) about the value of the research. Recorded as a reference observation, not as a decision: the AI's value evaluation, points of caution, the proposed staged-publication strategy of §15 → §14 → §13, and the strategic advice "do not aim at perfection; reliably bring out parts."
 - **v1.5** (2026-05-16): added §16 "Implementation challenges and response strategies." Three essential challenges that I re-recognized while reading back through Concept Record v1.4 — (1) orthogonality and sparsity of the 108-dimensional embedding, (2) tracking dynamic changes in scam techniques, (3) the timing paradox of ExPFC intervention — are recorded candidly, together with provisional response strategies (hierarchical embedding structure; separation into invariant and variable layers + incremental learning; graded intervention + Ulysses contract + third-party notification). The chapter explicitly demonstrates the posture that "the challenges that will draw criticism are recognized," and positions the research program as having a self-critical reflective function. Each response strategy is a hypothesis at this stage, to be improved in precision through verification and dialogue with collaborators.
 - **v1.6** (2026-05-16, same-day revision): added §0 "The fundamental purpose of the research" at the beginning. Articulated the author's original research intent (a methodological concern about neuroscience-centered approaches, the hypothesis of adopting Buddhism as a coordinate system, the ontological premise that mental afflictions are humanity itself, and the ultimate aim of dynamically analyzing the moment-to-moment weighting of afflictions). This organizes the program into a three-tier structure (Level 1: methodological / Level 2: strategic / Level 3: applied). Anti-scam (§1–§14) is repositioned as "the most pressing application." The center of appeal to the international AI Safety community is shown to be Level 1. This chapter articulates as a single fundamental purpose what had been touched on only fragmentarily through the discussions up to v1.5.
 - **v1.7** (2026-05-16, same-day supplement): added §16.4 "Personalization and the individual mental-affliction sensitivity profile." A fundamental insight that I recognized during the English-translation work for a LessWrong post — scam judgment does not close at the level of "text alone," but is a three-way relation among text × context × individual; the same text resonates with different afflictions depending on the recipient's mental-affliction sensitivity profile U. The mapping defined in §14.1 is developed: scam judgment is recaptured as the "resonance" between the text's stimulation profile and the user's sensitivity profile. Three response approaches are presented: progressive personalization, self-reported profiling, and design as a report for the user themselves. Furthermore, the meta-observation that "if everything is left to the AI, something important is about to be overlooked" is shown to be isomorphic to the fundamental purpose of the research program, indicating, in addition to the three-tier structure, the existence of Level 0 (the self-reflective tier). A supplement strengthening the self-referential soundness of the research program.
 - **v1.8** (2026-05-17): added §0.4.5 "The implementation starting point — a 3×3 minimum model" and §4.3.0 "The 3×3 minimum model — the shared first implementation step for all architectures." To close the gap that had existed between §0's "108-dimensional final form" and §16's "mathematical independence is a challenge" — namely the lack of a concrete first implementation step — a 9-dimensional minimum model (three poisons × three subcategories) is introduced. The correspondences greed (desire-craving / form-craving / formless-craving → reward and attachment hierarchy), aversion (immediate anger / lasting resentment / inner vexation → error and adversarial time axis), and ignorance (basic / innate / conceptual ignorance → structural and learned bugs) are presented, and how this minimum model embeds into each candidate architecture (GNN / VAE / Transformer / multi-task learning) together with the staged expansion order across Phase 1–3 is made explicit. It is positioned as the concretization of Level 2 within the hierarchical embedding of §16.2.2. This upgrades the proposal from a "philosophical proposal" to a "proposal with an implementation roadmap," providing a concrete footing for dialogue with international AI Safety researchers, domestic Buddhist scholars, and computational psychologists.
 - **v1.9** (2026-05-17, same-day revision): a full stylistic sweep across the entire site (Concept Record, two standalone essays, About, top page, contact, and index pages) into a first-person, declarative voice. Third-person, distancing subjects such as "this research program," "this proposal," and "the author" were replaced uniformly with "I / my research program." Bureaucratic frames such as "this chapter," "this section," and "here we present" were dissolved. No changes to argument, data, or references — only to whose voice the writing reads as.
-- v2 onward: updates as implementation progresses, dialogues with external collaborators occur, and validation results come in.
+- **v2.0** (2026-05-17, same-day revision): a single-pass consistency sweep against eleven points I identified on a full read-back. (1) Removed the triplicate top metadata block (frontmatter / H1 / created-by block) and replaced it with a single "Position and status" callout. (2) Brought the status statement into line with reality (PYOL Mind Mirror is running; affliction mapping is still in design). (3) Unified §14.1's affliction-embedding map from `f: T → V` to `f: (T, C, U) → V`, consistent with §0.4 / §0.4.5 / §16.5. (4) Normalized §3.4's `exploitation_strength` from 0–10 to [0, 1], aligning with §4.3.0 and §14.1. (5) Added Appendix E (References — 26 works cited in the body), supplying citations such as Bender et al. (2021), Carroll et al. (2023), Park et al. (2024) that had been used inline without a list. (6) Varied the repeated "my program" with "the program" / "this program" across the text to reduce monotony. (7) Updated §15.3 LLM-cost figures to 2026-05 levels (separating low-cost LLMs like GPT-4o mini and Claude Haiku 3.5 from high-end LLMs, with revised arithmetic), keeping the structural argument front and center. (8) Trimmed §14.9's nine application areas to four — clinical psychology, advertising ethics, AI-ethics evaluation, and education — with explicit prioritization. (9) Added cross-references among the three ethics sections (§10.3, §13.11, §14.12), pointing toward a future unified ethical guideline. (10) Merged §13.9 (Relation to existing research programs) and §13.10 (Interdisciplinary positioning) into a single §13.9, renumbering §13.11–§13.13 to §13.10–§13.12. (11) Fixed §16 numbering bug (there were two §16.4 sections), renumbering personalization to §16.5 and Conclusion to §16.6; added a "virus" metaphor note to Appendix A; rationalized Appendix lettering (D = Notes on staged publication, E = References, F = Revision history). No framework changes — only consistency, accuracy, and readability.
+- v2.1 onward: updates as implementation progresses, dialogues with external collaborators occur, and validation results come in.
 
 ---
 
