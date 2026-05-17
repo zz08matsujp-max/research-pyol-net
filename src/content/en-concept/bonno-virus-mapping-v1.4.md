@@ -1,10 +1,10 @@
 ---
 title: "Bonnō × Scam-Virus Mapping: An Integrated Database and a Study of Human Emotional Structure via Small Neural Networks"
 author: "Toshinobu Matsuura"
-summary: "The deepest-layer purpose of this research program is to understand the human as a structure of mental afflictions and to visualize their dynamic weighting through a computable coordinate system. It adopts the 2,500 years of internal Buddhist observation as the coordinate system for modern neural-network engineering. Anti-scam (SNS-mediated investment fraud / Pig Butchering Scam) is positioned as the most pressing first application. Updated in v1.6 with §0 'The fundamental purpose of the research,' organizing the program into a three-tier structure (methodological / strategic / applied). Further updated in v1.7 with §16.4 'Personalization and the individual mental-affliction sensitivity profile,' clarifying that scam judgment is a three-way relation among text × context × individual, and suggesting Level 0 (the self-reflective tier)."
+summary: "The deepest-layer purpose of this research program is to understand the human as a structure of mental afflictions and to visualize their dynamic weighting through a computable coordinate system. It adopts the 2,500 years of internal Buddhist observation as the coordinate system for modern neural-network engineering. Anti-scam (SNS-mediated investment fraud / Pig Butchering Scam) is positioned as the most pressing first application. Updated in v1.6 with §0 'The fundamental purpose of the research,' organizing the program into a three-tier structure (methodological / strategic / applied). Further updated in v1.7 with §16.4 'Personalization and the individual mental-affliction sensitivity profile,' clarifying that scam judgment is a three-way relation among text × context × individual, and suggesting Level 0 (the self-reflective tier). Updated in v1.8 with §0.4.5 'The implementation starting point — a 3×3 minimum model' and §4.3.0, presenting a concrete implementation roadmap (three poisons × three subcategories = 9 dimensions) and upgrading the proposal from a 'philosophical proposal' to a 'proposal with an implementation roadmap.'"
 publishedAt: 2026-05-12
-updatedAt: 2026-05-16
-version: "v1.7"
+updatedAt: 2026-05-17
+version: "v1.8"
 lang: "en"
 license: "CC BY 4.0"
 slug: "bonno-virus-mapping"
@@ -20,7 +20,7 @@ This research program addresses the rapid expansion of SNS-mediated internationa
 
 ---
 
-## §0. The fundamental purpose of the research (added in v1.6)
+## §0. The fundamental purpose of the research (added in v1.6, §0.4.5 supplemented in v1.8)
 
 This chapter states explicitly the deepest-layer purpose of the research program, prior to the concrete motivation (anti-scam) developed in §1 onward. It was newly added in Concept Record v1.6. What had been touched on only fragmentarily through the discussion of §1–§16 in earlier versions is here articulated as a single fundamental purpose.
 
@@ -78,6 +78,27 @@ Human state (T, C, U) → V = (w₁, w₂, ..., w₁₀₈)
 Here wᵢ is the weight of affliction i, **dynamically changing with time.** The moment of reading a scam message, the moment of seeing a photo of one's child, the moment of arguing with one's spouse, the moment of listening to a beloved piece of music — for each, the program visualizes where the energy is concentrated within the 108 dimensions.
 
 This is a means of scam detection and at the same time a **mirror by which the human understands the self.** The External Prefrontal Cortex (ExPFC) introduced in §13 functions, in the anti-scam context, as a "warning device"; in its original context, it functions as a **"mirror of self-understanding."**
+
+### 0.4.5 The implementation starting point — a 3×3 minimum model (added in v1.8)
+
+Implementing the full 108-dimensional form shown in §0.4 in one go is, as discussed in §16.2, technically and operationally difficult. This research program begins implementation from a **minimum model of 9 dimensions: the three poisons (greed / aversion / ignorance) × three subcategories each = 9 dimensions.** This is a verifiable first step that upgrades the program from a philosophical proposal to a proposal carrying a concrete implementation roadmap.
+
+| Three poisons | Three subcategories (from Buddhist canonical texts) | Computational interpretation |
+|---|---|---|
+| **Greed** (貪) | desire-craving / form-craving / formless-craving | reward and attachment hierarchy (craving for immediate reward / attachment to formed objects / attachment to formless ideation) |
+| **Aversion** (瞋) | immediate anger / lasting resentment / inner vexation | error and adversarial time axis (instantaneous anger / sustained resentment / inward affliction) |
+| **Ignorance** (癡) | basic ignorance / innate ignorance / conceptual ignorance | structural bugs and learned bugs (missing information / congenital blind spots / mis-segmentation by conceptualization) |
+
+This 3×3 minimum model functions, within the three-tier structure shown in §0.6, as the **first implementation step of Level 3 (the applied tier).** At the same time, it is the **concretization of Level 2** within the hierarchical embedding (Level 1: 3 dim → Level 2: 10–20 dim → Level 3: 108 dim) proposed in §16.2.2.
+
+Why begin with these 9 dimensions:
+
+1. **Buddhological validity is secured**: each subcategory of the three poisons is a traditional classification referenced across multiple canonical texts (e.g., the *Abhidharmakośa*, the *Cheng Weishi Lun*), and can serve as the starting point of agreement-building with Buddhist scholars (at institutions such as Bukkyo University, Komazawa University, and Ryukoku University)
+2. **Computationally meaningful**: each dimension corresponds to a concept that modern machine learning can handle — a reward mechanism, a time dynamic, a learning bias — preserving the correspondence between neural-network implementation and Buddhological structure
+3. **Low annotator load**: with 9 dimensions, inter-annotator agreement of κ > 0.7 is realistically achievable, fitting the first stage of the coarse-to-fine curriculum learning of §16.2.2
+4. **Verifiable on scam cases**: typical SNS-investment-scam patterns can be described within the 9 dimensions — for example, "desire-craving (immediate financial greed) × basic ignorance (gap in financial knowledge)" or "form-craving (romantic fantasy) × innate ignorance (avoidance from loneliness)" — making it tractable as a Phase 1 MVP (§7)
+
+The concrete computational definition is given in §4.3.0; the connection to the implementation roadmap is in §7. This minimum model is the **concrete starting point** of the proposal and provides a workable footing for dialogue with international AI Safety researchers, domestic Buddhist scholars, and computational psychologists, showing that the research program is not a philosophical aspiration but a verifiable engineering plan.
 
 ### 0.5 Relation to §1 onward — anti-scam is "the most pressing application"
 
@@ -274,6 +295,36 @@ This program adopts not large language models (tens to hundreds of billions of p
 This is consistent with the philosophy that the author, a former infrastructure engineer, internalized: "**use mature technology at the necessary and sufficient scale.**"
 
 ### 4.3 Candidate architectures
+
+#### 4.3.0 The 3×3 minimum model — the shared first implementation step for all architectures (added in v1.8)
+
+The 3×3 minimum model introduced in §0.4.5 is adopted as the shared input/output dimensionality of all candidate architectures in this section (4.3.1–4.3.4):
+
+```
+Input / output vector V_min = (g₁, g₂, g₃, a₁, a₂, a₃, i₁, i₂, i₃) ∈ ℝ⁹
+
+  Greed:      g₁ = desire-craving, g₂ = form-craving, g₃ = formless-craving
+  Aversion:   a₁ = immediate anger, a₂ = lasting resentment, a₃ = inner vexation
+  Ignorance:  i₁ = basic ignorance, i₂ = innate ignorance, i₃ = conceptual ignorance
+
+Each value is a continuous variable in [0, 1] — the minimum implementation
+of V in the mapping f: (T, C, U) → V from §14.1.
+```
+
+How it fits each candidate architecture:
+
+- **4.3.1 (GNN)**: construct the affliction layer with 9 nodes; add nodes when expanding beyond Level 2
+- **4.3.2 (VAE)**: adopt the 9-dimensional structure as the prior of the latent space z (10–30 dim)
+- **4.3.3 (Small Transformer)**: use a 9-dimensional multi-label head as the output
+- **4.3.4 (Multi-task learning)**: attach a 9-dimensional output as one head atop the shared backbone
+
+Implementation order (mapping onto §7 "Implementation Roadmap"):
+
+1. **Phase 1 (6 months)**: build a scam-detection MVP on V_min (9 dim); target inter-annotator κ > 0.7
+2. **Phase 2 (6 months)**: expand to Level 2 (10–20 dim); finalize dimensions after Buddhist-scholar review
+3. **Phase 3 onward**: progressively expand to Level 3 (108 dim); finalize after cross-checking across multiple canonical texts and schools
+
+By this staged expansion, the orthogonality and sparsity problems discussed in §16.2 are mitigated as coarse-to-fine curriculum learning, while each stage produces a verifiable deliverable (the MVP).
 
 #### 4.3.1 Graph Neural Networks (GNN)
 
@@ -1440,14 +1491,22 @@ Level 1 (3 dim): the three poisons (greed, aversion, ignorance)
                  — the basis vectors. Inter-annotator agreement
                  is most easily obtained here.
 
-Level 2 (10–20 dim): mid-level classification
-                     e.g. greed → desire for objects, status,
-                     sex, security, savings, superiority
-                     Finalized after review by Buddhist scholars.
+Level 2 (9–20 dim): mid-level classification
+                    Base (fixed in v1.8): the 3×3 minimum model
+                    from §0.4.5 (9 dim)
+                      greed     → desire-craving / form-craving / formless-craving
+                      aversion  → immediate anger / lasting resentment / inner vexation
+                      ignorance → basic / innate / conceptual ignorance
+                    Expansion examples: greed → desire for objects,
+                    status, sex, security, savings, superiority
+                    Final Level 2 dimensionality fixed after
+                    review by Buddhist scholars.
 
 Level 3 (108 dim): detailed classification
                    The final form after expert review.
 ```
+
+The 3×3 minimum model that anchors Level 2 is introduced in §0.4.5 and its computational embedding into the candidate architectures is defined in §4.3.0.
 
 The learning strategy is **coarse-to-fine curriculum learning**: first build a stable classifier at Level 1, then progressively raise the resolution at lower levels. Technically, this is compatible with Hierarchical Multi-label Classification or with Poincaré Embedding (Nickel & Kiela, 2017), which is well-suited to representations of hierarchical structure.
 
@@ -1656,6 +1715,7 @@ Finally, the very writing of this chapter is **evidence of the soundness** of th
 - **v1.5** (2026-05-16): added §16 "Implementation challenges and response strategies." Three essential challenges that the author re-recognized while reading back through Concept Record v1.4 — (1) orthogonality and sparsity of the 108-dimensional embedding, (2) tracking dynamic changes in scam techniques, (3) the timing paradox of ExPFC intervention — are recorded candidly, together with provisional response strategies (hierarchical embedding structure; separation into invariant and variable layers + incremental learning; graded intervention + Ulysses contract + third-party notification). The chapter explicitly demonstrates the posture that "the challenges that will draw criticism are recognized," and positions the research program as having a self-critical reflective function. Each response strategy is a hypothesis at this stage, to be improved in precision through verification and dialogue with collaborators.
 - **v1.6** (2026-05-16, same-day revision): added §0 "The fundamental purpose of the research" at the beginning. Articulated the author's original research intent (a methodological concern about neuroscience-centered approaches, the hypothesis of adopting Buddhism as a coordinate system, the ontological premise that mental afflictions are humanity itself, and the ultimate aim of dynamically analyzing the moment-to-moment weighting of afflictions). This organizes the program into a three-tier structure (Level 1: methodological / Level 2: strategic / Level 3: applied). Anti-scam (§1–§14) is repositioned as "the most pressing application." The center of appeal to the international AI Safety community is shown to be Level 1. This chapter articulates as a single fundamental purpose what had been touched on only fragmentarily through the discussions up to v1.5.
 - **v1.7** (2026-05-16, same-day supplement): added §16.4 "Personalization and the individual mental-affliction sensitivity profile." A fundamental insight recognized by the author during the English-translation work for a LessWrong post — scam judgment does not close at the level of "text alone," but is a three-way relation among text × context × individual; the same text resonates with different afflictions depending on the recipient's mental-affliction sensitivity profile U. The mapping defined in §14.1 is developed: scam judgment is recaptured as the "resonance" between the text's stimulation profile and the user's sensitivity profile. Three response approaches are presented: progressive personalization, self-reported profiling, and design as a report for the user themselves. Furthermore, the meta-observation that "if everything is left to the AI, something important is about to be overlooked" is shown to be isomorphic to the fundamental purpose of the research program, indicating, in addition to the three-tier structure, the existence of Level 0 (the self-reflective tier). A supplement strengthening the self-referential soundness of the research program.
+- **v1.8** (2026-05-17): added §0.4.5 "The implementation starting point — a 3×3 minimum model" and §4.3.0 "The 3×3 minimum model — the shared first implementation step for all architectures." To close the gap that had existed between §0's "108-dimensional final form" and §16's "mathematical independence is a challenge" — namely the lack of a concrete first implementation step — a 9-dimensional minimum model (three poisons × three subcategories) is introduced. The correspondences greed (desire-craving / form-craving / formless-craving → reward and attachment hierarchy), aversion (immediate anger / lasting resentment / inner vexation → error and adversarial time axis), and ignorance (basic / innate / conceptual ignorance → structural and learned bugs) are presented, and how this minimum model embeds into each candidate architecture (GNN / VAE / Transformer / multi-task learning) together with the staged expansion order across Phase 1–3 is made explicit. It is positioned as the concretization of Level 2 within the hierarchical embedding of §16.2.2. This upgrades the proposal from a "philosophical proposal" to a "proposal with an implementation roadmap," providing a concrete footing for dialogue with international AI Safety researchers, domestic Buddhist scholars, and computational psychologists.
 - v2 onward: updates as implementation progresses, dialogues with external collaborators occur, and validation results come in.
 
 ---
