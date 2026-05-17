@@ -1,10 +1,10 @@
 ---
 title: "Buddhism as a Coordinate System: A New Computational Foundation for Understanding the Human"
 author: "Toshinobu Matsuura"
-summary: "The mainstream of contemporary research on emotion and on the human is built on neuroscience and brain physics, but observation from the outside and physico-chemical reduction cannot capture the semantic resolution of human emotion. This essay proposes, methodologically, to incorporate the system of Buddhism — which has observed the human from the inside for 2,500 years — into modern neural-network engineering as a coordinate system for understanding the human. Without rejecting neuroscience, the proposal incorporates it as reinforcement at the physical layer while taking the coordinate system at the semantic layer from Buddhism. This positioning may serve as a methodological complement, from the East, for AI Safety, Affective Computing, and cognitive science alike."
+summary: "Almost all contemporary research on emotion and on the human starts by looking at the brain from the outside. I do not think that approach alone can reach the semantic resolution of human emotion. What I want to propose in this essay is a quieter but long-reaching attempt: to take the system Buddhism has built over 2,500 years of observing the human from the inside, and adopt it as a coordinate system inside modern neural-network engineering. I am not rejecting neuroscience. The physical layer I am happy to leave to neuroscience; what I want to take from Buddhism is the coordinate system at the semantic layer."
 publishedAt: 2026-05-16
-updatedAt: 2026-05-16
-version: "v1.0"
+updatedAt: 2026-05-17
+version: "v1.1"
 lang: "en"
 tags: ["AI Safety", "cognitive science", "Buddhism", "Affective Computing", "methodology"]
 license: "CC BY 4.0"
@@ -13,21 +13,21 @@ citationKeySuffix: "buddhismCoordinate"
 ogImage: "/img/ogp-buddhism-coordinate.png"
 ---
 
-> **Note on terminology.** "Mental afflictions" in this essay corresponds to the Buddhist concept of *bonnō* (煩悩) — in Sanskrit, *kleshas* — the mental states held to cause human suffering, classified into 108 categories. The translation of Buddhist terminology in this essay is preliminary and will be refined in v0.2 in consultation with Buddhist scholars.
+> **Note on terminology.** "Mental afflictions" in this essay corresponds to the Buddhist concept of *bonnō* (煩悩) — in Sanskrit, *kleshas* — the mental states held to cause human suffering, classified into 108 categories. The translation of Buddhist terminology in this essay is preliminary; I plan to refine it in v0.2 in consultation with Buddhist scholars.
 
 ## Introduction
 
-This essay reorganizes §0 of the [Concept Record v1.6](/en/concept/bonno-virus-mapping/) — the founding document of the research program *Bonnō × Scam-Virus Mapping: An Integrated Database* at Mindseed Research — into a standalone piece. The aim is for the essay to read on its own without requiring familiarity with the other chapters; necessary background is given in the body.
+What follows is my rewriting of §0 of the [Concept Record](/en/concept/bonno-virus-mapping/) — the founding document of the research program I am running at Mindseed Research, "Bonnō × Scam-Virus Mapping: An Integrated Database" — into a standalone piece. My intention is for the essay to stand on its own, without requiring readers to be familiar with the other chapters; the background I need is given in the body.
 
-The thesis can be summarized as follows. **Contemporary research on emotion and on the human is built almost entirely on the methodological foundation of "observation from the outside" and "physico-chemical reduction." This provides precise observational means but fails to capture the semantic resolution of human emotion. By adopting the 2,500-year system of internal Buddhist observation as a computable coordinate system, this gap can be filled.** This is a new positioning that may serve as a methodological complement, from the East, for AI Safety, Affective Computing, and cognitive science alike.
+I have only one thesis. **Almost all contemporary research on emotion and on the human is built on the methodological foundation of "observation from the outside" and "physico-chemical reduction." That gives us precise observational means, but it does not reach the semantic resolution of human emotion. I want to fill that gap by adopting 2,500 years of internal Buddhist observation as a computable coordinate system.** I believe this can serve as a methodological complement, from the East, for AI Safety, Affective Computing, and cognitive science alike.
 
-> **About the author**[^author]: This research program is led by Toshinobu Matsuura, an independent researcher at Mindseed Research in Wakayama, Japan. See the [About page](/en/about/) for background.
+> **About the author**[^author]: I run Mindseed Research as an independent researcher based in Wakayama, Japan. See the [About page](/en/about/) for my background.
 
 [^author]: See the About page linked above.
 
 ## 1. The standard approaches of existing research
 
-The mainstream of contemporary research on emotion and on the human can be organized as follows:
+As I see it, the mainstream of contemporary research on emotion and on the human can be organized this way:
 
 | Approach | Representative work | Direction of observation | Main object |
 |---|---|---|---|
@@ -39,31 +39,31 @@ The mainstream of contemporary research on emotion and on the human can be organ
 
 All of these have made great progress in recent years and have produced excellent results. Damasio's somatic-marker hypothesis revealed the importance of bodily reactions in decision-making; Friston's free-energy principle has had broad influence as a unified theory of brain function.
 
-But these methodological approaches share one feature in common. **The observer and the observed are separated**, and **the coordinate system of meaning relies almost entirely on the vocabulary of Western psychology.**
+But there is one feature these methodologies share. **The observer and the observed are separated**, and **the coordinate system of meaning relies almost entirely on the vocabulary of Western psychology.** Both of these I treat as constraints that have to be overcome.
 
 ## 2. "Resolution of neural activity" and "semantic resolution of emotion" are different problems
 
-Here is the central observation of this essay.
+Let me put down something that sounds obvious but is rarely stated clearly.
 
-Suppose fMRI shows activation of the amygdala. Whether that activation is "greed," "envy," "haste," or "loneliness" cannot be distinguished from the neural-activity signal itself. To distinguish, one has no choice but to rely on a different vocabulary system — most often the Big Five, the PAD model, Plutchik's wheel of emotions, or Ekman's six basic emotions, all from Western psychology.
+Suppose fMRI shows activation of the amygdala. From the neural-activity signal itself, you cannot tell whether that activation is "greed," "envy," "haste," or "loneliness." To tell them apart, you have no choice but to reach for some other vocabulary system — most often the Big Five, the PAD model, Plutchik's wheel of emotions, or Ekman's six basic emotions, all from Western psychology.
 
-That is, **the resolution of neural activity and the semantic resolution of emotion are different problems.** No matter how high the resolution of the former becomes, if the coordinate system of the latter is coarse, the understanding of emotion remains coarse.
+In other words, **the resolution of neural activity and the semantic resolution of emotion are different problems.** No matter how high you push the former, if the latter's coordinate system is coarse, our understanding of emotion remains coarse.
 
-And the Western models of emotion currently relied upon are all **fragmentary systems based on roughly 100 years of research.** Big Five since the 1980s, PAD in 1974, Plutchik in 1980, Ekman's basic emotions in the 1970s. Efforts to improve their precision have continued, but **there is still no established consensus on how many dimensions or what kind of partition is appropriate as a coordinate system in the first place.**
+And the Western models of emotion we are currently relying on are all, by my reading, **fragmentary systems built on roughly 100 years of research.** Big Five since the 1980s, PAD in 1974, Plutchik in 1980, Ekman's basic emotions in the 1970s. Efforts to improve their precision continue, but I think it is fair to say **there is still no settled consensus on how many dimensions or what kind of partition is appropriate as a coordinate system in the first place.**
 
 ## 3. The methodological significance of Buddhism
 
-What this essay proposes is to take the coordinate system **from Buddhism.**
+What I want to propose here is to take the coordinate system **from Buddhism.**
 
-Buddhism, before being a religion, is **the accumulated outcome of thoroughgoing empirical research on the workings of the human mind.** The three poisons (greed, aversion, ignorance), the 108 mental afflictions, the five aggregates, the twelve links of dependent origination — these are not abstract doctrines but **descriptive vocabulary systematized as the result of countless practitioners observing their own minds.**
+The way I read it, Buddhism — before being a religion — is **the accumulated outcome of thoroughgoing empirical research on the workings of the human mind.** The three poisons (greed, aversion, ignorance), the 108 mental afflictions, the five aggregates, the twelve links of dependent origination — these are not abstract doctrines, but **descriptive vocabulary systematized as the result of countless practitioners observing their own minds.**
 
-Particularly important is that the observation has been **continuous over 2,500 years.** It is the most refined description that humanity reached about itself in an age before research institutions and statistics existed. By the count of practitioners, Buddhists number cumulatively in the billions; even those who seriously observed their minds number in the millions. This is, **by orders of magnitude, the largest dataset of human self-observation** — far exceeding the sample sizes of contemporary psychology research.
+What I find particularly important is that this observation has been **continuous over 2,500 years.** It is the most refined description that humanity reached about itself, in an age before research institutions and statistics existed. Counted by practitioners, Buddhists number cumulatively in the billions; even those who seriously observed their minds number in the millions. The way I see it, **this is, by orders of magnitude, the largest dataset of human self-observation we have** — far exceeding the sample sizes of contemporary psychology research.
 
-To treat this not as something to be quarantined as "religion" but as **a body of empirical observation data**, and to handle it in an engineering framework. This is the methodological core of this essay.
+I want to treat this, not as something to be quarantined as "religion," but as **a body of empirical observation data**, and handle it within an engineering framework. That is the core of my methodology.
 
 ### 3.1 Internal vs external observation
 
-The methodological difference between the two:
+The difference becomes clear when I put the two side by side:
 
 | Aspect | Neuroscience | Buddhism |
 |---|---|---|
@@ -74,25 +74,25 @@ The methodological difference between the two:
 | Period of accumulation | about 100 years | about 2,500 years |
 | Number of observers | tens of thousands of subjects | millions to billions of practitioners |
 
-The two are not in opposition. **Neuroscience provides precision at the physical layer; Buddhism provides the coordinate system at the semantic layer.** Each requires the other; they are complementary.
+I am not setting the two against each other. **Neuroscience provides precision at the physical layer; Buddhism provides the coordinate system at the semantic layer.** Each needs the other; they are complementary.
 
 ## 4. The 108 dimensions as a computable coordinate system
 
-Concretely, this research program learns the following mapping:
+Concretely, the mapping I want my research program to learn is this:
 
 ```
 Arbitrary text T, situation C, individual U → V = (w₁, w₂, ..., w₁₀₈)
 ```
 
-Here wᵢ is the stimulation intensity (or weight) of mental affliction i. This 108-dimensional vector provides **a computable coordinate system for the emotional state of the human.**
+Here wᵢ is the stimulation intensity (or weight) of mental affliction i. My view is that this 108-dimensional vector gives us **a computable coordinate system for the emotional state of the human.**
 
-The number 108 is the granularity of partition empirically reached in Buddhist canonical texts: combinations of 6 sense faculties (eye, ear, nose, tongue, body, mind) × 3 affect attributes (suffering, pleasure, neutral) × 2 classifications (defiled, undefiled) × 3 temporal axes (past, present, future). Compared with contemporary psychological models of emotion (between roughly 5 and 28 dimensions), this is **a granularity orders of magnitude finer.**
+The number 108 is the granularity of partition empirically reached in Buddhist canonical texts: combinations of 6 sense faculties (eye, ear, nose, tongue, body, mind) × 3 affect attributes (suffering, pleasure, neutral) × 2 classifications (defiled, undefiled) × 3 temporal axes (past, present, future). Compared with contemporary psychological models of emotion (between roughly 5 and 28 dimensions), this is **a granularity that is orders of magnitude finer.**
 
-These 108 dimensions are not necessarily mathematically independent (orthogonal); see [§16.2 of the Concept Record](/en/concept/bonno-virus-mapping/) for the discussion of this challenge. But by building hierarchically — Level 1: three poisons (3-dim) → Level 2: mid-level classification → Level 3: 108-dim — the coordinate system can be made to function as a computable one.
+I am not assuming these 108 dimensions are mathematically independent (orthogonal); see [§16.2 of the Concept Record](/en/concept/bonno-virus-mapping/) for that discussion. But my position is that, by building hierarchically — Level 1: three poisons (3-dim) → Level 2: mid-level classification → Level 3: 108-dim — the coordinate system can be made to function as a computable one. As the concrete starting point for the implementation, I intend to begin with the "three poisons × 3 subcategories each = 9-dimensional minimum model" laid out in §0.4.5 and §4.3.0 of the Concept Record.
 
 ## 5. Comparison with existing models of emotion
 
-Contrasting the 108 Buddhist afflictions with the major models of emotion in Western psychology:
+If I line up the 108 Buddhist afflictions next to the major Western models of emotion:
 
 | Model | Dimensions | Established | Observational basis |
 |---|---|---|---|
@@ -103,65 +103,67 @@ Contrasting the 108 Buddhist afflictions with the major models of emotion in Wes
 | OCC model | 22 | 1988 | cognitive-appraisal theory |
 | **108 mental afflictions** | **108** | **5th c. (Abhidharmakośa)** | **2,500 years of internal observation** |
 
-This is not a simplistic argument that "finer is better." It is that, **in the historical depth of observation and in the number of observers, the 108 mental afflictions have an empirical foundation that is incomparable with the other models.**
+This is not me arguing that "finer is better." What I want to say is that, **in the historical depth of observation and in the number of observers, the 108 mental afflictions rest on an empirical foundation that is not comparable with any of the other models.**
 
 ## 6. Complementarity with neuroscience
 
-To repeat: this essay does not reject neuroscience. On the contrary, this research program actively incorporates neuroscientific findings:
+To repeat: I am not rejecting neuroscience. On the contrary, I plan to actively incorporate neuroscientific findings into my research program. Concretely, I divide the roles like this:
 
 - **Physical layer**: neuroscientific knowledge (function of the prefrontal cortex, role of the amygdala, dopamine pathways, etc.)
 - **Semantic layer**: Buddhist coordinate system (108 mental afflictions, the three poisons, the five aggregates)
 
-For example, the External Prefrontal Cortex (ExPFC) concept introduced in §13 of the Concept Record is one that integrates neuroscience (the prefrontal cortex falls into functional failure under emotional overwhelm) with Buddhism (the moment when an affliction is activated). Damasio's somatic-marker hypothesis, the affective neuroscience of Phelps and others on emotion and decision-making, Friston's predictive-processing theory — all of these excellent results constitute the physical layer of this research program.
+For example, the External Prefrontal Cortex (ExPFC) concept I introduce in §13 of the Concept Record is one that integrates neuroscience (the prefrontal cortex falls into functional failure under emotional overwhelm) with Buddhism (the moment when an affliction is activated). Damasio's somatic-marker hypothesis, the affective neuroscience of Phelps and others on emotion and decision-making, Friston's predictive-processing theory — I see all of these excellent results as constituting the physical layer of my research.
 
-What Buddhism supplements is **a coordinate system for semantically interpreting the signals of these physical layers.** When fMRI shows activation, Buddhism provides the resolution to distinguish "is this greed, attachment, or envy?"
+What I am asking Buddhism to provide is **a coordinate system for semantically interpreting the signals at those physical layers.** When fMRI shows activation, the resolution to distinguish "is this greed, attachment, or envy?"
 
 ## 7. Implications for the international AI Safety community
 
-A strategic point. Among the fundamental questions facing the AI Safety researchers at MIRI, Anthropic, DeepMind, and the LessWrong community is: "**what is the coordinate system by which AI understands the human?**"
+Let me take a strategic angle for a moment. My understanding is that one of the fundamental questions facing AI Safety researchers at MIRI, Anthropic, DeepMind, and the LessWrong community is: "**what is the coordinate system by which AI understands the human?**"
 
-At present, they have no choice but to rely on Western psychological models of emotion (Ekman, PAD, Big Five, etc.). But as discussed above, all of these are fragmentary systems based on roughly 100 years of research. As AI tackles the fundamental problems of "accurately understanding human intent" and "acting in accordance with human values" (AI Alignment), the low resolution of the coordinate system becomes a serious constraint.
+At present, they have no choice but to rely on Western psychological models of emotion (Ekman, PAD, Big Five, etc.). But as I wrote above, all of these are fragmentary systems based on roughly 100 years of research. When AI takes on the fundamental problems of "accurately understanding human intent" and "acting in accordance with human values" (AI Alignment), the low resolution of the coordinate system, I think, becomes a serious constraint.
 
-Into this, this essay presents **a coordinate system based on 2,500 years of internal observation.** For Western researchers, this may have a stronger appeal than expected, as **an epistemological complement they had overlooked.**
+Into this situation I want to bring **a coordinate system based on 2,500 years of internal observation.** My sense is that, for Western researchers, this may have a stronger appeal than they expect, **as an epistemological complement they had been overlooking.**
 
-This is, alongside [§15 "Economies of Precision vs Economies of Scale"](/en/essays/precision-economics/), another "domain Big AI cannot enter." Where §15 addressed an economic inability to enter, this essay addresses **an epistemological inability to enter.** Big AI is structurally unable to access 2,500 years of Buddhist internal-observation data — not as a technical problem, but because, culturally, historically, and philosophically, it has not been part of the imagination of Western researchers to seek a coordinate system there.
+This is, alongside the companion essay [§15 "Economies of Precision vs Economies of Scale"](/en/essays/precision-economics/), another "domain Big AI cannot enter." Where §15 addressed an economic inability to enter, what I want to point at here is **an epistemological inability to enter.** Big AI is structurally unable to access 2,500 years of Buddhist internal-observation data — not as a technical problem, but because, culturally, historically, and philosophically, it has not been part of the imagination of Western researchers to look for a coordinate system there.
 
 ## 8. Applications — the mirror of self-understanding, ExPFC, anti-scam
 
-The methodology argued in this essay has several concrete applications:
+The methodology I have been describing has, as I see it, several concrete applications. Four of them in particular.
 
 ### 8.1 The mirror of self-understanding
 
-What this research program aims at is a device by which the user can visualize, at any moment, **"which afflictions in me are active right now and to what degree."** This is a means of scam detection and, simultaneously, a mirror by which the human understands the self.
+What I am ultimately aiming at is a device by which the user can visualize, at any moment, **"which afflictions in me are active right now and to what degree."** I think of it as both a means of scam detection and, at the same time, a mirror by which the human understands the self.
 
-The moment of waking up; after an argument with one's spouse; the moment of irritation while looking at SNS; the moment of joy at a child's growth — for each, the weighting of the 108 dimensions becomes visible. This is an attempt to make introspection more precise through mechanical assistance.
+The moment of waking up; after an argument with one's spouse; the moment of irritation while scrolling SNS; the moment of joy at a child's growth — for each, the weighting across the 108 dimensions becomes visible. I see this as an attempt to make introspection more precise through mechanical assistance.
 
 ### 8.2 External Prefrontal Cortex (ExPFC)
 
-The ExPFC concept introduced in [§13 of the Concept Record](/en/concept/bonno-virus-mapping/) acquires meaning only on the methodological foundation of this essay. Neuroscience provides the fact that "the PFC falls into functional failure under emotional overwhelm"; Buddhism provides the semantic description "the moment when a particular affliction is activated." The integration of the two allows ExPFC to be defined as a device that **"detects affliction activation and externally substitutes for the judgment in a state of functional failure."**
+The ExPFC concept I introduce in [§13 of the Concept Record](/en/concept/bonno-virus-mapping/) only acquires meaning, in my view, on the methodological foundation laid out in this essay. Neuroscience provides the fact that "the PFC falls into functional failure under emotional overwhelm"; Buddhism provides the semantic description "the moment when a particular affliction is activated." Integrating the two, ExPFC can be defined as a device that **"detects affliction activation and externally substitutes for the judgment in a state of functional failure."**
 
 ### 8.3 Anti-scam
 
-The anti-scam discussion developed in [§1–§14 of the Concept Record](/en/concept/bonno-virus-mapping/) is the **most pressing application** of the methodological foundation of this essay. Scams are situations in which "particular aspects of humanity (particular afflictions) are exploited," and they can be precisely described and detected in the coordinate system of this program.
+The anti-scam discussion I develop in [§1–§14 of the Concept Record](/en/concept/bonno-virus-mapping/) is, in my view, the **most pressing application** of the methodological foundation laid out in this essay. Scams are situations in which "particular aspects of humanity — particular afflictions — are exploited," and I expect they can be precisely described and detected within my coordinate system.
 
 ### 8.4 Horizontal expansion (medicine, education, mental health)
 
-As discussed in the companion essay [§15 "Economies of Precision vs Economies of Scale"](/en/essays/precision-economics/), this methodology is not limited to anti-scam. Personalized precision medicine, individually optimized education, contextual understanding in mental health, contextual reading of relationships in child protection — all are domains that need to raise "the semantic resolution of the human," and the template of this methodology can be applied to them.
+As I wrote in the companion essay [§15 "Economies of Precision vs Economies of Scale"](/en/essays/precision-economics/), I do not intend to limit this methodology to anti-scam. Personalized precision medicine, individually optimized education, contextual understanding in mental health, contextual reading of relationships in child protection — these are all domains where "the semantic resolution of the human" needs to be raised, and I believe the template laid out here can be applied to them.
 
-For instance, in medicine, decoding 108-dimensional vectors from a patient's narrative may reveal anxieties that standardized questionnaires miss. In mental health, distinguishing "attachment-driven" from "aversion-driven" depressive states could inform the choice of therapeutic approach. In education, individual-level affliction sensitivity could shape both the prediction of stumbling points and the design of interventions. In child protection, reading the affliction structure latent in family relationships could surface warning signs that surface behavior alone cannot capture.
+For instance, in medicine, decoding 108-dimensional vectors from a patient's narrative may surface anxieties that standardized questionnaires miss. In mental health, distinguishing "attachment-driven" from "aversion-driven" depressive states could inform the choice of therapeutic approach. In education, individual-level affliction sensitivity could shape both the prediction of stumbling points and the design of interventions. In child protection, reading the affliction structure latent in family relationships could surface warning signs that surface behavior alone cannot capture.
 
 ## 9. Conclusion
 
-The thesis of this essay is plain. **Contemporary research on emotion and on the human, because its methodological foundation is observation from the outside and physico-chemical reduction, fails to capture the semantic resolution of human emotion. By adopting the 2,500-year system of internal Buddhist observation as a coordinate system, this gap can be filled.**
+Let me restate my thesis one more time, in my own words.
 
-This is not opposition to neuroscience but its complement. Neuroscience handles the physical layer; Buddhism handles the semantic layer. The integration of the two makes possible an understanding of the human at a resolution previously unattainable.
+**Contemporary research on emotion and on the human, because its methodological foundation is observation from the outside and physico-chemical reduction, is not reaching the semantic resolution of human emotion. I believe that by adopting the 2,500-year system of internal Buddhist observation as a coordinate system, this gap can be filled.**
 
-This research program takes on this methodological wager over a 20-year span. Anti-scam is its most pressing application; horizontal expansion to medicine, education, mental health, and child protection follows. The ultimate aim is **a foundation by which the human more accurately understands the self and the other.**
+This is not opposition to neuroscience; it is its complement. Neuroscience handles the physical layer; Buddhism handles the semantic layer. Only by integrating the two, in my view, does an understanding of the human at a previously unattainable resolution become possible. This is the wager I am making.
+
+I intend to give this methodological wager a 20-year horizon. Anti-scam is its most pressing application; horizontal expansion to medicine, education, mental health, and child protection follows. What I am ultimately aiming at is **a foundation by which the human more accurately understands the self and the other.**
 
 > Neuroscience has observed the brain from the outside.
 > Buddhism has observed the mind from the inside.
-> This research program integrates the two into a single computable system.
-> This is a new starting point for understanding the human in the age of AI.
+> What I want to do is integrate the two into a single computable system.
+> I believe that, in the age of AI, this can be a new starting point for understanding the human.
 
 ---
 
@@ -173,7 +175,7 @@ This research program takes on this methodological wager over a 20-year span. An
 
 ## Contact
 
-Replies from resonant researchers, critics, and successor candidates are welcomed. Constructive critique or collaboration proposals from Buddhist studies, neuroscience, cognitive science, AI Safety, or Affective Computing are received at any time via the [contact page](/en/contact/). Both English and Japanese are accepted.
+If anything in this essay resonates with you — as a researcher, a critic, or a possible successor — I would welcome hearing from you. Constructive critique or collaboration proposals from Buddhist studies, neuroscience, cognitive science, AI Safety, or Affective Computing are all welcome, at any time, via the [contact page](/en/contact/). English and Japanese are both fine.
 
 ## References
 
