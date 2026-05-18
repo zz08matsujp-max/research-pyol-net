@@ -11,7 +11,7 @@ tags: ["Affective Computing", "詐欺検出", "AI Safety", "埋め込み学習",
 license: "CC BY 4.0"
 derivedFrom: "構想記録 §14"
 citationKeySuffix: "bonnoEmbedding"
-ogImage: "/img/ogp-default.png"
+ogImage: "/img/ogp-external-prefrontal-desires.png"
 ---
 
 ## はじめに

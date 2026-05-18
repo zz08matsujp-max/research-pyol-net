@@ -10,7 +10,7 @@ tags: ["Affective Computing", "scam detection", "AI Safety", "embedding learning
 license: "CC BY 4.0"
 derivedFrom: "Concept Record §14"
 citationKeySuffix: "bonnoEmbedding"
-ogImage: "/img/ogp-default.png"
+ogImage: "/img/ogp-external-prefrontal-desires.png"
 ---
 
 > **Note on terminology.** "Mental afflictions" in this essay corresponds to the Buddhist concept of *bonnō* (煩悩) — in Sanskrit, *kleshas* — the mental states held to cause human suffering, classified into 108 categories. The translation of Buddhist terminology in this essay is preliminary; I plan to refine it in v0.2 in consultation with Buddhist scholars.
