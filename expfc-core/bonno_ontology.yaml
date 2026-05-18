@@ -1,0 +1,307 @@
+# Bonnō Ontology v0.1
+#
+# Reference ontology for ExPFC Core Specification v0.1
+# https://research.pyol.net/concept/bonno-virus-mapping/#17
+#
+# Levels:
+#   Level 1 (L1): 3 dimensions ── the three poisons (三毒)
+#   Level 2 (L2): 9 dimensions ── 3×3 minimum model (§0.4.5)
+#   Level 3 (L3): 108 dimensions ── full taxonomy (future, requires Buddhist scholar review)
+#
+# This file is the initial release (L1 + L2 = 12 dimensions).
+# Reviewed and refined in dialogue with Buddhist scholars (Bukkyo / Komazawa / Ryukoku universities, etc.)
+#
+# License: CC BY 4.0 (Toshinobu Matsuura / Mindseed Research)
+
+version: "0.1"
+released: 2026-05-18
+author: Toshinobu Matsuura
+license: CC BY 4.0
+
+dimensions:
+
+  # ────────────────────────────────────────────────────────
+  # Level 1: 三毒 (the three poisons) ── 3 dimensions
+  # ────────────────────────────────────────────────────────
+
+  - id: greed
+    level: 1
+    parent: null
+    name_ja: 貪
+    name_sa: rāga
+    name_en: greed
+    definition_ja: |
+      欲求・執着の根源的傾向。求めることそれ自体への駆動力。
+      対象は物質・地位・観念のいずれもあり得る。
+    definition_en: |
+      The root tendency of craving and attachment. The drive of seeking itself,
+      whose object may be material, social, or conceptual.
+    source_canonical:
+      - text: 阿毘達磨倶舎論 (Abhidharmakośa)
+        author: 世親 (Vasubandhu)
+        century: "5"
+      - text: 成唯識論 (Cheng Weishi Lun)
+        author: 玄奘 (Xuanzang)
+        century: "7"
+    computational_interpretation: |
+      Reward-seeking signal in reinforcement learning terms.
+      Activation triggered by tokens signaling gain, possession, acquisition.
+    related_modern_psychology:
+      - Big Five: Openness (low) × Conscientiousness (low) cluster
+      - Behavioral economics: Loss aversion (Kahneman & Tversky)
+
+  - id: aversion
+    level: 1
+    parent: null
+    name_ja: 瞋
+    name_sa: dveṣa
+    name_en: aversion
+    definition_ja: |
+      嫌悪・怒り・拒絶の根源的傾向。
+      自己と他者の対立軸で発火する。瞬間的反応から持続的怨恨まで時間軸が広い。
+    definition_en: |
+      The root tendency of aversion, anger, and rejection.
+      Fires on the self–other opposition axis. Spans temporal axis from instantaneous
+      reaction to lasting resentment.
+    source_canonical:
+      - text: 阿毘達磨倶舎論 (Abhidharmakośa)
+        author: 世親 (Vasubandhu)
+        century: "5"
+    computational_interpretation: |
+      Error signal / adversarial response.
+      In RL terms, negative-reward avoidance behavior.
+    related_modern_psychology:
+      - Big Five: Agreeableness (low) cluster
+      - Affective neuroscience: amygdala-driven threat response (LeDoux)
+
+  - id: ignorance
+    level: 1
+    parent: null
+    name_ja: 癡
+    name_sa: moha
+    name_en: ignorance
+    definition_ja: |
+      無明・誤認知の根源的傾向。
+      現実の構造を正しく見ない、または見えないことから生じる判断の歪み。
+    definition_en: |
+      The root tendency of unawareness and misconception.
+      Distortions of judgment arising from not seeing — or being unable to see —
+      the structure of reality correctly.
+    source_canonical:
+      - text: 阿毘達磨倶舎論 (Abhidharmakośa)
+        author: 世親 (Vasubandhu)
+        century: "5"
+      - text: 中論 (Mūlamadhyamakakārikā)
+        author: 龍樹 (Nāgārjuna)
+        century: "2"
+    computational_interpretation: |
+      Structural/learning bug class in ML terms.
+      Distinguished into: missing-information bugs, congenital architectural biases,
+      and segmentation errors from conceptualization.
+    related_modern_psychology:
+      - Cognitive biases (Kahneman, Thinking Fast and Slow)
+      - Dunning–Kruger effect
+      - Confirmation bias
+
+  # ────────────────────────────────────────────────────────
+  # Level 2: 3×3 ミニマムモデル (§0.4.5) ── 9 dimensions
+  # ────────────────────────────────────────────────────────
+
+  # --- Greed × 3 ---
+  - id: greed_desire
+    level: 2
+    parent: greed
+    name_ja: 欲貪
+    name_sa: kāma-rāga
+    name_en: desire-craving
+    definition_ja: |
+      形ある対象（金銭、物質、地位、性、即時的快楽）への
+      直接的・即時的な欲求。
+    definition_en: |
+      Direct, immediate craving toward concrete objects:
+      money, material possessions, status, sex, immediate pleasure.
+    source_canonical:
+      - text: 阿毘達磨倶舎論
+        chapter: 随眠品
+    computational_interpretation: |
+      Reward signal with high discount rate.
+      "Want it now" — minimal delay tolerance.
+      Typical scam exploitation: "easy money," "limited-time offer."
+
+  - id: greed_form
+    level: 2
+    parent: greed
+    name_ja: 色貪
+    name_sa: rūpa-rāga
+    name_en: form-craving
+    definition_ja: |
+      形ある世界（色界）の対象 ── 美、調和、洗練された経験 ── への
+      執着。即時報酬よりは精緻化された欲求。
+    definition_en: |
+      Attachment toward the world of form (rūpa-dhātu) ── beauty, harmony,
+      refined experiences. A more elaborated desire than immediate reward.
+    source_canonical:
+      - text: 阿毘達磨倶舎論
+        chapter: 随眠品
+    computational_interpretation: |
+      Reward signal with moderate discount rate, more aesthetic.
+      Typical scam exploitation: "luxury lifestyle," romance scam "perfect partner."
+
+  - id: greed_formless
+    level: 2
+    parent: greed
+    name_ja: 無色貪
+    name_sa: arūpya-rāga
+    name_en: formless-craving
+    definition_ja: |
+      形なき観念 ── 知識、自己肯定、超越的体験、地位、承認 ── への執着。
+      最も抽象度が高く、しばしば自己と区別しがたい。
+    definition_en: |
+      Attachment toward formless ideation ── knowledge, self-affirmation,
+      transcendent experiences, status, recognition. The most abstract;
+      often hard to distinguish from the self.
+    source_canonical:
+      - text: 阿毘達磨倶舎論
+        chapter: 随眠品
+    computational_interpretation: |
+      Reward signal at the symbolic/conceptual level.
+      Typical scam exploitation: "exclusive insider knowledge," cult "spiritual awakening."
+
+  # --- Aversion × 3 ---
+  - id: aversion_anger
+    level: 2
+    parent: aversion
+    name_ja: 忿
+    name_sa: krodha
+    name_en: immediate-anger
+    definition_ja: |
+      瞬間的に立ち上がる怒り。発火が早く、持続が短い。
+      強度は高いが体系的でない。
+    definition_en: |
+      Anger that rises instantaneously. Fast ignition, short duration.
+      High intensity but not systematic.
+    source_canonical:
+      - text: 成唯識論
+        chapter: 心所
+    computational_interpretation: |
+      Immediate adversarial response.
+      Fast time-constant error signal.
+      Typical scam exploitation: provocation messages, flame-war bait.
+
+  - id: aversion_resentment
+    level: 2
+    parent: aversion
+    name_ja: 恨
+    name_sa: upanāha
+    name_en: lasting-resentment
+    definition_ja: |
+      持続的な怒り・恨み。発火は遅いが減衰しない。
+      対象人物・組織・社会への長期的敵対性として現れる。
+    definition_en: |
+      Sustained anger and resentment. Slow ignition but does not decay.
+      Manifests as long-term hostility toward a person, organization, or society.
+    source_canonical:
+      - text: 成唯識論
+        chapter: 心所
+    computational_interpretation: |
+      Slow time-constant adversarial bias accumulated over time.
+      Typical scam exploitation: conspiracy-theory channels, "us vs them" rhetoric.
+
+  - id: aversion_vexation
+    level: 2
+    parent: aversion
+    name_ja: 悩
+    name_sa: pradāśa
+    name_en: inner-vexation
+    definition_ja: |
+      内攻的な煩悶・煩躁。外に向かう怒りが内に折り返した状態。
+      自責、自己嫌悪、抑うつ的回路を含む。
+    definition_en: |
+      Inward-turned vexation. The state in which aversion, instead of going outward,
+      folds back upon the self. Includes self-blame, self-loathing, depressive loops.
+    source_canonical:
+      - text: 成唯識論
+        chapter: 心所
+    computational_interpretation: |
+      Self-referential adversarial loop.
+      Typical scam exploitation: "you deserve better," guilt-trip manipulation.
+
+  # --- Ignorance × 3 ---
+  - id: ignorance_basic
+    level: 2
+    parent: ignorance
+    name_ja: 無知
+    name_sa: avidyā
+    name_en: basic-ignorance
+    definition_ja: |
+      情報の単純な欠落・未知の状態。
+      学習や情報提供によって最も容易に補える領域。
+    definition_en: |
+      Simple absence of information; the state of not knowing.
+      The most easily addressed area, through learning or information provision.
+    source_canonical:
+      - text: 中論
+        author: 龍樹
+    computational_interpretation: |
+      Missing-information bug. Can be patched by data.
+      Typical scam exploitation: technical jargon overwhelming the non-expert
+      (FX investing, crypto, complex financial products).
+
+  - id: ignorance_innate
+    level: 2
+    parent: ignorance
+    name_ja: 倶生
+    name_sa: sahaja
+    name_en: innate-ignorance
+    definition_ja: |
+      生得的・構造的な認知の盲点。
+      学習では補えない、人間の認知システムそのものの限界。
+    definition_en: |
+      Congenital, structural blind spots in cognition.
+      Limits of the human cognitive system itself, not patchable by learning.
+    source_canonical:
+      - text: 成唯識論
+        chapter: 異熟
+    computational_interpretation: |
+      Architectural bias of the cognitive system itself.
+      Examples: bounded rationality, cognitive biases (Kahneman),
+      attentional bottlenecks.
+      Typical scam exploitation: time pressure, cognitive overload,
+      emotional flooding to bypass deliberative thinking.
+
+  - id: ignorance_conceptual
+    level: 2
+    parent: ignorance
+    name_ja: 分別
+    name_sa: vikalpa
+    name_en: conceptual-ignorance
+    definition_ja: |
+      概念化・分節化によって生じる誤分節。
+      実際は連続している事象を、概念によって不適切に区切ることで生じる歪み。
+    definition_en: |
+      Mis-segmentation arising from conceptualization.
+      Distortions from inappropriately partitioning phenomena that are
+      actually continuous, through concepts.
+    source_canonical:
+      - text: 中論
+        author: 龍樹
+      - text: 成唯識論
+        chapter: 三性
+    computational_interpretation: |
+      Categorization error.
+      "Either A or B" framing when reality is on a spectrum.
+      Typical scam exploitation: false dichotomy ("decide now or lose forever"),
+      forced binary choices.
+
+# ────────────────────────────────────────────────────────
+# Notes for v0.2 and beyond
+# ────────────────────────────────────────────────────────
+#
+# Future expansion to 108 dimensions requires:
+# - Buddhist scholar review (Bukkyo, Komazawa, Ryukoku universities)
+# - Cross-checking across Abhidharma / Yogācāra / Mādhyamaka schools
+# - Mapping to modern psychology (Big Five, PAD, OCC, Plutchik)
+# - Empirical validation through annotator agreement (κ > 0.7 per dimension)
+#
+# Hierarchical relationships beyond Level 1 parent should be added in v0.2.
+# Sutra references should be page-precise for academic citation.

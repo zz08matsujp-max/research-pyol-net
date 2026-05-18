@@ -171,6 +171,7 @@ ExPFC 概念は、私の中で詐欺対策に限定されない。前頭前野�
 ## 関連資料
 
 - [構想記録 全文](/concept/bonno-virus-mapping/) ── §13 を含む私の研究プログラム本体
+- [構想記録 §17: ExPFC Core Specification v0.1](/concept/bonno-virus-mapping/#17) ── 本論考で論じた ExPFC を、コア仕様として明文化したもの（API 契約・JSON Schema・参照実装の配布計画）
 - [姉妹論考: 仏教を座標系として採用する](/essays/buddhism-as-coordinate-system/) ── ExPFC の意味層を提供する座標系（Level 1）
 - [姉妹論考: §14 煩悩埋め込みと詐欺検知メカニズム](/essays/bonno-embedding/) ── ExPFC の「吟味」モジュールを駆動する具体的実装機構（Affective Computing + 詐欺検出）
 - [姉妹論考: 精密の経済 vs 規模の経済](/essays/precision-economics/) ── ExPFC を立ち上げる戦略的位置取り（Level 2）

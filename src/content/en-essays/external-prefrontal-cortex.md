@@ -172,6 +172,7 @@ The Buddhist taxonomy of mental afflictions functions, in my design, as the **ou
 ## Related materials
 
 - [Concept Record (full text)](/en/concept/bonno-virus-mapping/) — including §13, the parent research program from which this essay is derived
+- [Concept Record §17: ExPFC Core Specification v0.1](/en/concept/bonno-virus-mapping/#17) — the formalization of the ExPFC discussed in this essay as a core specification (API contracts, JSON Schemas, reference-implementation distribution plan)
 - [Companion essay: Buddhism as a Coordinate System](/en/essays/buddhism-as-coordinate-system/) — the coordinate system that supplies ExPFC's semantic layer (Level 1)
 - [Companion essay: §14 Bonnō Embedding and the Scam-Detection Mechanism](/en/essays/bonno-embedding/) — the concrete implementation device driving ExPFC's "examination" module (Affective Computing + scam detection)
 - [Companion essay: Economies of Precision vs Economies of Scale](/en/essays/precision-economics/) — the strategic positioning in which ExPFC stands (Level 2)

@@ -206,6 +206,7 @@ This is the core technology of my research program. To Affective Computing resea
 ## Related materials
 
 - [Concept Record (full text)](/en/concept/bonno-virus-mapping/) — including §14, the parent research program from which this essay is derived
+- [Concept Record §17: ExPFC Core Specification v0.1](/en/concept/bonno-virus-mapping/#17) — the formalization of the function f and three-signature detection of this essay as a core specification (API contracts, JSON Schemas, Python reference implementation)
 - [Companion essay: §0 Buddhism as a Coordinate System](/en/essays/buddhism-as-coordinate-system/) — the methodological tier that backs the 108-dimensional coordinate system (Level 1)
 - [Companion essay: §13 The External Prefrontal Cortex (ExPFC)](/en/essays/external-prefrontal-cortex/) — the device that this detection mechanism drives (neuroethics + AI Safety)
 - [Companion essay: §15 Economies of Precision vs Economies of Scale](/en/essays/precision-economics/) — the strategic tier supporting the fight at the abstract level (Level 2)

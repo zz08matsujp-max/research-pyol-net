@@ -205,6 +205,7 @@ P(scam|T, C, U) = g(V(T, C, U), C(T), S(T))
 ## 関連資料
 
 - [構想記録 全文](/concept/bonno-virus-mapping/) ── §14 を含む私の研究プログラム本体
+- [構想記録 §17: ExPFC Core Specification v0.1](/concept/bonno-virus-mapping/#17) ── 本論考の写像 f と 3 シグネチャ検出を、コア仕様として明文化したもの（API 契約・JSON Schema・Python 参照実装）
 - [姉妹論考: §0 仏教を座標系として採用する](/essays/buddhism-as-coordinate-system/) ── 108 次元の座標系を支える方法論的階層（Level 1）
 - [姉妹論考: §13 External Prefrontal Cortex（ExPFC）](/essays/external-prefrontal-cortex/) ── 本検知メカニズムを駆動する装置（神経倫理 + AI Safety）
 - [姉妹論考: §15 精密の経済 vs 規模の経済](/essays/precision-economics/) ── 抽象レベルでの戦いを支える戦略的階層（Level 2）

@@ -1,10 +1,10 @@
 ---
 title: "Bonnō × Scam-Virus Mapping: An Integrated Database and a Study of Human Emotional Structure via Small Neural Networks"
 author: "Toshinobu Matsuura"
-summary: "The deepest-layer purpose of my research program is to understand the human as a structure of mental afflictions and to visualize their dynamic weighting through a computable coordinate system. I adopt the 2,500 years of internal Buddhist observation as the coordinate system for modern neural-network engineering. Anti-scam (SNS-mediated investment fraud / Pig Butchering Scam) is the most pressing first application of that program. Updated in v1.6 with §0 'The fundamental purpose of the research'; in v1.7 with §16.5 'Personalization and the individual mental-affliction sensitivity profile'; in v1.8 with §0.4.5 'The 3×3 minimum model' and §4.3.0 (a concrete implementation roadmap); in v1.9 with a stylistic sweep into first-person voice; in v2.0 with consistency fixes across eleven points (unified mapping form, References, cost figures updated, §16 numbering corrected, etc.)."
+summary: "The deepest-layer purpose of my research program is to understand the human as a structure of mental afflictions and to visualize their dynamic weighting through a computable coordinate system. I adopt the 2,500 years of internal Buddhist observation as the coordinate system for modern neural-network engineering. Anti-scam (SNS-mediated investment fraud / Pig Butchering Scam) is the most pressing first application of that program. Updated in v1.6 with §0; v1.7 with §16.5; v1.8 with §0.4.5 / §4.3.0; v1.9 with stylistic adjustments; v2.0 with eleven consistency fixes; v2.1 with §17 'ExPFC Core Specification v0.1' formalizing the research deliverable as a 'common vocabulary (specification + ontology + reference implementation)' rather than as a particular app."
 publishedAt: 2026-05-12
-updatedAt: 2026-05-17
-version: "v2.0"
+updatedAt: 2026-05-18
+version: "v2.1"
 lang: "en"
 license: "CC BY 4.0"
 slug: "bonno-virus-mapping"
@@ -1726,6 +1726,417 @@ Finally, the very writing of this chapter is **evidence of the soundness** of th
 
 ---
 
+## §17. ExPFC Core Specification v0.1 (added 2026-05-18)
+
+> §17 is the technical specification for the **Core** of my research program. I have decided that app development is out of my scope, and I will define only the Core's API contracts and the reference implementation language (Python). App developers can build their own implementations conforming to this specification, tailored to their respective purposes (consumer protection, healthcare, education, neuroethics research, etc.).
+
+### 17.1 Design philosophy — why only the "Core"
+
+I have experience building smartphone apps; I have several in production already. But I do not intend to build the ExPFC app myself. Within a 20-year research program, spending my limited time on app development is "もったいない" — too costly an opportunity.
+
+What I should build is the following five components:
+
+1. The Bonnō Ontology (definition of the 108 dimensions)
+2. The bonnō embedding function f: (T, C, U) → V
+3. The scam-detection algorithm (three fingerprints + source attribution)
+4. The U Profile schema
+5. The API contracts that bind the above together
+
+I call this the "ExPFC Core" and publish it together with a reference implementation in Python. App developers can build implementations on any OS, with any UI, wrapping this Core. Android accessibility-resident services, iOS Share Sheet / SMS Filter integration, web browser extensions, desktop resident daemons — all can coexist as different implementations standing on the same Core.
+
+This is the same structural relationship as W3C and web browsers. W3C writes HTML as a specification; Chrome / Safari / Firefox / Edge implement it independently. I write the ExPFC Core specification; multiple implementations emerge in the world. What survives 20 years is not any particular app, but the **specification, vocabulary, and ontology**.
+
+### 17.2 Architectural layering
+
+ExPFC is designed as a two-layer structure:
+
+```
+┌──────────────────────────────────────────────────────┐
+│  App Layer (the work of others)                      │
+│                                                       │
+│  ・Android accessibility-resident service             │
+│  ・iOS Share Sheet / SMS Filter                       │
+│  ・Web browser extensions                             │
+│  ・Desktop resident daemons                           │
+│  ・Output modes A/B/C/D UI                            │
+│  ・Stealth family-email notification mechanism        │
+│  ・Multi-language UI text                             │
+└──────────────────────────────────────────────────────┘
+              ↑ Input API           ↓ Output API
+┌──────────────────────────────────────────────────────┐
+│  ExPFC Core (my work)                                │
+│                                                       │
+│  ・Bonnō Ontology (108 dimensions, JSON/YAML)         │
+│  ・Bonnō Embedding function f: (T, C, U) → V          │
+│  ・Three-Signature Detector                           │
+│  ・Source Attribution Checker                         │
+│  ・Integrated Judgment function g(V, C, S)            │
+│  ・U Profile Schema (JSON Schema)                     │
+│  ・Reference Implementation (Python)                  │
+└──────────────────────────────────────────────────────┘
+```
+
+Defining the **boundary line (API contracts)** of Input API and Output API rigorously is the key to separating the Core from apps.
+
+### 17.3 Design decisions — four points fixed in v0.1
+
+The design decisions I have confirmed at this point are as follows:
+
+| Item | Decision | Reason |
+|---|---|---|
+| Minimum input | Operates on text T alone | Design that does not depend on the app's acquisition capability. Context C is used if available |
+| U profile | Required input (for accuracy) | Because scam judgment is a three-way relation (T, C, U). When unavailable, falls back to Anonymous Baseline U |
+| Output explanatory text | Not included (numbers and labels only) | Multi-language UI and tone design are the app's responsibility. The Core is language-agnostic |
+| Reference implementation language | Python | Reach into the academic community; depth of the ML ecosystem; ease of porting |
+
+### 17.4 Bonnō Ontology
+
+The bonnō ontology is built on the hierarchical structure introduced in §0.4.5 (the 3×3 minimum model) and §4.3.0 (V_min ∈ ℝ⁹) of this record:
+
+```
+Level 1: 3 dimensions (the three poisons)
+Level 2: 9 to 20 dimensions (3×3 minimum + extensions)
+Level 3: 108 dimensions (final form, after expert review)
+```
+
+The ontology is published as a **separate file (`bonno_ontology.yaml`)** alongside the Core. Each dimension carries the following fields:
+
+```yaml
+- id: greed_desire             # unique ID (snake_case)
+  level: 2                     # 1 (three poisons) / 2 (9-20) / 3 (108)
+  parent: greed                # Level 1 parent
+  name_ja: 欲貪                # Japanese name
+  name_sa: kāma-rāga           # Sanskrit
+  name_en: desire-craving      # English name
+  definition_ja: |
+    Immediate craving toward concrete objects (money, material, status, etc.)
+  definition_en: |
+    Immediate craving toward concrete objects ...
+  source_canonical:
+    - text: Abhidharmakośa
+      chapter: ...
+  computational_interpretation: |
+    Immediacy of the reward mechanism (high discount rate).
+  related_modern_psychology:
+    - Big Five: ...
+    - PAD: ...
+```
+
+This ontology becomes the **common vocabulary** for all implementations. It is here that the Buddhist scholars' review should be applied.
+
+### 17.5 The Embedding Function f
+
+The reference implementation function signature (Python):
+
+```python
+from typing import Optional
+from dataclasses import dataclass
+from datetime import datetime
+
+@dataclass
+class Context:
+    """C: contextual information. All fields Optional."""
+    medium: Optional[str] = None        # "sms" | "line" | "email" | ...
+    timestamp: Optional[datetime] = None
+    sender_info: Optional[dict] = None
+    conversation_history: Optional[list[str]] = None
+
+@dataclass
+class UserProfile:
+    """U: individual mental-affliction sensitivity profile. schema_version required."""
+    schema_version: str                 # "0.1"
+    profile_data: dict                  # defined in §17.7
+
+BonnoVector = list[float]               # 9 or 108 dimensions, each in [0, 1]
+
+def bonno_embed(
+    text: str,
+    user_profile: UserProfile,          # required
+    context: Optional[Context] = None,  # optional
+    *,
+    level: int = 2,                     # 1: 3-dim / 2: 9-dim / 3: 108-dim
+) -> BonnoVector:
+    """
+    Function f that maps text into an affliction-stimulation vector.
+
+    Args:
+        text: text under analysis, T
+        user_profile: individual affliction-sensitivity profile U (required)
+        context: situation/context C (None means text-only judgment)
+        level: dimensionality level of the output (see Conformance Level §17.10)
+
+    Returns:
+        Affliction-stimulation vector V (dims × [0, 1])
+    """
+```
+
+For apps that cannot acquire `user_profile`, the Core provides a standard profile called **Anonymous Baseline U** (constructed from population-statistics medians). This makes the minimum input = text-only design viable while keeping U "required."
+
+### 17.6 Three-Signature Detector and Source Attribution Checker
+
+The function that detects the three fingerprints (see §14.3):
+
+```python
+@dataclass
+class SignatureFireReport:
+    signature_type: str    # "concentration" | "suppression" | "incompatibility"
+    score: float           # [0, 1]
+    fired: bool            # threshold exceeded
+
+def detect_signatures(
+    vector: BonnoVector,
+    text: str,
+) -> list[SignatureFireReport]:
+    """Detects the three signatures (fingerprints)."""
+```
+
+Source attribution checker (see §14.6):
+
+```python
+@dataclass
+class SourceAttributionResult:
+    score: float                        # [0, 1]
+    missing_items: list[str]            # list of missing items
+
+def check_source_attribution(
+    text: str,
+    context: Optional[Context] = None,
+) -> SourceAttributionResult:
+    """Law-grounded check of the explicitness of the sender."""
+```
+
+The integrated judgment g(V, C, S) (see §14.2):
+
+```python
+@dataclass
+class JudgmentResult:
+    bonno_vector: BonnoVector
+    scam_probability: float             # [0, 1]
+    confidence: float                   # [0, 1]
+    alert_level: str                    # "none"|"info"|"caution"|"warning"|"danger"
+    fired_signatures: list[SignatureFireReport]
+    source_attribution: SourceAttributionResult
+
+def judge(
+    text: str,
+    user_profile: UserProfile,
+    context: Optional[Context] = None,
+) -> JudgmentResult:
+    """Integrates f → detect → check → g and returns the final judgment."""
+```
+
+### 17.7 Input API Contract (JSON Schema)
+
+JSON representation of the input the app passes to the Core:
+
+```json
+{
+  "$schema": "https://research.pyol.net/schemas/expfc-input-v0.1.json",
+  "type": "object",
+  "required": ["text", "user_profile"],
+  "properties": {
+    "text": {
+      "type": "string",
+      "description": "Text under analysis (T)"
+    },
+    "user_profile": {
+      "$ref": "#/definitions/UserProfile",
+      "description": "Individual affliction-sensitivity profile U (required)"
+    },
+    "context": {
+      "$ref": "#/definitions/Context",
+      "description": "Situation/context C (optional)"
+    },
+    "level": {
+      "type": "integer",
+      "enum": [1, 2, 3],
+      "default": 2,
+      "description": "Output dimensionality level (Conformance Level)"
+    }
+  }
+}
+```
+
+### 17.8 Output API Contract (JSON Schema)
+
+The output the Core returns to the app:
+
+```json
+{
+  "$schema": "https://research.pyol.net/schemas/expfc-output-v0.1.json",
+  "type": "object",
+  "required": [
+    "bonno_vector", "scam_probability", "confidence",
+    "alert_level", "fired_signatures", "source_attribution"
+  ],
+  "properties": {
+    "bonno_vector": {
+      "type": "array",
+      "items": { "type": "number", "minimum": 0, "maximum": 1 },
+      "description": "V: affliction-stimulation vector"
+    },
+    "scam_probability": {
+      "type": "number", "minimum": 0, "maximum": 1
+    },
+    "confidence": {
+      "type": "number", "minimum": 0, "maximum": 1
+    },
+    "alert_level": {
+      "type": "string",
+      "enum": ["none", "info", "caution", "warning", "danger"]
+    },
+    "fired_signatures": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "signature_type": {
+            "type": "string",
+            "enum": ["concentration", "suppression", "incompatibility"]
+          },
+          "score": { "type": "number", "minimum": 0, "maximum": 1 },
+          "fired": { "type": "boolean" }
+        }
+      }
+    },
+    "source_attribution": {
+      "type": "object",
+      "properties": {
+        "score": { "type": "number", "minimum": 0, "maximum": 1 },
+        "missing_items": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    }
+  }
+}
+```
+
+**No explanatory text is included.** Generating user-facing text from each `alert_level` and `signature_type` is the app's responsibility. By this, the Core stays language-agnostic, and the multi-language cost stays contained within the app layer.
+
+### 17.9 U Profile Schema
+
+Building on the discussion in §16.5, the U profile structures the answers to the initial setup (Q1–Q5):
+
+```json
+{
+  "$schema": "https://research.pyol.net/schemas/expfc-userprofile-v0.1.json",
+  "type": "object",
+  "required": ["schema_version", "setup_responses"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "setup_responses": {
+      "type": "object",
+      "properties": {
+        "money_concerns": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "retirement_savings", "investment_growth",
+              "debt", "education_costs", "none"
+            ]
+          }
+        },
+        "loneliness_level": {
+          "type": "number", "minimum": 0, "maximum": 1
+        },
+        "health_concerns": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "self_health", "family_health",
+              "dementia_concern", "none"
+            ]
+          }
+        },
+        "contact_circle_size": {
+          "type": "string",
+          "enum": ["small", "medium", "large"]
+        },
+        "trusted_contact": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["family", "friend", "professional", "none"]
+            },
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "name": { "type": "string" }
+          }
+        }
+      }
+    },
+    "episodic_updates": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "timestamp": { "type": "string", "format": "date-time" },
+          "busy": { "type": "boolean" },
+          "money_worry_now": { "type": "boolean" },
+          "in_a_hurry": { "type": "boolean" }
+        }
+      },
+      "description": "Accumulated episodic-question responses at judgment time (last N items)"
+    },
+    "last_updated": { "type": "string", "format": "date-time" }
+  }
+}
+```
+
+The Core specification mandates that this profile **resides only on the device**. Cloud synchronization is prohibited (an absolute condition for privacy protection).
+
+### 17.10 Conformance Levels
+
+How far an app implementation conforms to the Core specification is defined in three levels:
+
+| Level | Output dimensions | Required functions | Intended use |
+|---|---|---|---|
+| **L1 (MVP)** | 9 dimensions (three poisons × 3) | f, detect, judge | Initial implementations, developer validation, PoC |
+| **L2 (Production)** | 10–20 dimensions | L1 + source attribution, complete U profile | Phase 1 production apps |
+| **L3 (Full)** | 108 dimensions | L2 + hierarchical embedding, episodic learning | Phase 2 onward, research use |
+
+Implementations declare "ExPFC Core L1 conformant," "L2 conformant," etc. This lets users grasp an app's capability level at a glance.
+
+### 17.11 Reference implementation distribution plan
+
+The reference implementation is published as a separate GitHub repository (`expfc-core`), distinct from this research program:
+
+- **Language**: Python 3.11+
+- **License**: CC BY 4.0 (specification) / MIT (reference implementation code)
+- **Publication**: GitHub `mindseed-research/expfc-core` (tentative)
+- **Contents**:
+  - `bonno_ontology.yaml` (the ontology itself)
+  - `expfc_core/` (Python package)
+  - `schemas/` (the three JSON Schemas)
+  - `tests/` (conformance tests, sample scam corpus)
+  - `docs/` (API documentation, implementation guide)
+
+Porting to other languages (TypeScript / Swift / Kotlin / Rust) is left to the community. Once the specification (JSON Schema) and the reference implementation (Python) are both available, implementation in any language becomes possible.
+
+### 17.12 Conclusion (§17)
+
+The ExPFC Core Specification v0.1 is the **first formalization of the common vocabulary** I want my 20-year research program to leave behind.
+
+My role is now clearly defined:
+- **What I will build**: the ontology, function f, the detection algorithm, the API contracts, the reference implementation.
+- **What I will not build**: smartphone apps, UI, OS-integration code, multi-language text.
+
+The spirit of "Economies of Precision" (§15) is upheld here as well. **I go narrow and deep.** On top of the narrow, deep Core that I build, the app layer is constructed by a diversity of implementations that bloom around it.
+
+Just as W3C left the Web behind, I will leave the ExPFC Core behind. From there, implementers — including successors — will build apps for their own purposes.
+
+---
+
 ## Appendix E: References (works cited in this Concept Record)
 
 The following are the works I cite by author–year in the body, in APA format. I plan to enrich this list in subsequent versions.
@@ -1772,7 +2183,8 @@ The following are the works I cite by author–year in the body, in APA format. 
 - **v1.8** (2026-05-17): added §0.4.5 "The implementation starting point — a 3×3 minimum model" and §4.3.0 "The 3×3 minimum model — the shared first implementation step for all architectures." To close the gap that had existed between §0's "108-dimensional final form" and §16's "mathematical independence is a challenge" — namely the lack of a concrete first implementation step — a 9-dimensional minimum model (three poisons × three subcategories) is introduced. The correspondences greed (desire-craving / form-craving / formless-craving → reward and attachment hierarchy), aversion (immediate anger / lasting resentment / inner vexation → error and adversarial time axis), and ignorance (basic / innate / conceptual ignorance → structural and learned bugs) are presented, and how this minimum model embeds into each candidate architecture (GNN / VAE / Transformer / multi-task learning) together with the staged expansion order across Phase 1–3 is made explicit. It is positioned as the concretization of Level 2 within the hierarchical embedding of §16.2.2. This upgrades the proposal from a "philosophical proposal" to a "proposal with an implementation roadmap," providing a concrete footing for dialogue with international AI Safety researchers, domestic Buddhist scholars, and computational psychologists.
 - **v1.9** (2026-05-17, same-day revision): a full stylistic sweep across the entire site (Concept Record, two standalone essays, About, top page, contact, and index pages) into a first-person, declarative voice. Third-person, distancing subjects such as "this research program," "this proposal," and "the author" were replaced uniformly with "I / my research program." Bureaucratic frames such as "this chapter," "this section," and "here we present" were dissolved. No changes to argument, data, or references — only to whose voice the writing reads as.
 - **v2.0** (2026-05-17, same-day revision): a single-pass consistency sweep against eleven points I identified on a full read-back. (1) Removed the triplicate top metadata block (frontmatter / H1 / created-by block) and replaced it with a single "Position and status" callout. (2) Brought the status statement into line with reality (PYOL Mind Mirror is running; affliction mapping is still in design). (3) Unified §14.1's affliction-embedding map from `f: T → V` to `f: (T, C, U) → V`, consistent with §0.4 / §0.4.5 / §16.5. (4) Normalized §3.4's `exploitation_strength` from 0–10 to [0, 1], aligning with §4.3.0 and §14.1. (5) Added Appendix E (References — 26 works cited in the body), supplying citations such as Bender et al. (2021), Carroll et al. (2023), Park et al. (2024) that had been used inline without a list. (6) Varied the repeated "my program" with "the program" / "this program" across the text to reduce monotony. (7) Updated §15.3 LLM-cost figures to 2026-05 levels (separating low-cost LLMs like GPT-4o mini and Claude Haiku 3.5 from high-end LLMs, with revised arithmetic), keeping the structural argument front and center. (8) Trimmed §14.9's nine application areas to four — clinical psychology, advertising ethics, AI-ethics evaluation, and education — with explicit prioritization. (9) Added cross-references among the three ethics sections (§10.3, §13.11, §14.12), pointing toward a future unified ethical guideline. (10) Merged §13.9 (Relation to existing research programs) and §13.10 (Interdisciplinary positioning) into a single §13.9, renumbering §13.11–§13.13 to §13.10–§13.12. (11) Fixed §16 numbering bug (there were two §16.4 sections), renumbering personalization to §16.5 and Conclusion to §16.6; added a "virus" metaphor note to Appendix A; rationalized Appendix lettering (D = Notes on staged publication, E = References, F = Revision history). No framework changes — only consistency, accuracy, and readability.
-- v2.1 onward: updates as implementation progresses, dialogues with external collaborators occur, and validation results come in.
+- **v2.1** (2026-05-18): Added §17 "ExPFC Core Specification v0.1." Formalized the technical specification for the Core part of the research program. Articulated the design philosophy "I do not build the app — I build the Core specification" as a W3C-style division of roles. Confirmed four design decisions: (1) the minimum input is text T alone (Anonymous Baseline U fallback when no U profile is supplied); (2) the U profile is a required input (for accuracy); (3) no explanatory text in the output (multi-language UI is the app's responsibility; the Core is language-agnostic); (4) the reference implementation language is Python (for reach into the academic community). Defined the bonnō ontology (YAML format), Python signatures for f / detect / check / judge, JSON Schemas for Input / Output / U Profile, Conformance Levels (L1 9-dim / L2 10-20-dim / L3 108-dim), and the distribution plan for the reference implementation (GitHub `expfc-core` repository, CC BY 4.0 + MIT). Through this, the deliverable of the research program is fixed not as "a particular app" but as "a common vocabulary (specification + ontology + reference implementation)" to be handed down to a community of successors and implementers.
+- v2.2 onward: updates as implementation progresses, dialogues with external collaborators occur, and validation results come in.
 
 ---
 

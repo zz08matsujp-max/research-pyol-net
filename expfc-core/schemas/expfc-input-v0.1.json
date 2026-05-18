@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://research.pyol.net/schemas/expfc-input-v0.1.json",
+  "title": "ExPFC Core Input v0.1",
+  "description": "Input contract from app layer to ExPFC Core. See https://research.pyol.net/concept/bonno-virus-mapping/#17",
+  "type": "object",
+  "required": ["text", "user_profile"],
+  "properties": {
+    "text": {
+      "type": "string",
+      "description": "Text under analysis (T). The primary content to be judged.",
+      "minLength": 1
+    },
+    "user_profile": {
+      "$ref": "expfc-userprofile-v0.1.json",
+      "description": "Individual mental-affliction sensitivity profile (U). Required. When the app cannot acquire it, use Anonymous Baseline U provided by the Core."
+    },
+    "context": {
+      "type": "object",
+      "description": "Situational context (C). Optional. The Core operates without it but accuracy improves when supplied.",
+      "properties": {
+        "medium": {
+          "type": "string",
+          "enum": ["sms", "line", "kakaotalk", "email", "browser", "imessage", "telegram", "whatsapp", "other"],
+          "description": "Medium through which the text arrived."
+        },
+        "timestamp": {
+          "type": "string",
+          "format": "date-time",
+          "description": "When the text was received (ISO 8601)."
+        },
+        "sender_info": {
+          "type": "object",
+          "description": "Information about the sender, if available.",
+          "properties": {
+            "identifier": { "type": "string" },
+            "is_known_contact": { "type": "boolean" },
+            "first_contact_days_ago": { "type": "integer", "minimum": 0 }
+          }
+        },
+        "conversation_history": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Previous messages in the conversation (most recent last)."
+        }
+      }
+    },
+    "level": {
+      "type": "integer",
+      "enum": [1, 2, 3],
+      "default": 2,
+      "description": "Output dimensionality level. 1: 3-dim (three poisons). 2: 9-dim (3×3 minimum model). 3: 108-dim (full ontology)."
+    }
+  }
+}

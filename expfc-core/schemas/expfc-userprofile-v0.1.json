@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://research.pyol.net/schemas/expfc-userprofile-v0.1.json",
+  "title": "ExPFC User Profile v0.1",
+  "description": "User's mental-affliction sensitivity profile (U). Built from Q1-Q5 setup + episodic updates. Storage: on-device only; cloud sync is prohibited.",
+  "type": "object",
+  "required": ["schema_version", "setup_responses"],
+  "properties": {
+    "schema_version": {
+      "type": "string",
+      "const": "0.1"
+    },
+    "setup_responses": {
+      "type": "object",
+      "description": "Answers to the initial 5-minute setup (Q1-Q5).",
+      "required": [
+        "money_concerns",
+        "loneliness_level",
+        "health_concerns",
+        "contact_circle_size"
+      ],
+      "properties": {
+        "money_concerns": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "retirement_savings",
+              "investment_growth",
+              "debt",
+              "education_costs",
+              "none"
+            ]
+          },
+          "description": "Q1: financial concerns (multiple selection allowed)."
+        },
+        "loneliness_level": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1,
+          "description": "Q2: loneliness slider, 0 = none, 1 = severe."
+        },
+        "health_concerns": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "self_health",
+              "family_health",
+              "dementia_concern",
+              "none"
+            ]
+          },
+          "description": "Q3: health concerns (multiple selection allowed)."
+        },
+        "contact_circle_size": {
+          "type": "string",
+          "enum": ["small", "medium", "large"],
+          "description": "Q4: small=1-3 people, medium=4-10, large=10+."
+        },
+        "trusted_contact": {
+          "type": "object",
+          "description": "Q5: trusted contact for the Ulysses-contract-style family alert. Optional but recommended.",
+          "properties": {
+            "type": {
+              "type": "string",
+              "enum": ["family", "friend", "professional", "none"]
+            },
+            "email": {
+              "type": "string",
+              "format": "email"
+            },
+            "name": {
+              "type": "string"
+            }
+          }
+        }
+      }
+    },
+    "episodic_updates": {
+      "type": "array",
+      "description": "Accumulated answers to episodic questions at judgment time. Used to refine U over time.",
+      "items": {
+        "type": "object",
+        "required": ["timestamp"],
+        "properties": {
+          "timestamp": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "busy": {
+            "type": "boolean",
+            "description": "Was the user busy at that moment?"
+          },
+          "money_worry_now": {
+            "type": "boolean",
+            "description": "Was the user worried about money at that moment?"
+          },
+          "in_a_hurry": {
+            "type": "boolean"
+          },
+          "judgment_outcome": {
+            "type": "string",
+            "enum": ["accepted_warning", "dismissed_warning", "no_warning"],
+            "description": "How the user responded to the judgment."
+          }
+        }
+      },
+      "maxItems": 100,
+      "description": "Last 100 episodic updates (rolling window)."
+    },
+    "last_updated": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "anonymous_baseline": {
+      "type": "boolean",
+      "default": false,
+      "description": "True if this is the Anonymous Baseline U (used when the app cannot acquire a real profile)."
+    }
+  }
+}
