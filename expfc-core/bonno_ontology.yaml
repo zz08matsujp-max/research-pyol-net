@@ -1,20 +1,31 @@
-# Bonnō Ontology v0.1
+# Bonnō Ontology v0.2
 #
 # Reference ontology for ExPFC Core Specification v0.1
 # https://research.pyol.net/concept/bonno-virus-mapping/#17
 #
-# Levels:
-#   Level 1 (L1): 3 dimensions ── the three poisons (三毒)
-#   Level 2 (L2): 9 dimensions ── 3×3 minimum model (§0.4.5)
-#   Level 3 (L3): 108 dimensions ── full taxonomy (future, requires Buddhist scholar review)
+# Levels (v2.2 仕様確定):
+#   Level 1 (L1): 3 dimensions ── the three poisons (三毒). Baseline classifier.
+#   Level 2 (L2): 9 dimensions ── 3×3 minimum model (§0.4.5). ★ Operational standard.
+#   Level 3 (L3): 10-108 dimensions ── future research extension, awaiting:
+#                  (a) LLM-driven annotation assistance to mature,
+#                  (b) Buddhist scholar consensus on subcategory definitions,
+#                  (c) Inter-annotator κ > 0.7 achievable per dimension.
 #
-# This file is the initial release (L1 + L2 = 12 dimensions).
-# Reviewed and refined in dialogue with Buddhist scholars (Bukkyo / Komazawa / Ryukoku universities, etc.)
+# 9-dim commitment rationale (v2.2, 2026-05-18):
+#   External review (Gemini) confirmed that 108-dim annotation is impractical
+#   under current LLM/annotator capability. We commit to **9 dimensions as the
+#   operational baseline**, while keeping 108 as a long-term vision. Hand-curated
+#   GNN edges (relations:) become feasible at 9 nodes (vs. 5,778 possible edges at 108).
+#
+# This release (v0.2) contains L1 + L2 = 12 dimensions + inter-dimension relations.
+# Reviewed and refined in dialogue with Buddhist scholars
+# (Bukkyo / Komazawa / Ryukoku universities, etc.)
 #
 # License: CC BY 4.0 (Toshinobu Matsuura / Mindseed Research)
 
-version: "0.1"
+version: "0.2"
 released: 2026-05-18
+operational_level: 2     # L2 (9 dims) is the standard. L3 is vision-only.
 author: Toshinobu Matsuura
 license: CC BY 4.0
 
@@ -294,14 +305,129 @@ dimensions:
       forced binary choices.
 
 # ────────────────────────────────────────────────────────
-# Notes for v0.2 and beyond
+# Inter-dimension relations (for GNN edge definitions)
 # ────────────────────────────────────────────────────────
 #
-# Future expansion to 108 dimensions requires:
-# - Buddhist scholar review (Bukkyo, Komazawa, Ryukoku universities)
-# - Cross-checking across Abhidharma / Yogācāra / Mādhyamaka schools
-# - Mapping to modern psychology (Big Five, PAD, OCC, Plutchik)
-# - Empirical validation through annotator agreement (κ > 0.7 per dimension)
+# Per external review (Gemini, 2026-05-18) and Concept Record §17.10 v2.2,
+# 9 nodes allow hand-curated edges. These edges encode classical Buddhist
+# insights into how one affliction triggers, amplifies, or suppresses another.
 #
-# Hierarchical relationships beyond Level 1 parent should be added in v0.2.
-# Sutra references should be page-precise for academic citation.
+# Relation types:
+#   amplifies   ── source intensifies target  (e.g., desire-craving → urgency-like aversion)
+#   suppresses  ── source dampens target      (e.g., greed → suppression of caution)
+#   triggers    ── source can ignite target   (e.g., loneliness → form-craving for romance)
+#   coexists    ── empirically observed together (statistical, not causal)
+#
+# Each relation has a strength in [0, 1]. These are initial hypotheses;
+# they should be refined via annotated corpus + Buddhist scholar review.
+
+relations:
+
+  # 貪 (Greed) intra-cluster
+  - source: greed_desire
+    target: greed_form
+    type: amplifies
+    strength: 0.5
+    note: |
+      Immediate desire often escalates into attachment to a particular
+      formed object (e.g., specific romantic partner, specific investment).
+
+  - source: greed_form
+    target: greed_formless
+    type: amplifies
+    strength: 0.4
+    note: |
+      Attachment to a formed object can solidify into formless
+      attachment to identity/status ("I am someone who has this").
+
+  # 瞋 (Aversion) intra-cluster
+  - source: aversion_anger
+    target: aversion_resentment
+    type: triggers
+    strength: 0.6
+    note: |
+      Repeated immediate anger crystallizes into lasting resentment.
+
+  - source: aversion_resentment
+    target: aversion_vexation
+    type: triggers
+    strength: 0.4
+    note: |
+      When resentment cannot be expressed outward, it folds inward
+      as self-vexation, self-blame, depressive loops.
+
+  # 癡 (Ignorance) intra-cluster
+  - source: ignorance_innate
+    target: ignorance_conceptual
+    type: amplifies
+    strength: 0.5
+    note: |
+      Innate cognitive blind spots make conceptual mis-segmentation
+      more likely (e.g., forced binary thinking under cognitive load).
+
+  # Cross-cluster relations (Buddhist canonical insights)
+
+  - source: greed_desire
+    target: ignorance_basic
+    type: amplifies
+    strength: 0.7
+    note: |
+      Strong immediate desire suppresses information-seeking ──
+      "I don't want to know the risks." This is the core mechanism
+      of investment-scam victimization.
+
+  - source: aversion_anger
+    target: ignorance_conceptual
+    type: amplifies
+    strength: 0.6
+    note: |
+      Immediate anger produces black-and-white thinking, false
+      dichotomies, and tribal categorization.
+
+  - source: ignorance_innate
+    target: greed_desire
+    type: coexists
+    strength: 0.5
+    note: |
+      Bounded rationality (innate ignorance) and immediate-reward bias
+      (desire-craving) are empirically correlated in behavioral economics
+      (Kahneman et al.).
+
+  # Suppression relations (key for scam-detection signature 2)
+
+  - source: greed_desire
+    target: ignorance_basic
+    type: suppresses
+    strength: 0.5
+    side: caution
+    note: |
+      Strong desire suppresses cautionary information-seeking.
+      Detected as "suppression" signature in scam texts (§14.3).
+
+  - source: aversion_anger
+    target: ignorance_innate
+    type: suppresses
+    strength: 0.4
+    side: deliberation
+    note: |
+      Anger suppresses deliberative cognition, leading to impulsive action.
+
+# ────────────────────────────────────────────────────────
+# Notes for v0.3 and beyond
+# ────────────────────────────────────────────────────────
+#
+# 1. Strength values above are author's initial hypotheses; refinement via
+#    annotated corpus and inter-annotator agreement is planned.
+#
+# 2. Future expansion toward 108 dimensions requires:
+#    - LLM-driven annotation assistance ("bonnō prompting")
+#    - Buddhist scholar review (Bukkyo, Komazawa, Ryukoku universities)
+#    - Cross-checking across Abhidharma / Yogācāra / Mādhyamaka schools
+#    - Mapping to modern psychology (Big Five, PAD, OCC, Plutchik)
+#    - Empirical validation through annotator agreement (κ > 0.7 per dimension)
+#
+# 3. The operational level (operational_level: 2) constrains what
+#    conformance-checked implementations must support. L3 implementations
+#    are research-only until LLM annotation maturity arrives.
+#
+# 4. Sutra references should be page-precise for academic citation.

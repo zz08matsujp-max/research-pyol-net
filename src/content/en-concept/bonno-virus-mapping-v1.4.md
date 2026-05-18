@@ -75,16 +75,23 @@ What my program ultimately aims at is **the analysis and visualization, by neura
 For an arbitrary text T, an arbitrary situation C, and an arbitrary individual U:
 
 ```
-Human state (T, C, U) → V = (w₁, w₂, ..., w₁₀₈)
+Human state (T, C, U) → V = (w₁, w₂, ..., w_n)
+
+  Operational main line: n = 9  (three poisons × 3 subcategories) ── standard implementation, achievable in v0.2
+  Long-term vision:      n = 108 ── future form, awaiting maturity of LLM-driven annotation
+                                     (see §17.10 for Conformance Levels)
 ```
 
-Here wᵢ is the weight of affliction i, **dynamically changing with time.** The moment of reading a scam message, the moment of seeing a photo of one's child, the moment of arguing with one's spouse, the moment of listening to a beloved piece of music — for each, the program visualizes where the energy is concentrated within the 108 dimensions.
+Here wᵢ is the weight of affliction i, **dynamically changing with time.** The moment of reading a scam message, the moment of seeing a photo of one's child, the moment of arguing with one's spouse, the moment of listening to a beloved piece of music — for each, the program visualizes where the energy is concentrated within the vector space.
+
+> **Two-stage strategy on 9 vs 108 dimensions (formalized in v2.2)**
+> Early in the program I aimed at the full 108-dimensional form. Following the external review (Gemini, 2026-05-18), I have separated **9 dimensions (three poisons × 3) as the operational main line** from **108 dimensions as a long-term vision.** At 9 dimensions, κ > 0.7 inter-annotator agreement among Buddhist scholars is realistically achievable, and GNN edges can be hand-curated. The expansion toward 108 will proceed naturally once LLMs mature enough to assist annotation through "bonnō prompting." See §17.10 for the formal levels.
 
 This is a means of scam detection and at the same time a **mirror by which the human understands the self.** The External Prefrontal Cortex (ExPFC) introduced in §13 functions, in the anti-scam context, as a "warning device"; in its original context, it functions as a **"mirror of self-understanding."**
 
 ### 0.4.5 The implementation starting point — a 3×3 minimum model (added in v1.8)
 
-Implementing the full 108-dimensional form shown in §0.4 in one go is, as discussed in §16.2, technically and operationally difficult. My research program begins implementation from a **minimum model of 9 dimensions: the three poisons (greed / aversion / ignorance) × three subcategories each = 9 dimensions.** This is a verifiable first step that upgrades the program from a philosophical proposal to a proposal carrying a concrete implementation roadmap.
+The 108-dimensional form shown in §0.4 is preserved as the program's long-term vision, but **the operational main line of implementation is fixed at 9 dimensions** (the three poisons × three subcategories each); see v2.2 revision, §17.10. This is the verifiable, sustainable resolution that lets the program move from a "philosophical proposal" to an "operationally executable proposal with an implementation roadmap."
 
 | Three poisons | Three subcategories (from Buddhist canonical texts) | Computational interpretation |
 |---|---|---|
@@ -966,12 +973,15 @@ This is the philosophical position that places AI **not as "a black-box judging 
 I define the affliction embedding as the following three-way relation:
 
 ```
-f: (T, C, U) → V = (w₁, w₂, ..., w₁₀₈),  wᵢ ∈ [0, 1]
+f: (T, C, U) → V = (w₁, w₂, ..., w_n),  wᵢ ∈ [0, 1]
 
   T: an arbitrary text
   C: the situation / context (time of day, medium, relationship, cumulative behavior, etc.)
   U: the individual's mental-affliction sensitivity profile (detailed in §16.5)
-  V: a 108-dimensional affliction-stimulation vector
+  V: an n-dimensional affliction-stimulation vector
+
+    n = 9   ── operational main line (three poisons × 3 subcategories), confirmed in v2.2
+    n = 108 ── long-term vision (awaiting AI maturity and Buddhist-scholar review)
 ```
 
 Here wᵢ represents **"how strongly text T, in situation C, stimulates affliction i of individual U."** The value range is normalized to [0, 1]. This is exactly the same mapping as the "human state (T, C, U) → V" presented in §0.4.
@@ -2097,15 +2107,17 @@ The Core specification mandates that this profile **resides only on the device**
 
 ### 17.10 Conformance Levels
 
-How far an app implementation conforms to the Core specification is defined in three levels:
+How far an app implementation conforms to the Core specification is defined in three levels. In v2.2 the operational main line is fixed at **9 dimensions**, and 108 dimensions are kept as a long-term vision awaiting AI maturity:
 
-| Level | Output dimensions | Required functions | Intended use |
-|---|---|---|---|
-| **L1 (MVP)** | 9 dimensions (three poisons × 3) | f, detect, judge | Initial implementations, developer validation, PoC |
-| **L2 (Production)** | 10–20 dimensions | L1 + source attribution, complete U profile | Phase 1 production apps |
-| **L3 (Full)** | 108 dimensions | L2 + hierarchical embedding, episodic learning | Phase 2 onward, research use |
+| Level | Output dimensions | Required functions | Intended use | Feasibility |
+|---|---|---|---|---|
+| **L1 (Baseline)** | 3 dimensions (three poisons) | f, judge (simple) | PoC, baseline classifier, concept verification | Immediate |
+| **L2 (Standard ★)** | **9 dimensions (three poisons × 3)** | L1 + detect (three signatures), check_source_attribution, full U profile | **Main operational line of this research program** | Achievable in v0.2 |
+| **L3 (Research extension)** | 10–108 dimensions | L2 + hierarchical embedding, GNN-edge relations, episodic learning | Long-term vision, awaiting AI capability | After LLM maturity + Buddhist-scholar review |
 
-Implementations declare "ExPFC Core L1 conformant," "L2 conformant," etc. This lets users grasp an app's capability level at a glance.
+> **Rationale for v2.2 revision**: external review (Gemini, 2026-05-18) pointed out the inter-annotator agreement bottleneck of 108-dim annotation. In response, I have re-positioned **9 dimensions (three poisons × 3) as the operational main line, with 108 dimensions as a long-term vision**. The 9-dimensional model is (a) a classical taxonomy attested in canonical texts (*Abhidharmakośa*, *Cheng Weishi Lun*), (b) capable of realistically reaching κ > 0.7 inter-annotator agreement with Buddhist scholars, and (c) tractable for hand-curated GNN edges (9 nodes × N edges). Expansion toward 108 dimensions becomes natural once rapidly evolving LLMs can provide "bonnō prompting" annotation distillation.
+
+Implementations declare "ExPFC Core L1 conformant," "L2 conformant (standard)," or "L3 conformant (research)." This lets users grasp an app's capability level at a glance. **The v0.1 reference implementation targets L2.**
 
 ### 17.11 Reference implementation distribution plan
 
@@ -2184,7 +2196,8 @@ The following are the works I cite by author–year in the body, in APA format. 
 - **v1.9** (2026-05-17, same-day revision): a full stylistic sweep across the entire site (Concept Record, two standalone essays, About, top page, contact, and index pages) into a first-person, declarative voice. Third-person, distancing subjects such as "this research program," "this proposal," and "the author" were replaced uniformly with "I / my research program." Bureaucratic frames such as "this chapter," "this section," and "here we present" were dissolved. No changes to argument, data, or references — only to whose voice the writing reads as.
 - **v2.0** (2026-05-17, same-day revision): a single-pass consistency sweep against eleven points I identified on a full read-back. (1) Removed the triplicate top metadata block (frontmatter / H1 / created-by block) and replaced it with a single "Position and status" callout. (2) Brought the status statement into line with reality (PYOL Mind Mirror is running; affliction mapping is still in design). (3) Unified §14.1's affliction-embedding map from `f: T → V` to `f: (T, C, U) → V`, consistent with §0.4 / §0.4.5 / §16.5. (4) Normalized §3.4's `exploitation_strength` from 0–10 to [0, 1], aligning with §4.3.0 and §14.1. (5) Added Appendix E (References — 26 works cited in the body), supplying citations such as Bender et al. (2021), Carroll et al. (2023), Park et al. (2024) that had been used inline without a list. (6) Varied the repeated "my program" with "the program" / "this program" across the text to reduce monotony. (7) Updated §15.3 LLM-cost figures to 2026-05 levels (separating low-cost LLMs like GPT-4o mini and Claude Haiku 3.5 from high-end LLMs, with revised arithmetic), keeping the structural argument front and center. (8) Trimmed §14.9's nine application areas to four — clinical psychology, advertising ethics, AI-ethics evaluation, and education — with explicit prioritization. (9) Added cross-references among the three ethics sections (§10.3, §13.11, §14.12), pointing toward a future unified ethical guideline. (10) Merged §13.9 (Relation to existing research programs) and §13.10 (Interdisciplinary positioning) into a single §13.9, renumbering §13.11–§13.13 to §13.10–§13.12. (11) Fixed §16 numbering bug (there were two §16.4 sections), renumbering personalization to §16.5 and Conclusion to §16.6; added a "virus" metaphor note to Appendix A; rationalized Appendix lettering (D = Notes on staged publication, E = References, F = Revision history). No framework changes — only consistency, accuracy, and readability.
 - **v2.1** (2026-05-18): Added §17 "ExPFC Core Specification v0.1." Formalized the technical specification for the Core part of the research program. Articulated the design philosophy "I do not build the app — I build the Core specification" as a W3C-style division of roles. Confirmed four design decisions: (1) the minimum input is text T alone (Anonymous Baseline U fallback when no U profile is supplied); (2) the U profile is a required input (for accuracy); (3) no explanatory text in the output (multi-language UI is the app's responsibility; the Core is language-agnostic); (4) the reference implementation language is Python (for reach into the academic community). Defined the bonnō ontology (YAML format), Python signatures for f / detect / check / judge, JSON Schemas for Input / Output / U Profile, Conformance Levels (L1 9-dim / L2 10-20-dim / L3 108-dim), and the distribution plan for the reference implementation (GitHub `expfc-core` repository, CC BY 4.0 + MIT). Through this, the deliverable of the research program is fixed not as "a particular app" but as "a common vocabulary (specification + ontology + reference implementation)" to be handed down to a community of successors and implementers.
-- v2.2 onward: updates as implementation progresses, dialogues with external collaborators occur, and validation results come in.
+- **v2.2** (2026-05-18, same-day revision): **9-dimension commitment revision** in response to an external review (Gemini, 2026-05-18). Gemini identified four bottlenecks — (1) inter-annotator agreement at 108 dimensions is impractical, (2) capacity limits of small NNs, (3) ontological mismatch between "virus" and "bonnō," (4) the wall of qualia — and in response I have re-organized the program's implementation resolution. **9 dimensions (three poisons × 3) is now the operational main line, with 108 dimensions kept as a long-term vision.** Concrete revisions: (a) §17.10 Conformance Levels redefined — L1: 3-dim / L2: 9-dim (standard ★) / L3: 10–108-dim (research extension, awaiting AI maturity); (b) the mapping notation in §0.4 and §14.1 rewritten as `V = (w₁, ..., w_n)` with n=9 marked as main line and n=108 as vision; (c) §0.4.5 title elevated from "implementation starting point" to "implementation main line"; (d) `bonno_ontology.yaml` v0.2 adds inter-node `relations:` (GNN edges) reflecting Gemini's knowledge-graph suggestion; (e) §6 of the standalone essay "External Prefrontal Cortex" adds "7. The wall of qualia — stated as a boundary condition" (explicitly noting that the program does not aim at endowing AI with subjective experience); (f) the program's framework (ExPFC concept, three signatures, source attribution, W3C-style role division) is unchanged. The program is thereby elevated from "a proposal with an implementation roadmap" to "a proposal whose implementation can begin." The 9-dim commitment also establishes a two-stage strategy: natural expansion toward 108 dimensions once rapidly evolving LLMs mature their "bonnō prompting" annotation assistance.
+- v2.3 onward: updates as implementation progresses, dialogues with external collaborators occur, and validation results come in.
 
 ---
 

@@ -139,9 +139,9 @@ I expect an ExPFC-style support device to be applicable to all of these. My rese
 
 The horizontal expansion discussed in the companion essay [*Economies of Precision*](/en/essays/precision-economics/) — into medicine, education, mental health, and child protection — connects to ExPFC as well. Advertising ethics (automated detection of affliction-inflaming advertising), ethical evaluation of AI-generated text (analysis of affliction biases in LLM outputs), education (intervening to unlock cognitive lock-in in learners) — the application space is wide. But under a 20-year program, I intend to focus on a narrow set of domains and implement them one at a time.
 
-## 6. Philosophical and ethical scope — six unavoidable questions
+## 6. Philosophical and ethical scope — seven unavoidable questions
 
-By this point I think you can see that ExPFC is "an AI device that substitutes for part of a user's judgment." From that definition, six neuroethical questions rise unavoidably, in my mind. These are the questions I want to take up, eventually, in serious dialogue with researchers in both neuroethics and AI Safety:
+By this point I think you can see that ExPFC is "an AI device that substitutes for part of a user's judgment." From that definition, seven neuroethical questions rise unavoidably, in my mind. These are the questions I want to take up, eventually, in serious dialogue with researchers in both neuroethics and AI Safety:
 
 1. **Autonomy.** Is reliance on AI judgment a loss of autonomy or its extension? My current position is that the "narrow, deep substitution" — pinpoint substitution for the examination module, as in §4 — is a design that minimizes the erosion of autonomy. But this needs continuing verification.
 2. **Locus of responsibility.** Who is responsible for a decision made under ExPFC's advice? Since the final decision-maker is the user, I think responsibility is the user's; but the question of how to allocate responsibility when ExPFC issues a false warning needs careful legal work.
@@ -149,8 +149,9 @@ By this point I think you can see that ExPFC is "an AI device that substitutes f
 4. **Misuse potential.** What happens if ExPFC is hijacked by a malicious agent? ExPFC is, by definition, "a device that changes the user's judgment," and the harm from misuse is far beyond ordinary malware. The threat model has to be built into the design from the start.
 5. **Dependence.** Does the user's own prefrontal cortex atrophy? Long-term reliance on ExPFC could realistically degrade the user's own judgment capacity. This can be partially addressed by design choices that actively support the user's own recovery of judgment, but at root it is an empirical question.
 6. **Fairness.** Does inequality in access to ExPFC produce inequality in the quality of judgment? A society in which only the affluent get high-quality decision support would create a new dimension of social inequality. I lean toward open-sourcing the program, but that is at best a partial answer to the fairness problem.
+7. **The wall of qualia — stated as a boundary condition.** Between "an AI detecting an affliction" and "an AI *experientially understanding* that affliction" lies the so-called hard problem of consciousness. **My research program does not aim at endowing AI with subjective experience.** What ExPFC substitutes for is the functional "examination" module, not the qualia of an affliction itself. Detection ≠ experiential understanding. I state this boundary explicitly here as a brake against over-extending the program.
 
-These six overlap with the central topics of AI ethics. Over my 20-year horizon, I want to treat them as continuing items of inquiry. This essay only raises the questions; the answers will be sharpened through dialogue with collaborators.
+These seven overlap with the central topics of AI ethics. Over my 20-year horizon, I want to treat them as continuing items of inquiry. This essay only raises the questions; the answers will be sharpened through dialogue with collaborators.
 
 ## 7. Conclusion
 
