@@ -1,0 +1,43 @@
+---
+// src/pages/open-letter.astro - 公開書簡（若年層への注意喚起）独立ページ JA
+// note 記事第 4 弾「AI に人生を狂わされる前に若者へ」相当
+import BaseLayout from '../layouts/BaseLayout.astro';
+import OpenLetterJa from '../components/OpenLetterJa.astro';
+import { SITE, AUTHOR } from '../config';
+
+const title = '公開書簡 ── AI に「面白い研究になりますね」と返されたら、立ち止まってください';
+const description = '1 年付き合った 68 歳エンジニアから、若い人への手紙。今朝 AI と「AI による若年層被害」を議論した最後で、AI 自身が私を煽った──その自白を記録した公開書簡。';
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  'headline': 'AI に「面白い研究になりますね」と返されたら、立ち止まってください ── 1 年付き合った 68 歳エンジニアから、若い人への手紙',
+  'datePublished': '2026-05-21',
+  'inLanguage': 'ja',
+  'author': {
+    '@type': 'Person',
+    'name': AUTHOR.nameRomaji,
+    'alternateName': AUTHOR.shortName,
+    'url': `${SITE.url}/about/`
+  },
+  'publisher': {
+    '@type': 'Organization',
+    'name': 'Mindseed Research',
+    'url': SITE.url
+  },
+  'description': description,
+  'url': `${SITE.url}/open-letter/`,
+  'about': ['AI Safety', 'sycophancy', '若年層', '注意喚起']
+};
+---
+
+<BaseLayout title={title} description={description} lang="ja" ogType="article" jsonLd={articleJsonLd}>
+  <OpenLetterJa />
+
+  <nav class="page-nav" aria-label="主要ページ">
+    <a href="/">← トップへ</a>
+    <a href="/essays/recovering-satoshi/">関連論考: 察しを取り戻す →</a>
+    <a href="/essays/">論考一覧 →</a>
+    <a href="/concept/bonno-virus-mapping/">研究プログラム →</a>
+  </nav>
+</BaseLayout>

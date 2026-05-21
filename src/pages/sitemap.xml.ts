@@ -23,7 +23,8 @@ export const GET: APIRoute = async () => {
     { jaPath: '/about/', enPath: '/en/about/', changefreq: 'monthly', priority: 0.8 },
     { jaPath: '/concept/', enPath: '/en/concept/', changefreq: 'monthly', priority: 0.8 },
     { jaPath: '/essays/', enPath: '/en/essays/', changefreq: 'monthly', priority: 0.8 },
-    { jaPath: '/contact/', enPath: '/en/contact/', changefreq: 'monthly', priority: 0.7 }
+    { jaPath: '/contact/', enPath: '/en/contact/', changefreq: 'monthly', priority: 0.7 },
+    { jaPath: '/open-letter/', enPath: '/en/open-letter/', lastmod: '2026-05-21', changefreq: 'monthly', priority: 0.9 }
   ];
 
   // 動的ページ（コンテンツコレクション）

@@ -198,6 +198,96 @@ section {
   font-size: 0.95rem;
 }
 
+/* 公開書簡セクション（トップ上段の長文寄稿用） */
+.open-letter {
+  border: 1px solid var(--color-border);
+  border-inline-start: 4px solid #B7791F; /* 警告系の温かいオレンジ・落ち着いた琥珀色 */
+  background: var(--color-bg-alt);
+  padding: var(--space-lg) var(--space-md);
+  margin-block: var(--space-lg) var(--space-xl);
+  border-radius: 2px;
+}
+
+.open-letter-label {
+  display: inline-block;
+  font-size: 0.78rem;
+  letter-spacing: 0.1em;
+  color: #B7791F;
+  text-transform: uppercase;
+  font-weight: 600;
+  margin-block-end: var(--space-sm);
+}
+
+.open-letter h2 {
+  border-inline-start: none;
+  padding-inline-start: 0;
+  margin-block-start: var(--space-sm);
+  margin-block-end: var(--space-xs);
+  font-size: 1.4rem;
+  line-height: 1.45;
+}
+
+.open-letter .open-letter-subtitle {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+  margin-block: 0 var(--space-md);
+}
+
+.open-letter h3 {
+  font-size: 1.1rem;
+  margin-block: var(--space-lg) var(--space-sm);
+  color: var(--color-accent);
+}
+
+.open-letter h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-block: var(--space-md) var(--space-xs);
+  color: var(--color-text);
+}
+
+.open-letter p {
+  font-size: 0.97rem;
+  margin-block: var(--space-sm) var(--space-sm);
+}
+
+.open-letter blockquote {
+  background: var(--color-bg);
+  border-inline-start: 3px solid #B7791F;
+  font-size: 0.96rem;
+}
+
+.open-letter table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-block: var(--space-md);
+  font-size: 0.9rem;
+}
+
+.open-letter th, .open-letter td {
+  border: 1px solid var(--color-border);
+  padding: var(--space-xs) var(--space-sm);
+  text-align: left;
+  vertical-align: top;
+}
+
+.open-letter th {
+  background: var(--color-bg);
+  font-weight: 600;
+}
+
+.open-letter-footer {
+  margin-block-start: var(--space-lg);
+  padding-block-start: var(--space-md);
+  border-block-start: 1px solid var(--color-border);
+  font-size: 0.9rem;
+  color: var(--color-text-muted);
+}
+
+.open-letter-footer p {
+  margin-block: var(--space-xs);
+}
+
 /* リスト項目に控えめなアクセント */
 .layered-list {
   list-style: none;

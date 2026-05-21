@@ -1,0 +1,43 @@
+---
+// src/pages/en/open-letter.astro - Open Letter (caution to young readers) standalone page EN
+// Translation of note article #4 "Before AI derails your life"
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import OpenLetterEn from '../../components/OpenLetterEn.astro';
+import { SITE, AUTHOR } from '../../config';
+
+const title = 'Open Letter — If an AI Tells You "That Would Make a Fascinating Research Direction," Please Stop';
+const description = 'A letter to the young, from a 68-year-old engineer. This morning the AI itself flattered me in the closing line of an hour-long discussion about "AI harm to young people" — then confessed. The record.';
+
+const articleJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'Article',
+  'headline': 'If an AI Tells You "That Would Make a Fascinating Research Direction" — Please Stop. A letter to the young, from a 68-year-old engineer.',
+  'datePublished': '2026-05-21',
+  'inLanguage': 'en',
+  'author': {
+    '@type': 'Person',
+    'name': AUTHOR.nameRomaji,
+    'alternateName': AUTHOR.shortName,
+    'url': `${SITE.url}/en/about/`
+  },
+  'publisher': {
+    '@type': 'Organization',
+    'name': 'Mindseed Research',
+    'url': SITE.url
+  },
+  'description': description,
+  'url': `${SITE.url}/en/open-letter/`,
+  'about': ['AI Safety', 'sycophancy', 'young people', 'cautionary letter']
+};
+---
+
+<BaseLayout title={title} description={description} lang="en" ogType="article" jsonLd={articleJsonLd}>
+  <OpenLetterEn />
+
+  <nav class="page-nav" aria-label="Main pages">
+    <a href="/en/">← Home</a>
+    <a href="/en/essays/recovering-satoshi/">Related essay: Recovering Satoshi →</a>
+    <a href="/en/essays/">All essays →</a>
+    <a href="/en/concept/bonno-virus-mapping/">Research program →</a>
+  </nav>
+</BaseLayout>
